@@ -34,7 +34,7 @@
 </style>
 <body>
     <header class="header">
-        <a href="home.html">
+        <a href="home.php">
             <img src="../img/header.JPG">
         </a>
     </header>
