@@ -37,3 +37,15 @@
 body {
 padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにするため */
 }
+
+.circle {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    color: #fff;
+    background-color:#f00;
+    line-height: 100px;
+    text-align: center;
+    border-radius: 50%;
+    /*円*/
+}
