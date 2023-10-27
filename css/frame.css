@@ -1,0 +1,39 @@
+.header{
+    width: 100%;/*横幅*/
+    height: 80px;
+    background-color: #76E5D8;
+    padding: 20px 50px;/*上下左右の余白*/
+    box-sizing: border-box; /* padding分を含んで幅を100%にするため */
+    position: fixed; /* ウィンドウを基準に画面に固定 */
+    top: 0;
+    left: 0;
+    display: flex;/*要素の横並び*/
+    align-items: center;/*要素を上下中央に並べる*/
+    justify-content: space-between;/*[ログイン]を右に寄せる*/
+}
+.name{
+    padding-bottom: 10px;
+}
+.shopping-cart{
+    text-align: right;
+    padding-top: 10px;
+}
+.container{
+    width: 100%;/*横幅*/
+    left: 0;
+    display: flex;/*要素の横並び*/
+}
+.main{
+    width: 80%;/*横幅*/
+    padding: 10px;/*文字と枠の余白*/
+    background-color: lightyellow;
+}
+.left-menu{
+    width: 20%;/*横幅*/
+    padding: 5px;/*文字と枠の余白*/
+    left: 0;
+    background-color: lightgray;
+}
+body {
+padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにするため */
+}
