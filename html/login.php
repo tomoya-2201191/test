@@ -32,7 +32,7 @@
 <body>
     <header class="header">
         <a href="home.php">
-            <img src="../img/header.JPG">
+            <img src="./img/header.JPG">
         </a>
         </header>
         <br>
