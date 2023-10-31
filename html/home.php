@@ -1,3 +1,11 @@
+<?php
+    const SERVER = 'mysql219.phy.lolipop.lan';
+    const DBNAME = 'LAA1516821-asoclothes';
+    const USER = 'LAA1516821';
+    const PASS = 'Pass0726';
+
+    $connect = 'mysql:host='. SERVER . ';dbname='. DBNAME . ';charset=utf8';
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -13,6 +21,13 @@
     }
     .active ul {
       display: block;
+    }
+    .flex{
+    display: flex;
+    
+    }
+    .flex>p{
+        width: 25%;
     }
   </style>
 </head>
@@ -50,13 +65,26 @@
             </ul>
         </div>
         <div class="main">
-          
-    
-  
-  <script>
-    function func1(e) {
-      e.classList.toggle("active");
-    }
-  </script>
+          <?php
+            $pdo= new PDO($connect,USER,PASS);
+            $sql=$pdo->query('select * from product');
+            
+            foreach($sql as $row){
+              echo '<div class="flex">';
+              echo '<p><img src=""></p>';
+              echo '<a href="detail.php?id=',$row['id'],'">',$row['name'],'</a>','<br>';
+              echo '¥',$row['price'],'<br>';
+              echo $row['category'],'<br>';
+              echo '</div>';
+            }
+           
+          ?>
+        </div>
+        
+        <script>
+          function func1(e) {
+            e.classList.toggle("active");
+          }
+        </script>
 </body>
 </html>
