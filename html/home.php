@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <link rel="stylesheet" href="css/frame.css">
+    <link rel="stylesheet" href="../css/frame.css">
     <title>home</title>
 </head>
   <style>
@@ -19,7 +19,7 @@
 <body>
     <header class="header">
         <a href="home.php">
-            <img src="./img/header.JPG">
+            <img src="../img/header.JPG">
         </a>
         <div class="login">
             <a href="login.php">ログイン</a>
