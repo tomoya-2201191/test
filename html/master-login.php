@@ -50,7 +50,9 @@
     </div>
     <br>
     <div class="log">
-        <button type="button">ログイン</button>
+        <form action="m-home.php" method="post">
+            <input type="button">ログイン</input>
+        </form>
     </div>
 </body>
 </html>
