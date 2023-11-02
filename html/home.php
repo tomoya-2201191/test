@@ -29,6 +29,9 @@
     .flex>p{
         width: 25%;
     }
+    .main{
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -50,7 +53,7 @@
     <div class="container">
         <div class="left-menu">
             <ul>
-                <li><a href="#">ホーム</a></li>
+                <li><a href="#">ホーム</a></li><br>
                 <li class="parent" onclick="func1(this)">ランキング
                     <ul>
                       <li><a href="">アウター</a></li>
@@ -59,9 +62,9 @@
                       <li><a href="">インナー</a></li>
                       <li><a href="">小物</a></li>
                     </ul>
-                  </li>
-                <li><a href="#">ユーザー情報更新</a></li>
-                <li><a href="productSearch.php">商品検索</a></li>
+                  </li><br>
+                <li><a href="#">ユーザー情報更新</a></li><br>
+                <li><a href="productSearch.php">商品検索</a></li><br>
             </ul>
         </div>
         <div class="main">
@@ -72,10 +75,12 @@
             foreach($sql as $row){
               echo '<div class="flex">';
               echo '<p><img src=""></p>';
-              echo '<a href="detail.php?id=',$row['id'],'">',$row['name'],'</a>','<br>';
-              echo '¥',$row['price'],'<br>';
-              echo $row['category'],'<br>';
+              echo '<a href="detail.php?id=',$row['id'],'">',$row['name'],'<br>',
+              '¥',$row['price'],'<br>',
+              $row['category'],'<br>',
+              '</a>','<br>';
               echo '</div>';
+              echo '<br>';
             }
            
           ?>
