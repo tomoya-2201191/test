@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<meta charset="UTF-8">
     <title>ログイン</title>
     <link rel="stylesheet" href="../css/frame.css">
     <style>
