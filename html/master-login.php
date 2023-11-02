@@ -50,7 +50,7 @@
     </div>
     <br>
     <div class="log">
-        <button type="button">ログイン</button>
+        <button type="button" onclick="location.href='m-home.php'">ログイン</button>
     </div>
 </body>
 </html>
