@@ -4,6 +4,9 @@
     <title>管理者ログイン</title>
     <link rel="stylesheet" href="../css/frame.css">
     <style>
+        .title{
+            text-align: center;
+        }
         .mail{
             text-align: center;
         }
@@ -36,6 +39,9 @@
         </a>
     </header>
     <br>
+    <div class="title">
+        <h1>管理者ログイン</h1>
+    </div>    
     <div class="mail">
         <input type="text" class="txt" placeholder="メールアドレス">
     </div>
