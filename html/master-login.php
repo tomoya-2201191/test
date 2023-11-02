@@ -50,7 +50,9 @@
     </div>
     <br>
     <div class="log">
-        <button type="button" onclick="location.href='m-home.php'">ログイン</button>
+        <form action="m-home.php" method="post">
+            <button type="button">ログイン</button>
+        </form>
     </div>
 </body>
 </html>
