@@ -7,7 +7,7 @@
   
 </head>
 <body>
-  <?php require 'home.php'; ?>
+  <?php require 'm-home.php'; ?>
 
         <div class="main">
           <!--検索選択リンク-->
