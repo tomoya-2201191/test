@@ -10,7 +10,7 @@
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="../css/frame.css">
-    <title>home</title>
+    <title>ASO CLOTHES</title>
 </head>
   <style>
     .parent ul{
@@ -31,6 +31,9 @@
     }
     .main{
       text-align: center;
+    }
+    a {
+      text-decoration:none;
     }
   </style>
 </head>
