@@ -38,6 +38,7 @@ body {
 padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにするため */
 }
 
+
 .circle {
     display: inline-block;
     width: 100px;

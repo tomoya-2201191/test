@@ -32,7 +32,7 @@
     .main{
       text-align: center;
     }
-    a {
+    a{
       text-decoration:none;
     }
   </style>
@@ -58,12 +58,13 @@
             <ul>
                 <li><a href="#">ホーム</a></li><br>
                 <li class="parent" onclick="func1(this)">ランキング
+                <form action="ranking.php" method="post">
                     <ul>
-                      <li><a href="">アウター</a></li>
-                      <li><a href="">トップス</a></li>
-                      <li><a href="">ボトムス</a></li>
-                      <li><a href="">インナー</a></li>
-                      <li><a href="">小物</a></li>
+                      <li><a href="ranking.php">アウター</a></li>
+                      <li><a href="ranking.php">トップス</a></li>
+                      <li><a href="ranking.php">ボトムス</a></li>
+                      <li><a href="ranking.php">インナー</a></li>
+                      <li><a href="ranking.php">小物</a></li>
                     </ul>
                   </li><br>
                 <li><a href="#">ユーザー情報更新</a></li><br>
