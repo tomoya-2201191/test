@@ -51,7 +51,7 @@
     <br>
     <div class="log">
         <form action="m-home.php" method="post">
-            <button type="button">ログイン</button>
+            <input type="button">ログイン</input>
         </form>
     </div>
 </body>
