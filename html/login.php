@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<meta charset="UTF-8">
     <title>ログイン</title>
     <link rel="stylesheet" href="../css/frame.css">
     <style>
@@ -48,7 +49,7 @@
         </div>
         <br>
         <div class="top">
-            <h3>管理者の方は<button type="button" >管理者ログイン</button></h3>
+            <h3>管理者の方は<button type="button" onclick="location.href='master-login.php'">管理者ログイン</button></h3>
         </div>
         <div class="new">
             <h3>初めての方は<button type="button" onclick="location.href='signup.php'">新規登録</button></h3>
