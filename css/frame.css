@@ -39,14 +39,49 @@ padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにす�
 }
 
 
-.circle {
+.p_name {
     display: inline-block;
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 300px;
     color: #fff;
-    background-color:#f00;
-    line-height: 100px;
+    background-color:orange;
     text-align: center;
+    height:300px;
+    line-height:300px;
     border-radius: 50%;
+    font-size: 35px;
+    /*円,検索機能*/
+}
+
+.p_category {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    color: #fff;
+    background-color:rgb(52, 136, 232);
+    text-align: center;
+    height:300px;
+    line-height:300px;
+    border-radius: 50%;
+    position:relative;
+    left: 50px;
+    font-size: 35px;
+    /*円,検索機能*/
+}
+
+.p_price {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    color: #fff;
+    background-color:rgb(56, 220, 56);
+    text-align: center;
+    height:300px;
+    line-height:300px;
+    border-radius: 50%;
+    position:relative;
+    top: 330px;
+    right: 430px;
+    font-size: 35px;
     /*円,検索機能*/
 }
