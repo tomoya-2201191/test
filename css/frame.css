@@ -10,9 +10,14 @@
     display: flex;/*要素の横並び*/
     align-items: center;/*要素を上下中央に並べる*/
     justify-content: space-between;/*[ログイン]を右に寄せる*/
+    font-size: 20px;
+}
+.home{
+    font-size: 20px;
 }
 .name{
     padding-bottom: 10px;
+    font-size: 20px;
 }
 .shopping-cart{
     text-align: right;
@@ -20,34 +25,38 @@
 }
 .container{
     width: 100%;/*横幅*/
+    height: 1000px;
     left: 0;
     display: flex;/*要素の横並び*/
+    /*position: relative;*/
 }
 .main{
-    width: 80%;/*横幅*/
     padding: 10px;/*文字と枠の余白*/
     background-color: lightyellow;
+    width: 100%;
 }
 .left-menu{
-    width: 20%;/*横幅*/
+    width: 25%;/*横幅*/
     padding: 5px;/*文字と枠の余白*/
-    left: 0;
     background-color: lightgray;
+    margin: 0;
+    font-size: 25px;
+    line-height: 55px;
 }
 body {
 padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにするため */
 }
 
-
 .p_name {
     display: inline-block;
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
+    margin-top: 80px;
+    margin-left: 180px;
     color: #fff;
     background-color:orange;
     text-align: center;
-    height:300px;
-    line-height:300px;
+    line-height:350px;
     border-radius: 50%;
     font-size: 35px;
     /*円,検索機能*/
@@ -55,40 +64,59 @@ padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにす�
 
 .p_category {
     display: inline-block;
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
+    margin-top: 80px;
+    margin-left: 240px;
     color: #fff;
     background-color:rgb(52, 136, 232);
     text-align: center;
-    height:300px;
-    line-height:300px;
+    line-height:350px;
     border-radius: 50%;
-    position:relative;
-    left: 50px;
     font-size: 35px;
     /*円,検索機能*/
 }
 
 .p_price {
     display: inline-block;
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
+    margin-top: 50px;
+    margin-left: 480px;
     color: #fff;
     background-color:rgb(56, 220, 56);
     text-align: center;
-    height:300px;
-    line-height:300px;
+    line-height:350px;
     border-radius: 50%;
-    position:relative;
-    top: 330px;
-    right: 430px;
     font-size: 35px;
     /*円,検索機能*/
 }
 
-.button{
-    width: 60px;
+.text{
+    width: 600px;
+    height: 70px;
+    margin-top: 50px;
+    margin-left: 50px;
+    font-size: 40px;
     padding: 10px;
-    box-sizing: border-box;
-    background-color: rgb(240, 185, 32);
+}
+
+.button{
+    width: 110px;
+    height: 70px;
+    margin-left: 40px;
+    padding: 10px;
+    background-color: rgb(255, 192, 4);
+    font-size: 25px;
+    border-radius:5px;
+}
+
+.p_text{
+    width: 450px;
+    height: 60px;
+    margin-top: 50px;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 30px;
+    padding: 10px;
 }
