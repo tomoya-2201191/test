@@ -42,9 +42,10 @@
             </ul>
         </div>
         <div class="main">
-          <a class="p_name" href="#">商品登録</a>
-          <a class="p_category" href="#">商品削除</a>
-          <a class="p_price" href="#">更新</a>
+          <a class="p_name" href="p-insert-input.php">商品登録</a>
+          <a class="p_category" href="p-delete-input.php">商品削除</a>
+          <a class="p_price" href="p-update-input.php">更新</a>
+        </div>
     
   
   <script>
