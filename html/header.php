@@ -26,12 +26,6 @@
             
         </div>
     </header>
-        <div class="shopping-cart">
-            <a href="#">買い物カゴ</a>
-        </div>
-    <div class="name"></div>
-            <u><p>ホーム</p></u>
-    </div>
     <div class="container">
         <div class="left-menu">
             <ul>
