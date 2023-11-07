@@ -58,11 +58,11 @@
                 <li><a href="#">ホーム</a></li><br>
                 <li class="parent" onclick="func1(this)">ランキング
                     <ul>
-                      <li><a href="">アウター</a></li>
-                      <li><a href="">トップス</a></li>
-                      <li><a href="">ボトムス</a></li>
-                      <li><a href="">インナー</a></li>
-                      <li><a href="">小物</a></li>
+                      <li><a href="ranking.php?category=アウター">アウター</a></li>
+                      <li><a href="ranking.php?category=トップス">トップス</a></li>
+                      <li><a href="ranking.php?category=ボトムス">ボトムス</a></li>
+                      <li><a href="ranking.php?category=インナー">インナー</a></li>
+                      <li><a href="ranking.php?category=小物">小物</a></li>
                     </ul>
                   </li><br>
                 <li><a href="#">ユーザー情報更新</a></li><br>

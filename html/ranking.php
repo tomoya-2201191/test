@@ -19,9 +19,22 @@
         .active ul {
         display: block;
         }
-        a{
-        text-decoration:none;
-        }
+        .flex{
+    display: flex;
+    
+    }
+    .flex>p{
+        width: 25%;
+    }
+    .main{
+      text-align: center;
+    }
+    a {
+      text-decoration:none;
+    }
+    .genre{
+      text-align: right;
+    }
     </style>
 </head>
 <body>
@@ -38,6 +51,11 @@
     </div>
     <div class="name"></div>
             <u><p>ランキング</p></u>
+            <div class="genre">
+              <?php
+              echo '現在選択中のジャンル : ',$_GET['category'];
+              ?>
+            </div>
     </div>
     <div class="container">
         <div class="left-menu">
@@ -45,11 +63,11 @@
                 <li><a href="home.php">ホーム</a></li><br>
                 <li class="parent" onclick="func1(this)">ランキング
                     <ul>
-                      <li><a href="">アウター</a></li>
-                      <li><a href="">トップス</a></li>
-                      <li><a href="">ボトムス</a></li>
-                      <li><a href="">インナー</a></li>
-                      <li><a href="">小物</a></li>
+                      <li><a href="ranking.php?category=アウター">アウター</a></li>
+                      <li><a href="ranking.php?category=トップス">トップス</a></li>
+                      <li><a href="ranking.php?category=ボトムス">ボトムス</a></li>
+                      <li><a href="ranking.php?category=インナー">インナー</a></li>
+                      <li><a href="ranking.php?category=小物">小物</a></li>
                     </ul>
                   </li><br>
                 <li><a href="#">ユーザー情報更新</a></li><br>
@@ -59,8 +77,22 @@
         <div class="main">
           <?php
             $pdo= new PDO($connect,USER,PASS);
-            
-           
+            $sql=$pdo->prepare('select * from product '.
+            'where category = ? order by sales DESC');
+            $sql->execute([$_GET['category']]);
+            $i = 1;
+            foreach($sql as $row){
+              echo '<div class="flex">';
+              echo $i,'位';
+              echo '<p><img src=""></p>';
+              echo '<a href="detail.php?id=',$row['id'],'">',$row['name'],'<br>',
+              '¥',$row['price'],'<br>',
+              $row['category'],'<br>',
+              '</a>','<br>';
+              echo '</div>';
+              echo '<br>';
+              $i++;
+            }
           ?>
         </div>
         
