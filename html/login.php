@@ -19,7 +19,7 @@
             text-align: center;
             font-size: 20px;
         }
-        .log{
+        .login{
             text-align: center;
         }
         .top{
@@ -31,22 +31,24 @@
     </style>
 </head>
 <body>
-    <header class="header">
-        <a href="home.php">
-            <img src="../img/header.JPG">
-        </a>
+        <header class="header">
+            <a href="home.php">
+                <img src="../img/header.JPG">
+            </a>
         </header>
         <br>
-        <div class="mail">
-            <input type="text" class="txt" placeholder="メールアドレス">
-        </div>
-        <div class="pass">
-            <input type="password" class="txt" placeholder="パスワード">
-        </div>
-        <br>
-        <div class="log">
-            <button type="button">ログイン</button>
-        </div>
+        <form action="login-output.php" method="post">
+            <div class="mail">
+                <input type="text" class="txt" name="mail" placeholder="メールアドレス">
+            </div>
+            <div class="pass">
+                <input type="password" class="txt" name="password" placeholder="パスワード">
+            </div>
+            <br>
+            <div class="login">
+                <button type="submit">ログイン</button>
+            </div>
+        </form>
         <br>
         <div class="top">
             <h3>管理者の方は<button type="button" onclick="location.href='master-login.php'">管理者ログイン</button></h3>
