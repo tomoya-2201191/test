@@ -85,3 +85,12 @@ padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにす�
     font-size: 35px;
     /*円,検索機能*/
 }
+
+.button{
+    width: 50%;
+    min-width: 200px;
+    max-width: 600px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgb(240, 185, 32);
+}
