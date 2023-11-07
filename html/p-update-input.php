@@ -50,9 +50,7 @@
                 価格：<input type="text" name="price"><br>
                 概要：<input type="text" name="outline"><br>
                 在庫：<input type="text" name="stock">
-                <div class="button">
-                    <input type="submit" value="更新">
-                </div>
+                <input type="submit" value="更新" class="button">
             </form>
         </div>
     </div>
