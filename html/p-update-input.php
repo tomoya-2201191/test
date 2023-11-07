@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/frame.css">
-    <title>m-home</title>
+    <title>更新</title>
 </head>
-  <style>
+    <style>
     .parent ul{
       display: none;
     }
@@ -26,8 +28,8 @@
             
         </div>
     </header>
-    <div class="name"></div>
-            <u><p>管理者画面</p></u>
+    <div class="name">
+        <u><p>更新</p></u>
     </div>
     <div class="container">
         <div class="left-menu">
@@ -42,16 +44,15 @@
             </ul>
         </div>
         <div class="main">
-          <a class="p_name" href="p-insert-input.php">商品登録</a>
-          <a class="p_category" href="p-delete-input.php">商品削除</a>
-          <a class="p_price" href="p-update-input.php">更新</a>
+            <form action="p-update-output.php" method="post">
+                商品名：<input type="text" name="name"><br>
+                カテゴリ:<input type="text" name="category"><br>
+                価格：<input type="text" name="price"><br>
+                概要：<textarea name="outline" cols="50" rows="3"></textarea><br>
+                在庫：<input type="text" name="stock">
+                <input type="submit" value="更新" class="button">
+            </form>
         </div>
-    
-  
-  <script>
-    function func1(e) {
-      e.classList.toggle("active");
-    }
-  </script>
+    </div>
 </body>
 </html>

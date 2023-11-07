@@ -9,19 +9,17 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/frame.css">
-    <title>ASO CLOTHES</title>
-  <style>
-    .parent ul{
-      display: none;
-    }
-    .active {
-      /*background-color: lightyellow;*/
-    }
-    .active ul {
-      display: block;
-    }
-    .flex{
+    <title>ranking</title>
+    <style>
+        .parent ul{
+        display: none;
+        }
+        .active ul {
+        display: block;
+        }
+        .flex{
     display: flex;
     
     }
@@ -34,7 +32,10 @@
     a {
       text-decoration:none;
     }
-  </style>
+    .genre{
+      text-align: right;
+    }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -43,19 +44,23 @@
         </a>
         <div class="login">
             <a href="login.php">ログイン</a>
-            
         </div>
     </header>
-        <div class="shopping-cart">
-            <a href="cart-show.php">買い物カゴ</a>
-        </div>
+    <div class="shopping-cart">
+        <a href="cart-show.php">買い物カゴ</a>
+    </div>
     <div class="name"></div>
-            <u><p>ホーム</p></u>
+            <u><p>ランキング</p></u>
+            <div class="genre">
+              <?php
+              echo '現在選択中のジャンル : ',$_GET['category'];
+              ?>
+            </div>
     </div>
     <div class="container">
         <div class="left-menu">
             <ul>
-                <li><a href="#">ホーム</a></li><br>
+                <li><a href="home.php">ホーム</a></li><br>
                 <li class="parent" onclick="func1(this)">ランキング
                     <ul>
                       <li><a href="ranking.php?category=アウター">アウター</a></li>
@@ -72,9 +77,13 @@
         <div class="main">
           <?php
             $pdo= new PDO($connect,USER,PASS);
-            $sql=$pdo->query('select * from product');            
+            $sql=$pdo->prepare('select * from product '.
+            'where category = ? order by sales DESC');
+            $sql->execute([$_GET['category']]);
+            $i = 1;
             foreach($sql as $row){
               echo '<div class="flex">';
+              echo $i,'位';
               echo '<p><img src=""></p>';
               echo '<a href="detail.php?id=',$row['id'],'">',$row['name'],'<br>',
               '¥',$row['price'],'<br>',
@@ -82,6 +91,7 @@
               '</a>','<br>';
               echo '</div>';
               echo '<br>';
+              $i++;
             }
           ?>
         </div>
