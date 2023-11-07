@@ -34,11 +34,11 @@
     <div class="container">
         <div class="left-menu">
             <ul>
-                <li><a href="#">ホーム</a></li>
+                <li><a href="m-home.php">ホーム</a></li>
                     <ul>
-                    <li><a href="">商品登録</a></li>
-                    <li><a href="">商品削除</a></li>
-                    <li><a href="">更新</a></li>
+                    <li><a href="p-insert-input.php">商品登録</a></li>
+                    <li><a href="p-delete-input.php">商品削除</a></li>
+                    <li><a href="p-update-input.php">更新</a></li>
                     </ul>
                 </li>
             </ul>
