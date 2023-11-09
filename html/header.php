@@ -26,6 +26,9 @@
             
         </div>
     </header>
+    <div class="shopping-cart">
+            <a href="cart-show.php">買い物カゴ</a>
+        </div>
     <div class="container">
         <div class="left-menu">
             <ul>
