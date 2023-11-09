@@ -111,6 +111,19 @@ padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにす�
     border-radius:5px;
 }
 
+.button2{
+    min-width: 200px; 
+    height: 70px;
+    margin-left: 40px;
+    background-color: rgb(20, 230, 146);
+    font-size: 25px;
+    border-radius:5px;
+    padding: 0 16px; /* テキスト横の余白がキツキツにならないように */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .p_text{
     width: 450px;
     height: 60px;
@@ -118,5 +131,5 @@ padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにす�
     margin-left: 40px;
     margin-right: 40px;
     font-size: 30px;
-    padding: 10px;
+    padding: 0 16px;
 }
