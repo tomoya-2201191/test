@@ -45,11 +45,12 @@
         </div>
         <div class="main">
             <form action="p-update-output.php" method="post">
-                商品名：<input type="text" name="name"><br>
-                カテゴリ:<input type="text" name="category"><br>
-                価格：<input type="text" name="price"><br>
+                商品名：<input type="text" name="name" style="width: 300px; height=30px"><br>
+                カテゴリ：<input type="text" name="category" style="width: 200px; height=30px"><br>
+                サイズ：<input type="text" name="size" style="width: 200px; height=30px"><br>
+                価格：<input type="text" name="price" style="width: 200px; height=30px"><br>
                 概要：<textarea name="outline" cols="50" rows="3"></textarea><br>
-                在庫：<input type="text" name="stock">
+                在庫：<input type="text" name="stock" style="width: 50px; height=30px">
                 <input type="submit" value="更新" class="button">
             </form>
         </div>
