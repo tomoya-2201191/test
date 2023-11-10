@@ -123,6 +123,15 @@ padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにす�
     align-items: center;
     justify-content: center;
 }
+.button3{
+    width: 110px;
+    height: 70px;
+    margin-left: 40px;
+    padding: 10px;
+    background-color: rgb(191, 105, 237);
+    font-size: 25px;
+    border-radius:5px;
+}
 
 .p_text{
     width: 450px;
