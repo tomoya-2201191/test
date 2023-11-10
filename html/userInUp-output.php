@@ -50,20 +50,22 @@
                 <li><a href="productSearch.php">商品検索</a></li>
             </ul>
         </div>
+
         <div class = "main">
+          ?>
           <?php
           $pdo = new PDO('mysql:host=mysql219.phy.lolipop.lan;dbname=LAA1516821-asoclothes;charset=utf8',
           'LAA1516821','Pass0726');
-          $sql=$pdo->prepare('update product set name=?,price=? where id=?'); 
-          if ($sql->execute(
-            $_POST['name'],$_POST['price'],$_POST['id']
-          )) {
-            echo 'ユーザー情報を更新しました。'
+          $sql=$pdo->prepare('update customer set name=?,mail_adress=?,adress=?,tel=?'); 
+          if ($sql->execute([
+            $_POST['name'],$_POST['mail_adress'],$_POST['adress'],$_POST['tel']
+          ])) {
+            echo 'ユーザー情報を更新しました。';
           } else {
             echo '更新に失敗しました。';
           }
-        <form class="forms-sample">
-          <h1>ユーザー情報を更新しました。</h1>
+          ?>
+        <form action="home.php" method="post">
         <button type="submit">ホームへ戻る</button>
         </form>
         <script>
