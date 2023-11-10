@@ -69,7 +69,7 @@
             ?>
             <br><hr><br>
             <table>
-                <tr><th>商品番号</th><th>商品名</th><th>カテゴリ</th><th>サイズ</th><th>価格</th><th>概要</th><th>在庫数</th><th>売上数</th>
+                <tr><th>商品番号</th><th>商品名</th><th>カテゴリ</th><th>サイズ</th><th>価格</th><th>概要</th><th>在庫数</th><th>売上数</th></tr>
                 <?php
                     foreach($pdo->query('select * from product') as $row){
                         echo '<tr>';
