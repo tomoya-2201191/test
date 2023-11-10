@@ -30,6 +30,7 @@
         $sql->execute([$_POST['keyword']]);
         echo '<tr><th>商品名</th><th>価格</th><th>カテゴリー</th></tr>';
         foreach ($sql as $row) {
+            $id=$row['id'];
             echo '<tr>';
             echo '<td>';
             echo '<a href="detail.php?id=', $id, '">', $row['name'], '</a>';
