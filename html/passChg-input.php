@@ -3,7 +3,7 @@
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="../css/frame.css">
-    <title>ユーザー情報更新</title>
+    <title>パスワード変更</title>
 </head>
   <style>
     .parent ul{
@@ -31,7 +31,7 @@
             <a href="cart-show.php">買い物カゴ</a>
         </div>
     <div class="name"></div>
-            <u><p>ユーザー情報更新</p></u>
+            <u><p>パスワード変更</p></u>
     </div>
     <div class="container">
         <div class="left-menu">
@@ -51,14 +51,16 @@
             </ul>
         </div>
         <div class="main">
-        <form action="userInUp-output.php" method="post">
-                      <p>名前<input type="text" name="name"  placeholder="name"></p>
-                      <p>メールアドレス<input type="text" name="mail_adress"  placeholder="mail_adress"></p>
-                      <p>住所<input type="text" name="adress"  placeholder="adress"></p>
-                      <p>電話番号<input type="text" name="tel"  placeholder="tel"></p>
-                      <a href="passChg-input.php">パスワードの変更はこちら</a>
+        <form action="passChg-output.php" method="post">
+                        <p>旧パスワード入力
+                          <input type="password" name="pass1"></p>
+                        <p>新パスワード入力
+                          <input type="password" name="pass2"></p>
+                        <p>パスワード再入力
+                          <input type="password" name="pass3"></p>
                       <p></p>
                       <button type="submit">変更</button>
+                      
                     </form>
     
   
