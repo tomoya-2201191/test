@@ -25,7 +25,7 @@
 }
 .container{
     width: 100%;/*横幅*/
-    height: auto;
+    height: 100%;
     left: 0;
     display: flex;/*要素の横並び*/
     /*position: relative;*/
