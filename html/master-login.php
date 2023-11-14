@@ -1,12 +1,43 @@
+<?php
+    const SERVER = 'mysql219.phy.lolipop.lan';
+    const DBNAME = 'LAA1516821-asoclothes';
+    const USER = 'LAA1516821';
+    const PASS = 'Pass0726';
+
+    $connect = 'mysql:host='. SERVER . ';dbname='. DBNAME . ';charset=utf8';
+?>
+<?php
+    error_reporting(0);
+    ini_set('display_errors', 0);
+    session_start();
+    $pdo = new PDO($connect,USER,PASS);
+        if(isset($_POST["login"])) {
+            $error_message = "";
+            $mail = $_POST['mail'];
+            $pass = $_POST['password'];
+            
+            $sql = $pdo->prepare('select * from master where mail_adress=?');
+            $sql->execute([$mail]);
+            $row = $sql->fetch();
+
+                if(empty($mail) || empty($pass)){
+                    $error_message = "※未入力の項目があります";
+                }else if($mail !== $row['mail_adress'] || $pass !== $row['pass']) {
+                    $error_message = "※メールアドレスかパスワードが違います";
+                }else if($mail == $row['mail_adress'] && $pass == $row['pass']){
+                    $login_success_url = "m-home.php";
+                    header("Location: {$login_success_url}");
+                    exit;
+                }
+            }
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<meta charset="UTF-8">
     <title>管理者ログイン</title>
     <link rel="stylesheet" href="../css/frame.css">
     <style>
-        .title{
-            text-align: center;
-        }
         .mail{
             text-align: center;
         }
@@ -21,7 +52,7 @@
             text-align: center;
             font-size: 20px;
         }
-        .log{
+        .login{
             text-align: center;
         }
         .top{
@@ -30,29 +61,37 @@
         .new{
             text-align: center;
         }
+        .error{
+            text-align: center;
+            color: red;
+        }
     </style>
 </head>
 <body>
-    <header class="header">
-        <a href="home.php">
-            <img src="../img/header.JPG">
-        </a>
-    </header>
-    <br>
-    <div class="title">
-        <h1>管理者ログイン</h1>
-    </div>    
-    <div class="mail">
-        <input type="text" class="txt" placeholder="メールアドレス">
-    </div>
-    <div class="pass">
-        <input type="password" class="txt" placeholder="パスワード">
-    </div>
-    <br>
-    <div class="log">
-        <form action="m-home.php" method="post">
-            <input type="button" onclick="location.href='m-home.php'" value="ログイン">
+        <header class="header">
+            <a href="home.php">
+                <img src="../img/header.JPG">
+            </a>
+        </header>
+        <br>
+        <form action="master-login.php" method="post">
+            <div class="mail">
+                <input type="text" class="txt" name="mail" placeholder="メールアドレス">
+            </div>
+            <div class="pass">
+                <input type="password" class="txt" name="password" placeholder="パスワード">
+            </div>
+            <br>
+            <div class="login">
+                <input type="submit" name="login" value="ログイン">
+            </div>
         </form>
-    </div>
+        <div class="error">
+            <?php
+                    if(!empty($error_message)){
+                        echo $error_message;
+                    }
+            ?>
+        </div>
 </body>
 </html>
