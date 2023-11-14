@@ -3,18 +3,17 @@
 <head>
     <link rel="stylesheet" href="../css/frame.css">
     <title>m-home</title>
-</head>
-  <style>
-    .parent ul{
-      display: none;
-    }
-    .active {
-      /*background-color: lightyellow;*/
-    }
-    .active ul {
-      display: block;
-    }
-  </style>
+    <style>
+      .parent ul{
+        display: none;
+      }
+      .active {
+        /*background-color: lightyellow;*/
+      }
+      .active ul {
+        display: block;
+      }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -26,7 +25,7 @@
             
         </div>
     </header>
-    <div class="name"></div>
+    <div class="name">
             <u><p>管理者画面</p></u>
     </div>
     <div class="container">
