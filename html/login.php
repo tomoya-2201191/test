@@ -7,24 +7,29 @@
     $connect = 'mysql:host='. SERVER . ';dbname='. DBNAME . ';charset=utf8';
 ?>
 <?php 
+    error_reporting(0);
+    ini_set('display_errors', 0);
     session_start();
-    $error_message = "";
     $pdo = new PDO($connect,USER,PASS);
         if(isset($_POST["login"])) {
+            $error_message = "";
             $mail = $_POST['mail'];
             $pass = $_POST['password'];
-
+            
             $sql = $pdo->prepare('select * from customer where mail_adress=?');
             $sql->execute([$mail]);
-            foreach($sql as $row){
-                if($mail == $row['mail_adress'] && $pass == $row['pass']) {
+            $row = $sql->fetch();
+
+                if(empty($mail) || empty($pass)){
+                    $error_message = "※未入力の項目があります";
+                }else if($mail !== $row['mail_adress'] || $pass !== $row['pass']) {
+                    $error_message = "※メールアドレスかパスワードが違います";
+                }else{
                     $login_success_url = "home.php";
                     header("Location: {$login_success_url}");
                     exit;
                 }
             }
-        $error_message = "※メールアドレスもしくはパスワードが間違っています。<br>もう一度入力して下さい。";
-        }     
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -90,9 +95,9 @@
         </div>
         <div class="error">
             <?php
-                if($error_message){
-                    echo $error_message;
-                }
+                    if(!empty($error_message)){
+                        echo $error_message;
+                    }
             ?>
         </div>
 </body>
