@@ -1,4 +1,11 @@
+<?php
+    const SERVER = 'mysql219.phy.lolipop.lan';
+    const DBNAME = 'LAA1516821-asoclothes';
+    const USER = 'LAA1516821';
+    const PASS = 'Pass0726';
 
+    $connect = 'mysql:host='. SERVER . ';dbname='. DBNAME . ';charset=utf8';
+?>
 <?php
             if (isset($_POST['register'])) {
                 // エラーメッセージを格納する変数
@@ -13,23 +20,25 @@
                 $confirmpass = $_POST['confirmpass'];
             
                 //必須項目チェック
-                if (empty($name) || empty($phone) || empty($mail) || empty($pass) || empty($address) || empty($confirmpass)) {
-                    $error_message = '全ての項目を入力してください。';
+                if(empty($name) || empty($phone) || empty($mail) || empty($pass) || empty($address) || empty($confirmpass)){
+                    $error_message = '※未入力の項目があります';
+                }else if(strlen($phone) < 10 || strlen($phone) > 12){
+                    $error_message = '※電話番号を10文字以上12文字以内で収めてください';
+                }else if(!filter_var($mail, FILTER_VALIDATE_EMAIL)){
+                    $error_message = '※メールアドレスの形式が違います';
+                }else if(strlen($pass) < 8 || strlen($pass) > 11){
+                    $error_message = '※パスワードを8文字以上11文字以内に収めてください';
+                }else if($pass !== $confirmpass){
+                    $error_message = '※入力されているパスワードが異なっています';
                 }else{
-                        $login_success_url = "home.php";
-                        header("Location: {$login_success_url}");
-                        exit;
+                    $login_success_url = "home.php";
+                    header("Location: {$login_success_url}");
+                    $pdo=new PDO($connect,USER,PASS);
+                    $sql=$pdo->prepare('insert into customer(name,adress,tel,pass,mail_adress) 
+                    values (?,?,?,?,?)');
+                    $sql->execute([$name,$address,$phone,$pass,$mail]);
+                    exit;
                 }
-            
-                
-            
-                // エラーメッセージがある場合は表示
-                /*if (!empty($error_message)) {
-                    echo '<script>document.getElementById("error-message").textContent = "' . $error_message . '";</script>';
-                } else {
-                    // バリデーションが成功した場合、ここで登録処理を実行
-                    // データベースにユーザーを登録するなどの処理を実行
-                }*/
             }
             ?>
 <!DOCTYPE html>
@@ -65,6 +74,10 @@
     .B1{
         margin-right: 400px;
     }
+    .error{
+            text-align: center;
+            color: red;
+        }
 </style>
 <body>
     <header class="header">
@@ -73,7 +86,7 @@
         </a>
     </header>
             <h1>新規登録</h1>
-            <form action="signup.php">
+            <form action="signup.php" method="post">
                 <div class="top">
                     <input type="text" class="txt" name="name" placeholder="名前">
                     <input type="text" class="txt" name="phone" placeholder="電話番号">

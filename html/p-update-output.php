@@ -1,11 +1,11 @@
 <?php require 'dbconnect.php'; ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/frame.css">
-    <title>登録完了</title>
+    <title>更新完了</title>
 </head>
 <body>
 <style>
@@ -31,7 +31,7 @@
         </div>
     </header>
     <div class="name">
-        <u><p>商品登録</p></u>
+        <u><p>更新</p></u>
     </div>
     <div class="container">
         <div class="left-menu">
@@ -48,7 +48,7 @@
         <div class="main">
             <?php
                 $pdo=new PDO($connect,USER,PASS);
-                $sql=$pdo->prepare('insert into product(name,category,size,price,outline,stock) value (?,?,?,?,?,?)');
+                $sql=$pdo->prepare('update product set name=?,category=?,size=?,price=?,outline=?,stock=? where id=?');
                 if(empty($_POST['name'])){
                     echo '商品名を入力してください';
                 }else if(empty($_POST['category'])){
@@ -61,15 +61,15 @@
                     echo '概要を入力してください';
                 }else if(!preg_match('/^[0-9]+$/',$_POST['stock'])){
                     echo '在庫数を整数で入力してください';
-                }else if($sql->execute([$_POST['name'],$_POST['category'],$_POST['size'],$_POST['price'],$_POST['outline'],$_POST['stock']])){
-                    echo '登録が完了しました';
+                }else if($sql->execute([$_POST['name'],$_POST['category'],$_POST['size'],$_POST['price'],$_POST['outline'],$_POST['stock'],$_POST['id']])){
+                    echo '更新が完了しました';
                 }else{
-                    echo '登録に失敗しました';
+                    echo '更新に失敗しました';
                 }
             ?>
             <br><hr><br>
             <table>
-                <tr><th>商品番号</th><th>商品名</th><th>カテゴリ</th><th>サイズ</th><th>価格</th><th>概要</th><th>在庫数</th><th>売上数</th></tr>
+                <tr><th>商品ID</th><th>商品名</th><th>カテゴリ</th><th>サイズ</th><th>価格</th><th>概要</th><th>在庫数</th><th>売上数</th></tr>
                 <?php
                     foreach($pdo->query('select * from product') as $row){
                         echo '<tr>';
@@ -90,5 +90,7 @@
             </form>
         </div>
     </div>
+</body>
+</html>
 </body>
 </html>

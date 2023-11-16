@@ -25,7 +25,7 @@
 }
 .container{
     width: 100%;/*横幅*/
-    height: 1000px;
+    height: 100%;
     left: 0;
     display: flex;/*要素の横並び*/
     /*position: relative;*/
@@ -122,6 +122,15 @@ padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにす�
     display: inline-flex;
     align-items: center;
     justify-content: center;
+}
+.button3{
+    width: 110px;
+    height: 70px;
+    margin-left: 40px;
+    padding: 10px;
+    background-color: rgb(191, 105, 237);
+    font-size: 25px;
+    border-radius:5px;
 }
 
 .p_text{

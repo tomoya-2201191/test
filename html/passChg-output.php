@@ -3,7 +3,7 @@
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="../css/frame.css">
-    <title>ユーザー情報更新</title>
+    <title>ユーザー情報更新完了</title>
 </head>
   <style>
     .parent ul{
@@ -30,8 +30,8 @@
         <div class="shopping-cart">
             <a href="cart-show.php">買い物カゴ</a>
         </div>
-    <div class="name"></div>
-            <u><p>ユーザー情報更新</p></u>
+    <div class="name"></div>ユーザー情報更新完了
+            <u><p></p></u>
     </div>
     <div class="container">
         <div class="left-menu">
@@ -50,19 +50,33 @@
                 <li><a href="productSearch.php">商品検索</a></li>
             </ul>
         </div>
-        <div class="main">
-        <form action="userInUp-output.php" method="post">
-                      <p>名前<input type="text" name="name"  placeholder="name"></p>
-                      <p>メールアドレス<input type="text" name="mail_adress"  placeholder="mail_adress"></p>
-                      <p>住所<input type="text" name="adress"  placeholder="adress"></p>
-                      <p>電話番号<input type="text" name="tel"  placeholder="tel"></p>
-                      <a href="passChg-input.php">パスワードの変更はこちら</a>
-                      <p></p>
-                      <button type="submit">変更</button>
-                    </form>
-    
-  
-  <script>
+        <div class = "main">
+        <?php
+          $error_message = "";
+          
+          if(!empty($error_message)){
+            echo $error_message;
+          }
+          ?>
+          <?php
+          $pdo = new PDO('mysql:host=mysql219.phy.lolipop.lan;dbname=LAA1516821-asoclothes;charset=utf8',
+          'LAA1516821','Pass0726');
+          $sql=$pdo->prepare('update customer set pass=?'); 
+          $error_message = "";
+          if(empty($_POST['pass1'] || empty($_POST['pass2'] || empty($_POST['pass3'])) )) {
+            echo $error_message = "※入力項目を入力してください";
+          } else if($_POST['pass2'] !== $_POST['pass3']){
+            echo $error_message = "※パスワードが一致しません。";
+          }else if ($sql->execute([
+            $_POST['pass3']
+          ])) {
+            echo 'ユーザー情報を更新しました。';
+          }
+          ?>
+        <form action="home.php" method="post">
+        <button type="submit">ホームへ戻る</button>
+        </form>
+        <script>
     function func1(e) {
       e.classList.toggle("active");
     }

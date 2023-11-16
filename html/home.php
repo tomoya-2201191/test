@@ -49,7 +49,7 @@
         <div class="shopping-cart">
             <a href="cart-show.php">買い物カゴ</a>
         </div>
-    <div class="name"></div>
+    <div class="name">
             <u><p>ホーム</p></u>
     </div>
     <div class="container">
@@ -75,7 +75,7 @@
             $sql=$pdo->query('select * from product');            
             foreach($sql as $row){
               echo '<div class="flex">';
-              echo '<p><img src=""></p>';
+              echo '<p><img src="#"></p>';
               echo '<a href="detail.php?id=',$row['id'],'">',$row['name'],'<br>',
               '¥',$row['price'],'<br>',
               $row['category'],'<br>',

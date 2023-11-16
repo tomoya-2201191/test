@@ -1,12 +1,13 @@
+<?php require 'dbconnect.php'; ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/frame.css">
     <title>更新</title>
 </head>
-    <style>
+<style>
     .parent ul{
       display: none;
     }
@@ -30,6 +31,7 @@
     </header>
     <div class="name">
         <u><p>更新</p></u>
+        更新したい商品を選択してください
     </div>
     <div class="container">
         <div class="left-menu">
@@ -44,14 +46,33 @@
             </ul>
         </div>
         <div class="main">
-            <form action="p-update-output.php" method="post">
-                商品名：<input type="text" name="name" style="width: 300px; height=30px"><br>
-                カテゴリ：<input type="text" name="category" style="width: 200px; height=30px"><br>
-                サイズ：<input type="text" name="size" style="width: 200px; height=30px"><br>
-                価格：<input type="text" name="price" style="width: 200px; height=30px"><br>
-                概要：<textarea name="outline" cols="50" rows="3"></textarea><br>
-                在庫：<input type="text" name="stock" style="width: 50px; height=30px">
-                <input type="submit" value="更新" class="button">
+            <table>
+            <tr><th>商品ID</th><th>商品名</th><th>カテゴリ</th><th>サイズ</th><th>価格</th><th>概要</th><th>在庫数</th><th>売上数</th></tr>
+            <?php
+                $pdo=new PDO($connect, USER, PASS);
+                foreach($pdo->query('select * from product') as $row){
+                    echo '<tr>';
+                    echo '<td>',$row['id'],'</td>';
+                    echo '<td>',$row['name'],'</td>';
+                    echo '<td>',$row['category'],'<td>';
+                    echo '<td>',$row['size'],'</td>';
+                    echo '<td>',$row['price'],'</td>';
+                    echo '<td>',$row['outline'],'</td>';
+                    echo '<td>',$row['stock'],'</td>';
+                    echo '<td>',$row['sales'],'</td>';
+                    echo '<td>';
+                    echo '<form action="p-update-input2.php" method="post">';
+                    echo '<input type="hidden" name="id" value="',$row['id'],'">';
+                    echo '<button type="submit" class="button">更新</button>';
+                    echo '</form>';
+                    echo '</td>';
+                    echo '</tr>';
+                    echo "\n";
+                }
+            ?>
+            </table>
+            <form action="m-home.php" method="post">
+                <input type="submit" value="ホームへ戻る" class="button2">
             </form>
         </div>
     </div>
