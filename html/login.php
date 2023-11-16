@@ -65,6 +65,15 @@
             text-align: center;
             color: red;
         }
+        .b1{
+            width: auto;
+            height: 70px;
+            margin-left: 40px;
+            padding: 10px;
+            background-color: rgb(255, 192, 4);
+            font-size: 25px;
+            border-radius:5px;
+        }
     </style>
 </head>
 <body>
@@ -83,15 +92,15 @@
             </div>
             <br>
             <div class="login">
-                <input type="submit" name="login" value="ログイン">
+                <input type="submit" name="login" class="b1" value="ログイン">
             </div>
         </form>
         <br>
         <div class="top">
-            <h3>管理者の方は<button type="button" onclick="location.href='master-login.php'">管理者ログイン</button></h3>
+            <h3>管理者の方は<button type="button" class="b1" onclick="location.href='master-login.php'">管理者ログイン</button></h3>
         </div>
         <div class="new">
-            <h3>初めての方は<button type="button" onclick="location.href='signup.php'">新規登録</button></h3>
+            <h3>初めての方は<button type="button" class="b1" onclick="location.href='signup.php'">新規登録</button></h3>
         </div>
         <div class="error">
             <?php

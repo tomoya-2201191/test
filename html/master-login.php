@@ -65,6 +65,15 @@
             text-align: center;
             color: red;
         }
+        .b1{
+            width: auto;
+            height: 70px;
+            margin-left: 40px;
+            padding: 10px;
+            background-color: rgb(255, 192, 4);
+            font-size: 25px;
+            border-radius:5px;
+        }
     </style>
 </head>
 <body>
@@ -83,7 +92,7 @@
             </div>
             <br>
             <div class="login">
-                <input type="submit" name="login" value="ログイン">
+                <input type="submit" name="login" class="b1" value="ログイン">
             </div>
         </form>
         <div class="error">

@@ -34,6 +34,9 @@
     a {
       text-decoration:none;
     }
+    .shopping-cart{
+      font-size: 20px;
+    }
   </style>
 </head>
 <body>
@@ -75,7 +78,7 @@
             $sql=$pdo->query('select * from product');            
             foreach($sql as $row){
               echo '<div class="flex">';
-              echo '<p><img src="#"></p>';
+              echo '<p><img src="',$row['pass'],'.png"></p>';
               echo '<a href="detail.php?id=',$row['id'],'">',$row['name'],'<br>',
               '¥',$row['price'],'<br>',
               $row['category'],'<br>',

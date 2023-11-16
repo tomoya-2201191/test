@@ -70,7 +70,7 @@
                       <li><a href="ranking.php?category=小物">小物</a></li>
                     </ul>
                   </li><br>
-                <li><a href="#">ユーザー情報更新</a></li><br>
+                <li><a href="userInUp-input.php">ユーザー情報更新</a></li><br>
                 <li><a href="productSearch.php">商品検索</a></li><br>
             </ul>
         </div>

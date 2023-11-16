@@ -72,11 +72,27 @@
         text-align: center;
     }
     .B1{
-        margin-right: 400px;
+        margin-right: 170px;
+        width: 100px;
+        height: 70px;
+        margin-left: 40px;
+        padding: 10px;
+        background-color: gley;
+        font-size: 25px;
+        border-radius:5px;
     }
     .error{
-            text-align: center;
-            color: red;
+        text-align: center;
+        color: red;
+    }
+    .B2{
+            width: 100px;
+            height: 70px;
+            margin-left: 150px;
+            padding: 10px;
+            background-color: rgb(255, 192, 4);
+            font-size: 25px;
+            border-radius:5px;
         }
 </style>
 <body>
