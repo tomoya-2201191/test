@@ -50,23 +50,23 @@
                 <?php
                     $pdo=new PDO($connect, USER, PASS);
                     foreach($pdo->query('select * from product') as $row){
-                        echo '<tr>';
-                        echo '<td>',$row['id'],'</td>';
-                        echo '<td>',$row['name'],'</td>';
-                        echo '<td>',$row['category'],'<td>';
-                        echo '<td>',$row['size'],'</td>';
-                        echo '<td>',$row['price'],'</td>';
-                        echo '<td>',$row['outline'],'</td>';
-                        echo '<td>',$row['stock'],'</td>';
-                        echo '<td>',$row['sales'],'</td>';
-                        echo '<td>';
+                        echo '<div class="frame">';
+                        echo '<p><img alt="image" src="../img/', $row['jpg'], '.jpg" height="150" width="170"></p>';
+                        echo '<div class="detail">';
+                        echo '<p>',$row['id'],'</p>';
+                        echo '<p>',$row['name'],'</p>';
+                        echo '<p>',$row['category'],'</p>';
+                        echo '<p>',$row['size'],'</p>';
+                        echo '<p>',$row['price'],'</p>';
+                        echo '<p>',$row['outline'],'</p>';
+                        echo '<p>',$row['stock'],'</p>';
+                        echo '<p>',$row['sales'],'</p>';
+                        echo '</div>';
                         echo '<form action="p-delete-output.php" method="post">';
                         echo '<input type="hidden" name="id" value="',$row['id'],'">';
                         echo '<button type="submit" class="button3">削除</button>';
                         echo '</form>';
-                        echo '</td>';
-                        echo '</tr>';
-                        echo "\n";
+                        echo '</div>';
                     }
                 ?>
             </table>
