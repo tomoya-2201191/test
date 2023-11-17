@@ -27,6 +27,13 @@
                 }else{
                     $login_success_url = "home.php";
                     header("Location: {$login_success_url}");
+                    foreach($sql as $row){
+                            $_SESSION['customer']=[
+                                'id'=>$row['id'],'name'=>$row['name'],
+                                'address'=>$row['adress'],'tel'=>$row['tel'],
+                                'pass'=>$row['pass'],'mail'=>$row['mail_adress']
+                            ];
+                    }
                     exit;
                 }
             }

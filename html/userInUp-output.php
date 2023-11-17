@@ -15,9 +15,6 @@
     .active ul {
       display: block;
     }
-    a{
-      text-decoration:none;
-    }
   </style>
 </head>
 <body>
@@ -39,23 +36,22 @@
     <div class="container">
         <div class="left-menu">
             <ul>
-                <li><a href="home.php">ホーム</a></li><br>
+                <li><a href="#">ホーム</a></li>
                 <li class="parent" onclick="func1(this)">ランキング
                     <ul>
-                      <li><a href="ranking.php?category=アウター">アウター</a></li>
-                      <li><a href="ranking.php?category=トップス">トップス</a></li>
-                      <li><a href="ranking.php?category=ボトムス">ボトムス</a></li>
-                      <li><a href="ranking.php?category=インナー">インナー</a></li>
-                      <li><a href="ranking.php?category=小物">小物</a></li>
+                      <li><a href="">アウター</a></li>
+                      <li><a href="">トップス</a></li>
+                      <li><a href="">ボトムス</a></li>
+                      <li><a href="">インナー</a></li>
+                      <li><a href="">小物</a></li>
                     </ul>
-                  </li><br>
-                <li><a href="userInUp-input.php">ユーザー情報更新</a></li><br>
+                  </li>
+                <li><a href="#">ユーザー情報更新</a></li>
                 <li><a href="productSearch.php">商品検索</a></li>
             </ul>
         </div>
 
         <div class = "main">
-          ?>
           <?php
           $pdo = new PDO('mysql:host=mysql219.phy.lolipop.lan;dbname=LAA1516821-asoclothes;charset=utf8',
           'LAA1516821','Pass0726');
