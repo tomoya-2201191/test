@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <link rel="stylesheet" href="../css/frame.css">
+    <link rel="stylesheet" href="css/frame.css">
     <title>ASO CLOTHES</title>
   <style>
     .parent ul{
@@ -34,15 +34,12 @@
     a {
       text-decoration:none;
     }
-    .shopping-cart{
-      font-size: 20px;
-    }
   </style>
 </head>
 <body>
     <header class="header">
         <a href="home.php">
-            <img src="../img/header.JPG">
+            <img src="../image/header.JPG">
         </a>
         <div class="login">
             <a href="login.php">ログイン</a>
@@ -52,40 +49,31 @@
         <div class="shopping-cart">
             <a href="cart-show.php">買い物カゴ</a>
         </div>
-    <div class="name">
+    <div class="name"></div>
             <u><p>ホーム</p></u>
     </div>
-    <div class="container">
-        <div class="left-menu">
-            <ul>
-                <li><a href="#">ホーム</a></li><br>
-                <li class="parent" onclick="func1(this)">ランキング
-                    <ul>
-                      <li><a href="ranking.php?category=アウター">アウター</a></li>
-                      <li><a href="ranking.php?category=トップス">トップス</a></li>
-                      <li><a href="ranking.php?category=ボトムス">ボトムス</a></li>
-                      <li><a href="ranking.php?category=インナー">インナー</a></li>
-                      <li><a href="ranking.php?category=小物">小物</a></li>
-                    </ul>
-                  </li><br>
-                <li><a href="userInUp-input.php">ユーザー情報更新</a></li><br>
-                <li><a href="productSearch.php">商品検索</a></li><br>
-            </ul>
-        </div>
+    <?php require 'header.php'; ?>
+
         <div class="main">
           <?php
+            echo '<table>';
             $pdo= new PDO($connect,USER,PASS);
             $sql=$pdo->query('select * from product');            
-            foreach($sql as $row){
-              echo '<div class="flex">';
-              echo '<p><img src="#"></p>';
-              echo '<a href="detail.php?id=',$row['id'],'">',$row['name'],'<br>',
-              '¥',$row['price'],'<br>',
-              $row['category'],'<br>',
-              '</a>','<br>';
-              echo '</div>';
-              echo '<br>';
-            }
+            foreach ($sql as $row) {
+              $id=$row['id'];
+              echo '<tr>';
+              echo '<td>';
+              echo '<p><img alt="image" src="image/', $row['jpg'], '.jpg" height="150" width="170"></p>';
+              echo '</td>';
+              echo '<td>';
+              echo '<a href="detail.php?id=', $id, '">', $row['name'], '</a>';
+              echo '</td>';
+              echo '<td>', $row['price'], '</td>';
+              echo '<td>', $row['category'], '</td>';
+              echo '<td>', $row['size'], '</td>';
+              echo '</tr>';
+          }
+          echo '</table>'
           ?>
         </div>
         
