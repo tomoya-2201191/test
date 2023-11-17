@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php require 'dbconnect.php'; ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -61,14 +62,14 @@
           <?php
           $pdo = new PDO('mysql:host=mysql219.phy.lolipop.lan;dbname=LAA1516821-asoclothes;charset=utf8',
           'LAA1516821','Pass0726');
-          $sql=$pdo->prepare('update customer set pass=?'); 
+          $sql=$pdo->prepare('update customer set pass=? where id=?'); 
           $error_message = "";
           if(empty($_POST['pass1'] || empty($_POST['pass2'] || empty($_POST['pass3'])) )) {
             echo $error_message = "※入力項目を入力してください";
           } else if($_POST['pass2'] !== $_POST['pass3']){
             echo $error_message = "※パスワードが一致しません。";
           }else if ($sql->execute([
-            $_POST['pass3']
+            $_POST['pass3'],$_SESSION['customer']['id']
           ])) {
             echo 'ユーザー情報を更新しました。';
           }
