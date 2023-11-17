@@ -71,7 +71,9 @@
                         echo ' <input type="text" name="price" value="', $row['price'], '">';
                         echo '</td> ';
                         echo '<td>';
-                        echo ' <input type="text" name="outline" value="', $row['outline'], '">';
+                        echo '<textarea name="outline">';
+                        echo $row['outline'];
+                        echo '</textarea>';
                         echo '</td> ';
                         echo '<td>';
                         echo ' <input type="text" name="stock" value="', $row['stock'], '">';

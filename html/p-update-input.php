@@ -50,7 +50,7 @@
                 $pdo=new PDO($connect, USER, PASS);
                 foreach($pdo->query('select * from product') as $row){
                         echo '<div class="frame">';
-                        echo '<p><img alt="image" src="../image/', $row['jpg'], '.jpg" height="150" width="170"></p>';
+                        echo '<p><img alt="image" src="../img/', $row['jpg'], '.jpg" height="150" width="170"></p>';
                         echo '<div class="detail">';
                         echo '<p>',$row['id'],'</p>';
                         echo '<p>',$row['name'],'</p>';

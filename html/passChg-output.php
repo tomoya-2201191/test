@@ -68,9 +68,8 @@
             echo $error_message = "※入力項目を入力してください";
           } else if($_POST['pass2'] !== $_POST['pass3']){
             echo $error_message = "※パスワードが一致しません。";
-          }else if ($sql->execute([
-            $_POST['pass3'],$_SESSION['customer']['id']
-          ])) {
+          }else{
+            $sql->execute([$_POST['pass3'],$_SESSION['customer']['id']]);
             echo 'ユーザー情報を更新しました。';
           }
           ?>
