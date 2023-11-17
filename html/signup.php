@@ -31,7 +31,7 @@
                 }else if($pass !== $confirmpass){
                     $error_message = '※入力されているパスワードが異なっています';
                 }else{
-                    $login_success_url = "home.php";
+                    $login_success_url = "login.php";
                     header("Location: {$login_success_url}");
                     $pdo=new PDO($connect,USER,PASS);
                     $sql=$pdo->prepare('insert into customer(name,adress,tel,pass,mail_adress) 
