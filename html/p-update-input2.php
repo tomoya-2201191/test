@@ -83,7 +83,7 @@
                     }
                 ?>
             </table>
-            <form action="m-home.php" method="post">
+            <form action="p-update-input.php" method="post">
                 <input type="submit" value="選択画面へ戻る" class="button2">
             </form>
         </div>
