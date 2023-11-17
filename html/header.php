@@ -39,7 +39,7 @@
                       <li><a href="">小物</a></li>
                     </ul>
                   </li>
-                <li><a href="#">ユーザー情報更新</a></li>
+                <li><a href="userInUp-input.php">ユーザー情報更新</a></li>
                 <li><a href="productSearch.php">商品検索</a></li>
             </ul>
         </div>
