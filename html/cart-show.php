@@ -16,34 +16,34 @@ echo '</div>';
 <?php //require 'cart.php'; ?>
 
 <?php
+
+// ボタンを押したか確認
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $id=$_POST['id'];
-$cartcount=$_POST['count'];
-// echo $id;
+$cartcount[$id]=$_POST['count'];
+
 // var_dump($_SESSION);
-//  $cartcount = $_SESSION['product'][$id]['count'];
-// echo $cartcount;
-// echo '確認';
 
 // echo $_POST['action'];
 
 if (isset($_POST['action']) && $_POST['action'] == 'increase') {
     
-    $cartcount = $cartcount + 1;
+    $cartcount[$id] = $cartcount[$id] + 1;
    
     // echo $cartcount;
     // echo '確認２';
 }
 
 if (isset($_POST['action']) && $_POST['action'] == 'decrease' && $_SESSION['product'][$id]['count'] > 0) {
-    $cartcount = $cartcount - 1;;
+    $cartcount[$id] = $cartcount[$id] - 1;;
 }
 }
 
 
 
-
+// 商品表示
 if (!empty($_SESSION['product'])){
+    
     echo '<table>';
     echo '<tr><th>商品番号</th><th>商品名</th>';
     echo '<th>価格</th><th></th><th>個数</th><th></th><th>小計</th><th></th></tr>';
@@ -51,8 +51,9 @@ if (!empty($_SESSION['product'])){
     $count=0;
     foreach ($_SESSION['product'] as $id=>$product){
         // $cartcount = $_SESSION['product'][$id]['count'];
-        if(!(isset($cartcount))){
-            $cartcount = $_SESSION['product'][$id]['count'];
+
+        if(!(isset($cartcount[$id]))){
+            $cartcount[$id] = $_SESSION['product'][$id]['count'];
         }
         echo '<tr>';
         echo '<td>', $id, '</td>';
@@ -60,21 +61,24 @@ if (!empty($_SESSION['product'])){
              $product['name'], '<a></td>';
         echo '<td>', $product['price'], '</td>';
         echo '<form action="cart-show.php" method="post">';
-        echo '<td><button type="submit" name="action" value="decrease" >減らす</button></td>';
+        echo '<td><button type="submit" name="action" value="decrease" >-</button></td>';
         echo '<td><input type="hidden" value="',$id, '"name="id" id="',$id,'"></td>';
-        echo '<td><input type="hidden" value="',$cartcount, '"name="count" id="',$id,'"></td>';
+        echo '<td><input type="hidden" value="',$cartcount[$id], '"name="count" id="',$id,'"></td>';
 
-        // echo '<td>  <a href="cart-show.php?id=', $id, '">-</a> <td>';
         echo '</form>';
-        echo '<td>',$cartcount,'</td>';
-        $_SESSION['product'][$id]['count'] = $cartcount;
+        echo '<td>',$cartcount[$id],'</td>';
+        $_SESSION['product'][$id]['count'] = $cartcount[$id];
         echo '<form action="cart-show.php" method="post">';
-        echo ' <td><button type="submit" name="action" value="increase">増やす</button></td>';
+        echo ' <td><button type="submit" name="action" value="increase">+</button></td>';
         echo '<td><input type="hidden" value="',$id, '"name="id"></td>';
-        echo '<td><input type="hidden" value="',$cartcount, '"name="count"></td>';
-        // echo '<td> <a href="cart-show.php?id=', $id, '">+</a> <td>';
+        echo '<td><input type="hidden" value="',$cartcount[$id], '"name="count"></td>';
+        
         echo '</form>';
-        $subtotal=$product['price']*$cartcount;
+
+        //  var_dump($product['price']);
+        //  var_dump($cartcount);
+
+        $subtotal=$product['price']*$cartcount[$id];
         $total+=$subtotal;
         echo '<td>', $subtotal, '</td>';
        
