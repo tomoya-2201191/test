@@ -142,3 +142,11 @@ padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにす�
     font-size: 30px;
     padding: 0 16px;
 }
+
+.frame{
+    display: flex;
+}
+ 
+.detail{
+    width: auto;
+}
