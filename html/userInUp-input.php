@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php require 'dbconnect.php'; ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -52,10 +53,10 @@
         </div>
         <div class="main">
         <form action="userInUp-output.php" method="post">
-                      <p>名前<input type="text" name="name"  placeholder="name"></p>
-                      <p>メールアドレス<input type="text" name="mail_adress"  placeholder="mail_adress"></p>
-                      <p>住所<input type="text" name="adress"  placeholder="adress"></p>
-                      <p>電話番号<input type="text" name="tel"  placeholder="tel"></p>
+                      <p>名前<input type="text" name="name"  value="<?php echo $_SESSION['customer']['name']?>"></p>
+                      <p>メールアドレス<input type="text" name="mail_adress"  value="<?php echo $_SESSION['customer']['mail']?>"></p>
+                      <p>住所<input type="text" name="adress"  value="<?php echo $_SESSION['customer']['address']?>"></p>
+                      <p>電話番号<input type="text" name="tel"  value="<?php echo $_SESSION['customer']['tel']?>"></p>
                       <a href="passChg-input.php">パスワードの変更はこちら</a>
                       <p></p>
                       <button type="submit">変更</button>
