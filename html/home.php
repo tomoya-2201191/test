@@ -63,7 +63,7 @@
               $id=$row['id'];
               echo '<tr>';
               echo '<td>';
-              echo '<p><img alt="image" src="img/', $row['jpg'], '.jpg" height="150" width="170"></p>';
+              echo '<p><img alt="image" src="../img/', $row['jpg'], '.jpg" height="150" width="170"></p>';
               echo '</td>';
               echo '<td>';
               echo '<a href="detail.php?id=', $id, '">', $row['name'], '</a>';
