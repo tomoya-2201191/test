@@ -10,10 +10,11 @@ if (!empty($_SESSION['product'])){
         echo '<td><a href="detail.php?id=', $id, '">',
              $product['name'], '<a></td>';
         echo '<td>', $product['price'], '</td>';
-        echo '<td>', $product['count'], '</td>';
+        echo '<td>',$product['count'],'</td>';
         $subtotal=$product['price']*$product['count'];
         $total+=$subtotal;
         echo '<td>', $subtotal, '</td>';
+       
         echo '<td><a href="cart-delete.php?id=', $id, '">削除</a></td>';
         echo '</tr>';
 
