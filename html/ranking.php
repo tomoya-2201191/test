@@ -81,18 +81,26 @@
             'where category = ? order by sales DESC');
             $sql->execute([$_GET['category']]);
             $i = 1;
+            echo '<table>';
             foreach($sql as $row){
-              echo '<div class="flex">';
+              //echo '<div class="flex">';
+              echo '<tr>';
+              echo '<td>';
               echo $i,'位';
-              echo '<p><img src=""></p>';
-              echo '<a href="detail.php?id=',$row['id'],'">',$row['name'],'<br>',
-              '¥',$row['price'],'<br>',
-              $row['category'],'<br>',
-              '</a>','<br>';
-              echo '</div>';
-              echo '<br>';
+              echo '</td>';
+              echo '<td>';
+              echo '<p><img alt="image" src="../img/', $row['jpg'], '.jpg" height="150" width="170"></p>';
+              echo '</td>';
+              echo '<td>';
+              echo '<a href="detail.php?id=', $row['id'], '">', $row['name'], '</a>';
+              echo '</td>';
+              echo '<td></td><td></td><td></td><td></td>';
+              echo '<td>¥', $row['price'], '<br>',$row['category'],'<br>',$row['size'], '</td>';
+              echo '</tr>';
+              //echo '</div>';
               $i++;
             }
+            echo '</table>';
           ?>
         </div>
         

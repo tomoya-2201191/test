@@ -68,9 +68,8 @@
               echo '<td>';
               echo '<a href="detail.php?id=', $id, '">', $row['name'], '</a>';
               echo '</td>';
-              echo '<td>', $row['price'], '</td>';
-              echo '<td>', $row['category'], '</td>';
-              echo '<td>', $row['size'], '</td>';
+              echo '<td></td><td></td><td></td><td></td>';
+              echo '<td>¥', $row['price'], '<br>',$row['category'],'<br>',$row['size'], '</td>';
               echo '</tr>';
           }
           echo '</table>'
