@@ -66,7 +66,9 @@
           $error_message = "";
           if(empty($_POST['pass1'] || empty($_POST['pass2'] || empty($_POST['pass3'])) )) {
             echo $error_message = "※入力項目を入力してください";
-          } else if($_POST['pass2'] !== $_POST['pass3']){
+          } else if($_POST['pass1'] !== $_SESSION['customer']['pass']){
+            echo $error_message = "※旧パスワードが一致しません。";
+          }else if($_POST['pass2'] !== $_POST['pass3']){
             echo $error_message = "※パスワードが一致しません。";
           }else{
             $sql->execute([$_POST['pass3'],$_SESSION['customer']['id']]);
