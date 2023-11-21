@@ -18,15 +18,23 @@ echo '</div>';
 require 'cart.php';
 
 echo '<hr>';
-echo '決済方法　　　　　　　　　　';
-echo $_POST['cash'];
-echo '<br>';
-echo '住所　　　　　　　　　　　　',$_SESSION['customer']['address'];
-echo '<br>';
-echo '名前　　　　　　　　　　　　',$_SESSION['customer']['name'];
-echo '<br>';
-echo 'メールアドレス　　　　　　　　　　　　',$_SESSION['customer']['mail'];
-echo '<br>';
+echo '<table>';
+echo '<tr>';
+echo '<td>決　済　方　法　　　',$_POST['cash'],'</td>';
+echo '</tr>';
+
+echo '<tr>';
+echo '<td>住　　　　　所　　　',$_SESSION['customer']['address'],'</td>';
+echo '</tr>';
+
+echo '<tr>';
+echo '<td>名　　　　　前　　　',$_SESSION['customer']['name'],'</td>';
+echo '</tr>';
+
+echo '<tr>';
+echo '<td>メールアドレス　　　',$_SESSION['customer']['mail'],'</td>';
+echo '</tr>';
+echo '<table>';
 echo '</hr>';
 
 echo '<hr>';

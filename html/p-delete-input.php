@@ -17,6 +17,19 @@
     .active ul {
       display: block;
     }
+    .header{
+        position:fixed;
+        width:100%;
+        z-index: 1;
+    }
+    .frame{
+        position:relative;
+    }
+    .button3{
+        position:absolute;
+        bottom:0;
+        right:0;
+    }
   </style>
 <body>
     <header class="header">

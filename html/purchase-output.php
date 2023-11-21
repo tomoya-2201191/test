@@ -21,13 +21,39 @@ echo '</div>';
 
     foreach ($_SESSION['product'] as $item=>$product){
         $sql=$pdo->prepare('insert into purchase_detail (purchase_id, product_id, count) value(?,?,?)');
-  
         $sql->execute([$last_id,$product['id'],$product['count']]);
-       
-        unset($_SESSION['product'],$product['id']);
-    }
 
+        // $sql=$pdo->prepare('update product set sales = ? ');
+        // $sql->execute($product['count']);
+       
+        
+    
+
+    $sql=$pdo->prepare('select * from product where id=?');
+    $sql->execute([$product['id']]);
+    foreach ($sql as $row) {
+        $stock = $row['stock'];
+
+        $salse=$row['sales'];
+
+        $salse += $product['count'];
+        $stock = $stock-$product['count'];
+
+        $sql=$pdo->prepare('update product set stock = ?, sales = ? where id = ? ');
+        $sql->execute([$stock,$salse, $row['id']]);
+       
+
+    }
+    unset($_SESSION['product'],$product['id']);
+}
+
+    echo '<br>';
     echo '購入手続きが完了しました。ありがとうございます';
+
+    echo    '<br><br>';
+    echo    '<form action="home.php" methods="post">';
+    echo    '<input type="submit" value="ホームに戻る">';
+
      }else {
          echo '購入を行うにはするには、ログインしてください。';
      }
