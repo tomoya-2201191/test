@@ -33,23 +33,8 @@
     <div class="name"></div>
             <u><p>パスワード変更</p></u>
     </div>
-    <div class="container">
-        <div class="left-menu">
-            <ul>
-                <li><a href="#">ホーム</a></li>
-                <li class="parent" onclick="func1(this)">ランキング
-                    <ul>
-                      <li><a href="">アウター</a></li>
-                      <li><a href="">トップス</a></li>
-                      <li><a href="">ボトムス</a></li>
-                      <li><a href="">インナー</a></li>
-                      <li><a href="">小物</a></li>
-                    </ul>
-                  </li>
-                <li><a href="#">ユーザー情報更新</a></li>
-                <li><a href="productSearch.php">商品検索</a></li>
-            </ul>
-        </div>
+    <?php require 'header.php'; ?>
+
         <div class="main">
         <form action="passChg-output.php" method="post">
                         <p>旧パスワード入力
