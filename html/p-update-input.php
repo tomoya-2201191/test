@@ -17,6 +17,19 @@
     .active ul {
       display: block;
     }
+    .header{
+        position:fixed;
+        width:100%;
+        z-index: 1;
+    }
+    .frame{
+        position:relative;
+    }
+    .button{
+        position:absolute;
+        bottom:0;
+        right:0;
+    }
   </style>
 </head>
 <body>
@@ -25,8 +38,7 @@
             <img src="../img/header.JPG">
         </a>
         <div class="login">
-            <a href="#">ログアウト</a>
-            
+            <a href="#">ログアウト</a>        
         </div>
     </header>
     <div class="name">
