@@ -46,7 +46,7 @@ if (!empty($_SESSION['product'])){
     
     echo '<table>';
     echo '<tr><th>商品番号</th><th>商品名</th>';
-    echo '<th>価格</th><th></th><th>個数</th><th></th><th>小計</th><th></th></tr>';
+    echo '<th>価格</th><th></th><th>個数</th><th></th><th></th><th>　　　　小計</th><th></th></tr>';
     $total=0;
     $count=0;
     foreach ($_SESSION['product'] as $id=>$product){
@@ -87,6 +87,8 @@ if (!empty($_SESSION['product'])){
         
 
     }
+    echo '<tr><td><br>';
+    echo '<br></tr></td>';
     echo '<tr><td>合計</td><td></td><td></td><td></td><td>',$total,
          '</td><td></td></tr>';
     echo '</table>';
@@ -101,7 +103,7 @@ if (!empty($_SESSION['product'])){
 
 echo '<form action="paymentInformation.php" method="post">';
 if(isset($_SESSION['product'])){
-echo '<input type="submit" value="購入へ進む">';
+echo '<br><input type="submit" value="購入へ進む">';
   }
     
 ?>
