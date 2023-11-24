@@ -46,7 +46,7 @@
         </div>
         <div class="main">
             <table>
-                <tr><th>商品ID</th><th>商品名</th><th>カテゴリ</th><th>サイズ</th><th>価格</th><th>概要</th><th>在庫数</th></tr>
+                <tr><th>商品ID</th><th>商品名</th><th>カテゴリ</th><th>サイズ</th><th>価格</th><th>概要</th><th>在庫数</th><th>画像パス</th></tr>
                 <?php
                     $pdo=new PDO($connect, USER, PASS);
                     $sql=$pdo->prepare('select * from product where id=?');
@@ -81,6 +81,10 @@
                         echo '<td>';
                         echo ' <input type="hidden" name="stock" value="', $row['stock'], '">';
                         echo $row['stock'];
+                        echo '</td> ';
+                        echo '<td>';
+                        echo ' <input type="hidden" name="jpg" value="', $row['jpg'], '">';
+                        echo $row['jpg'];
                         echo '</td> ';
                         echo '<td><input type="submit" value="削除" class="button3"></td>';
                         echo '</form>';
