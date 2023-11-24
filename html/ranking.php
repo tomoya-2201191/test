@@ -60,17 +60,17 @@
     <div class="container">
         <div class="left-menu">
             <ul>
-                <li><a href="home.php">ホーム</a></li><br>
+                <li><a href="home.php">ホーム</a></li>
                 <li class="parent" onclick="func1(this)">ランキング
                     <ul>
                       <li><a href="ranking.php?category=アウター">アウター</a></li>
                       <li><a href="ranking.php?category=トップス">トップス</a></li>
                       <li><a href="ranking.php?category=ボトムス">ボトムス</a></li>
-                      <li><a href="ranking.php?category=インナー">インナー</a></li>
+                      <li><a href="ranking.php?category=シューズ">シューズ</a></li>
                       <li><a href="ranking.php?category=小物">小物</a></li>
                     </ul>
-                  </li><br>
-                <li><a href="userInUp-input.php">ユーザー情報更新</a></li><br>
+                  </li>
+                <li><a href="userInUp-input.php">ユーザー情報更新</a></li>
                 <li><a href="productSearch.php">商品検索</a></li><br>
             </ul>
         </div>
@@ -86,7 +86,15 @@
               //echo '<div class="flex">';
               echo '<tr>';
               echo '<td>';
-              echo $i,'位';
+              if($i == 1){
+                echo '<img src="../img/top.png" height="100" width="120">';
+              }else if($i == 2){
+                echo '<img src="../img/second.png" height="100" width="120">';
+              }else if($i == 3){
+                echo '<img src="../img/third.png" height="100" width="120">';
+              }else{
+                echo $i,'位';
+              }
               echo '</td>';
               echo '<td>';
               echo '<p><img alt="image" src="../img/', $row['jpg'], '.jpg" height="150" width="170"></p>';
@@ -95,7 +103,9 @@
               echo '<a href="detail.php?id=', $row['id'], '">', $row['name'], '</a>';
               echo '</td>';
               echo '<td></td><td></td><td></td><td></td>';
-              echo '<td>¥', $row['price'], '<br>',$row['category'],'<br>',$row['size'], '</td>';
+              echo '<td>¥', $row['price'], '<br><br>',$row['category'],'<br><br>','size:',$row['size'], '</td>';
+              echo '<td></td><td></td><td></td><td></td>';
+              echo '<td>売上数:',$row['sales'],'</td>';
               echo '</tr>';
               //echo '</div>';
               $i++;

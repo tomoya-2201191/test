@@ -16,6 +16,28 @@
     .active ul {
       display: block;
     }
+    a {
+      text-decoration:none;
+    }
+    .b1{
+      width: 100px;
+      height: 70px;
+      padding: 10px;
+      background-color: gley;
+      font-size: 25px;
+      border-radius:5px;
+    }
+    .b2{
+      width: auto;
+      height: 70px;
+      padding: 10px;
+      background-color: rgb(20, 230, 146);
+      font-size: 25px;
+      border-radius:5px;
+    }
+    .main {
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -37,23 +59,27 @@
     <?php require 'header.php'; ?>
 
         <div class = "main">
+          <br>
           <?php
           $pdo = new PDO('mysql:host=mysql219.phy.lolipop.lan;dbname=LAA1516821-asoclothes;charset=utf8',
           'LAA1516821','Pass0726');
           $sql=$pdo->prepare('update customer set name=?,mail_adress=?,adress=?,tel=? where id=?');
-          $error_message = "";
           if(empty($_POST['name'] || empty($_POST['mail_adress'] || empty($_POST['tel'])) )) {
-            echo $error_message = "※入力項目を入力してください";
+            echo "<h3>※入力項目を入力してください</h3>";
+            echo '<form action="userInUp-input.php" method="post">
+                  <button type="submit" class="b1">戻る</button>
+                  </form>';
           }else{
             $sql->execute([
               $_POST['name'],$_POST['mail_adress'],$_POST['adress'],$_POST['tel'],$_SESSION['customer']['id']
             ]);
-            echo 'ユーザー情報を更新しました。';
+            echo '<h3>ユーザー情報を更新しました。</h3>';
+            echo '<form action="home.php" method="post">
+                  <button type="submit" class="b2">ホームへ戻る</button>
+                  </form>';
           }
           ?>
-        <form action="home.php" method="post">
-        <button type="submit">ホームへ戻る</button>
-        </form>
+        
         <script>
     function func1(e) {
       e.classList.toggle("active");

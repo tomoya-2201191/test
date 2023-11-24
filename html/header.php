@@ -14,6 +14,9 @@
     .active ul {
       display: block;
     }
+    a {
+      text-decoration:none;
+    }
   </style>
 </head>
 <body>
@@ -42,7 +45,7 @@
                       <li><a href="ranking.php?category=アウター">アウター</a></li>
                       <li><a href="ranking.php?category=トップス">トップス</a></li>
                       <li><a href="ranking.php?category=ボトムス">ボトムス</a></li>
-                      <li><a href="ranking.php?category=インナー">インナー</a></li>
+                      <li><a href="ranking.php?category=シューズ">シューズ</a></li>
                       <li><a href="ranking.php?category=小物">小物</a></li>
                     </ul>
                   </li>

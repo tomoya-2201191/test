@@ -15,6 +15,15 @@
     .active ul {
       display: block;
     }
+    .b1{
+            width: 100px;
+            height: 70px;
+            margin-left: 100px;
+            padding: 10px;
+            background-color: rgb(255, 192, 4);
+            font-size: 25px;
+            border-radius:5px;
+        }
   </style>
 </head>
 <body>
@@ -44,7 +53,7 @@
                         <p>パスワード再入力
                           <input type="password" name="pass3"></p>
                       <p></p>
-                      <button type="submit">変更</button>
+                      <button type="submit" class="b1">変更</button>
                       
                     </form>
     

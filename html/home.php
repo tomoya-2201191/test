@@ -16,9 +16,6 @@
     .parent ul{
       display: none;
     }
-    .active {
-      /*background-color: lightyellow;*/
-    }
     .active ul {
       display: block;
     }
