@@ -16,6 +16,25 @@
     .active ul {
       display: block;
     }
+    .b1{
+      width: 100px;
+      height: 70px;
+      padding: 10px;
+      background-color: gley;
+      font-size: 25px;
+      border-radius:5px;
+    }
+    .b2{
+      width: auto;
+      height: 70px;
+      padding: 10px;
+      background-color: rgb(20, 230, 146);
+      font-size: 25px;
+      border-radius:5px;
+    }
+    .main {
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -37,6 +56,7 @@
     <?php require 'header.php'; ?>
 
         <div class = "main">
+          <br>
         <?php
           $error_message = "";
           
@@ -48,21 +68,30 @@
           $pdo = new PDO('mysql:host=mysql219.phy.lolipop.lan;dbname=LAA1516821-asoclothes;charset=utf8',
           'LAA1516821','Pass0726');
           $sql=$pdo->prepare('update customer set pass=? where id=?'); 
-          $error_message = "";
           if(empty($_POST['pass1'] || empty($_POST['pass2'] || empty($_POST['pass3'])) )) {
-            echo $error_message = "※入力項目を入力してください";
+            echo "<h3>※入力項目を入力してください</h3>";
+            echo '<form action="passChg-input.php" method="post">
+                  <button type="submit" class="b1">戻る</button>
+                  </form>';
           } else if($_POST['pass1'] !== $_SESSION['customer']['pass']){
-            echo $error_message = "※旧パスワードが一致しません。";
+            echo "<h3>※旧パスワードが一致しません。</h3>";
+            echo '<form action="passChg-input.php" method="post">
+                  <button type="submit" class="b1">戻る</button>
+                  </form>';
           }else if($_POST['pass2'] !== $_POST['pass3']){
-            echo $error_message = "※パスワードが一致しません。";
+            echo "<h3>※パスワードが一致しません。</h3>";
+            echo '<form action="passChg-input.php" method="post">
+                  <button type="submit" class="b1">戻る</button>
+                  </form>';
           }else{
             $sql->execute([$_POST['pass3'],$_SESSION['customer']['id']]);
-            echo 'ユーザー情報を更新しました。';
+            echo '<h3>ユーザー情報を更新しました。</h3>';
+            echo '<form action="home.php" method="post">
+                  <button type="submit" class="b2">ホームへ戻る</button>
+                  </form>';
           }
           ?>
-        <form action="home.php" method="post">
-        <button type="submit">ホームへ戻る</button>
-        </form>
+        
         <script>
     function func1(e) {
       e.classList.toggle("active");

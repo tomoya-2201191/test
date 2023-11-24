@@ -17,6 +17,21 @@
     .active ul {
       display: block;
     }
+    a {
+      text-decoration:none;
+    }
+    .b1{
+            width: 100px;
+            height: 70px;
+            margin-left: 100px;
+            padding: 10px;
+            background-color: rgb(255, 192, 4);
+            font-size: 25px;
+            border-radius:5px;
+        }
+    h3{
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -47,10 +62,10 @@
             echo '<p>電話番号<input type="text" name="tel"  value="',$_SESSION['customer']['tel'],'"></p>';
             echo '<a href="passChg-input.php">パスワードの変更はこちら</a>';
             echo '<p></p>';
-            echo '<button type="submit">変更</button>';
+            echo '<button type="submit" class="b1">変更</button>';
             echo '</form>';
           }else {
-            echo 'ユーザー情報を更新するには、ログインしてください。';
+            echo '<h3>ユーザー情報を更新するには、ログインしてください。</h3>';
           }
           ?>
           
