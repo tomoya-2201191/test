@@ -48,7 +48,7 @@
         <div class="main">
             <?php
                 $pdo=new PDO($connect,USER,PASS);
-                $sql=$pdo->prepare('insert into product(name,category,size,price,outline,stock) value (?,?,?,?,?,?)');
+                $sql=$pdo->prepare('insert into product(name,category,size,price,outline,stock,jpg) value (?,?,?,?,?,?,?)');
                 if(empty($_POST['name'])){
                     echo '商品名を入力してください';
                 }else if(empty($_POST['category'])){
@@ -61,7 +61,9 @@
                     echo '概要を入力してください';
                 }else if(!preg_match('/^[0-9]+$/',$_POST['stock'])){
                     echo '在庫数を整数で入力してください';
-                }else if($sql->execute([$_POST['name'],$_POST['category'],$_POST['size'],$_POST['price'],$_POST['outline'],$_POST['stock']])){
+                }else if(empty($_POST['jpg'])){
+                    echo '画像パスを入力してください';
+                }else if($sql->execute([$_POST['name'],$_POST['category'],$_POST['size'],$_POST['price'],$_POST['outline'],$_POST['stock'],$_POST['jpg']])){
                     echo '登録が完了しました';
                 }else{
                     echo '登録に失敗しました';
@@ -69,7 +71,7 @@
             ?>
             <br><hr><br>
             <table>
-                <tr><th>商品番号</th><th>商品名</th><th>カテゴリ</th><th>サイズ</th><th>価格</th><th>概要</th><th>在庫数</th><th>売上数</th></tr>
+                <tr><th>商品番号</th><th>商品名</th><th>カテゴリ</th><th>サイズ</th><th>価格</th><th>概要</th><th>在庫数</th><th>売上数</th><th>画像パス</th></tr>
                 <?php
                     foreach($pdo->query('select * from product') as $row){
                         echo '<tr>';
@@ -81,6 +83,7 @@
                         echo '<td>',$row['outline'],'</td>';
                         echo '<td>',$row['stock'],'</td>';
                         echo '<td>',$row['sales'],'</td>';
+                        echo '<td>',$row['jpg'],'</td>';
                         echo "\n";
                     }
                 ?>
