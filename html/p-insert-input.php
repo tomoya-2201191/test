@@ -11,7 +11,7 @@
     ini_set('display_errors', 0);
     session_start();
     $pdo = new PDO($connect,USER,PASS);
-        if(isset($_POST["login"])) {
+        if(isset($_POST['insert'])) {
             $login_success_url="";
             $error_message = "";
             $name = $_POST['name'];
@@ -20,26 +20,25 @@
             $price = $_POST['price'];
             $outline = $_POST['outline'];
             $stock = $_POST['stock'];
-            $sales = $_POST['sales'];
             $jpg = $_POST['jpg'];
             
             $sql = $pdo->prepare('insert into product(name,category,size,price,outline,stock,jpg) value (?,?,?,?,?,?,?)');
-                if(empty($_POST['name'])){
+                if(empty($name)){
                     $error_message = '商品名を入力してください';
-                }else if(empty($_POST['category'])){
+                }else if(empty($category)){
                     $error_message = 'カテゴリを入力してください';
-                }else if(empty($_POST['size'])){
+                }else if(empty($size)){
                     $error_message = 'サイズを入力してください';
-                }else if(!preg_match('/^[0-9]+$/',$_POST['price'])){
+                }else if(!preg_match('/^[0-9]+$/',$price)){
                     $error_message = '価格を整数で入力してください';
-                }else if(empty($_POST['outline'])){
+                }else if(empty($outline)){
                     $error_message = '概要を入力してください';
-                }else if(!preg_match('/^[0-9]+$/',$_POST['stock'])){
+                }else if(!preg_match('/^[0-9]+$/',$stock)){
                     $error_message = '在庫数を整数で入力してください';
-                }else if(empty($_POST['jpg'])){
+                }else if(empty($jpg)){
                     $error_message = '画像パスを入力してください';
                 }else{
-                    $sql->execute([$_POST['name'],$_POST['category'],$_POST['size'],$_POST['price'],$_POST['outline'],$_POST['stock'],$_POST['jpg']])
+                    $sql->execute([$name,$category,$size,$price,$outline,$stock,$jpg]);
                     $login_success_url = "p-insert-output.php";
                     header("Location: {$login_success_url}");
                     exit;
@@ -100,8 +99,15 @@
                 概要：<textarea name="outline" cols="50" rows="3"></textarea><br>
                 在庫：<input type="text" name="stock" style="width: 50px; height=30px"><br>
                 画像パス:<input type="text" name="jpg" style="width: 50px; height=30px">.jpg<br>
-                <input type="submit" value="登録" class="button">
+                <input type="submit" name="insert" value="登録" class="button">
             </form>
+            <div class="error">
+            <?php
+                    if(!empty($error_message)){
+                        echo $error_message;
+                    }
+            ?>
+        </div>
         </div>
     </div>
 </body>
