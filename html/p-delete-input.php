@@ -73,6 +73,7 @@
                         echo '<p>',$row['outline'],'</p>';
                         echo '<p>',$row['stock'],'</p>';
                         echo '<p>',$row['sales'],'</p>';
+                        echo '<p>',$row['jpg'],'<p>';
                         echo '</div>';
                         echo '<form action="p-delete-output.php" method="post">';
                         echo '<input type="hidden" name="id" value="',$row['id'],'">';

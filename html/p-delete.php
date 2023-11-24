@@ -68,6 +68,7 @@
                         echo '<p>',$row['outline'],'</p>';
                         echo '<p>',$row['stock'],'</p>';
                         echo '<p>',$row['sales'],'</p>';
+                        echo '<p>',$row['jpg'],'</p>';
                         echo '</div>';
                         echo '</div>';
                     }
