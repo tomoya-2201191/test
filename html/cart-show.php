@@ -103,7 +103,7 @@ if (!empty($_SESSION['product'])){
 
 echo '<form action="paymentInformation.php" method="post">';
 if(isset($_SESSION['product'])){
-echo '<br><input type="submit" value="購入へ進む">';
+echo '<br><input type="submit" class="b1" value="購入へ進む">';
   }
     
 ?>

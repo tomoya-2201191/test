@@ -1,4 +1,5 @@
-<?php require 'dbconnect.php'; ?>
+<?php session_start();?>
+<?php require 'dbconnect.php';?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -9,21 +10,9 @@
     .parent ul{
       display: none;
     }
-    .active {
-      /*background-color: lightyellow;*/
-    }
     .active ul {
       display: block;
     }
-    .b1{
-            width: 100px;
-            height: 70px;
-            margin-left: 100px;
-            padding: 10px;
-            background-color: rgb(255, 192, 4);
-            font-size: 25px;
-            border-radius:5px;
-        }
   </style>
 </head>
 <body>
@@ -32,8 +21,13 @@
             <img src="../img/header.JPG">
         </a>
         <div class="login">
-            <a href="login.php">ログイン</a>
-            
+        <?php
+            if(isset($_SESSION['customer'])){
+              echo '<a href="logout.php">ログアウト</a>';
+            }else{
+              echo '<a href="login.php">ログイン</a>';
+            }
+          ?>
         </div>
     </header>
         <div class="shopping-cart">
@@ -53,7 +47,7 @@
                         <p>パスワード再入力
                           <input type="password" name="pass3"></p>
                       <p></p>
-                      <button type="submit" class="b1">変更</button>
+                      <button type="submit" class="B1">変更</button>
                       
                     </form>
     

@@ -13,12 +13,6 @@
     <link rel="stylesheet" href="css/frame.css">
     <title>ASO CLOTHES</title>
   <style>
-    .parent ul{
-      display: none;
-    }
-    .active ul {
-      display: block;
-    }
     .flex{
     display: flex;
     
@@ -29,9 +23,7 @@
     .main{
       text-align: center;
     }
-    a {
-      text-decoration:none;
-    }
+    
   </style>
 </head>
 <body>

@@ -14,14 +14,14 @@
         if(isset($_POST["login"])) {
             $login_success_url="";
             $error_message = "";
-            $name = $_POST['name'];
-            $category = $_POST['category'];
-            $size = $_POST['size'];
-            $price = $_POST['price'];
-            $outline = $_POST['outline'];
-            $stock = $_POST['stock'];
-            $sales = $_POST['sales'];
-            $jpg = $_POST['jpg'];
+            //$name = $_POST['name'];
+            //$category = $_POST['category'];
+            //$size = $_POST['size'];
+            //$price = $_POST['price'];
+            //$outline = $_POST['outline'];
+            //$stock = $_POST['stock'];
+           //$sales = $_POST['sales'];
+            //$jpg = $_POST['jpg'];
             
             $sql = $pdo->prepare('insert into product(name,category,size,price,outline,stock,jpg) value (?,?,?,?,?,?,?)');
                 if(empty($_POST['name'])){
@@ -39,7 +39,7 @@
                 }else if(empty($_POST['jpg'])){
                     $error_message = '画像パスを入力してください';
                 }else{
-                    $sql->execute([$_POST['name'],$_POST['category'],$_POST['size'],$_POST['price'],$_POST['outline'],$_POST['stock'],$_POST['jpg']])
+                    $sql->execute([$_POST['name'],$_POST['category'],$_POST['size'],$_POST['price'],$_POST['outline'],$_POST['stock'],$_POST['jpg']]);
                     $login_success_url = "p-insert-output.php";
                     header("Location: {$login_success_url}");
                     exit;
@@ -104,5 +104,10 @@
             </form>
         </div>
     </div>
+    <?php
+        if(!empty($error_message)){
+            echo $error_message;
+        }
+    ?>
 </body>
 </html>

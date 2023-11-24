@@ -10,13 +10,10 @@
     .parent ul{
       display: none;
     }
-    .active {
-      /*background-color: lightyellow;*/
-    }
     .active ul {
       display: block;
     }
-    a {
+    a{
       text-decoration:none;
     }
     .b1{
@@ -46,8 +43,13 @@
             <img src="../img/header.JPG">
         </a>
         <div class="login">
-            <a href="login.php">ログイン</a>
-            
+        <?php
+            if(isset($_SESSION['customer'])){
+              echo '<a href="logout.php">ログアウト</a>';
+            }else{
+              echo '<a href="login.php">ログイン</a>';
+            }
+          ?>
         </div>
     </header>
         <div class="shopping-cart">
