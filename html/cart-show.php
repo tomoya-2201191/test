@@ -1,4 +1,12 @@
 <?php session_start(); ?>
+<?php
+    const SERVER = 'mysql219.phy.lolipop.lan';
+    const DBNAME = 'LAA1516821-asoclothes';
+    const USER = 'LAA1516821';
+    const PASS = 'Pass0726';
+
+    $connect = 'mysql:host='. SERVER . ';dbname='. DBNAME . ';charset=utf8';
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -146,7 +154,7 @@ if (!empty($_SESSION['product'])){
         
         echo '<td><a href="detail.php?id=', $id, '">',
              $product['name'], '<a></td>';
-        echo '<td>', $product['price'], '</td>';
+        echo '<td>¥', $product['price'], '</td>';
         // 増減ボタン
         echo '<form action="cart-show.php" method="post">';
         echo '<td><button type="submit" name="action" value="decrease" >-</button></td>';
@@ -167,7 +175,7 @@ if (!empty($_SESSION['product'])){
 
         $subtotal=$product['price']*$cartcount[$id];
         $total+=$subtotal;
-        echo '<td>', $subtotal, '</td>';
+        echo '<td>¥', $subtotal, '</td>';
        
         echo '<td><a href="cart-delete.php?id=', $id, '">削除</a></td>';
         echo '</tr>';
@@ -176,7 +184,7 @@ if (!empty($_SESSION['product'])){
     }
     echo '<tr><td><br>';
     echo '<br></tr></td>';
-    echo '<tr><td>合計</td><td></td><td></td><td></td><td>',$total,
+    echo '<tr><td>合計</td><td></td><td></td><td></td><td>¥',$total,
          '</td><td></td></tr>';
     echo '</table>';
 
@@ -193,10 +201,10 @@ if(!empty($_SESSION['product'])){
 
     echo '<table>';
     echo '<form action="home.php" method="post">';
-    echo '<tr><td><input type="submit" value="買い物を続ける"></td>';
+    echo '<tr><td><input type="submit" class="b2" value="買い物を続ける"></td>';
     echo '</form>';
     echo '<form action="paymentInformation.php" method="post">';
-    echo '<td><input type="submit" value="購入へ進む"></td></tr>';
+    echo '<td><input type="submit" class="b1" value="購入へ進む"></td></tr>';
     echo '</form>';
 
     echo '</table>';

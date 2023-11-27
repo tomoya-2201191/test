@@ -111,7 +111,7 @@
               echo '</td>';
               echo '<td></td><td></td><td></td><td></td>';
               echo '<td>¥', $row['price'], '<br><br>',$row['category'],'<br><br>','size:',$row['size'], '</td>';
-              echo '<td>売上数:<input type="hidden" value="',$row['sales'],'"></td>';
+              echo '<td><input type="hidden" value="',$row['sales'],'"></td>';
               echo '</tr>';
               //echo '</div>';
               $i++;

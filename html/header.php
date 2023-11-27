@@ -22,6 +22,14 @@
       font-size: 25px;
       border-radius:5px;
     }
+    #b1{
+      width: auto;
+      height: 70px;
+      padding: 10px;
+      background-color: rgb(255, 192, 4);
+      font-size: 25px;
+      border-radius:5px;
+    }
     .b2{
       width: auto;
       height: 70px;
