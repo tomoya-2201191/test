@@ -57,11 +57,15 @@
         <div class="main">
         <form action="userInUp-output.php" method="post">
           <?php
+          $pdo = new PDO($connect,USER,PASS);
           if(isset($_SESSION['customer'])){
-            echo '<p>名前<input type="text" name="name"  value="',$_SESSION['customer']['name'],'"></p>';
-            echo '<p>メールアドレス<input type="text" name="mail_adress"  value="',$_SESSION['customer']['mail'],'"></p>';
-            echo '<p>住所<input type="text" name="adress"  value="',$_SESSION['customer']['address'],'"></p>';
-            echo '<p>電話番号<input type="text" name="tel"  value="',$_SESSION['customer']['tel'],'"></p>';
+            $sql = $pdo->prepare('select * from customer where id=?');
+          $sql->execute([$_SESSION['customer']['id']]);
+          $row = $sql->fetch();
+            echo '<p>名前<input type="text" name="name"  value="',$row['name'],'"></p>';
+            echo '<p>メールアドレス<input type="text" name="mail_adress"  value="',$row['mail_adress'],'"></p>';
+            echo '<p>住所<input type="text" name="adress"  value="',$row['adress'],'"></p>';
+            echo '<p>電話番号<input type="text" name="tel"  value="',$row['tel'],'"></p>';
             echo '<a href="passChg-input.php">パスワードの変更はこちら</a>';
             echo '<p></p>';
             echo '<button type="submit" class="b1">変更</button>';
