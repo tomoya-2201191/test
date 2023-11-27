@@ -28,10 +28,12 @@
     if (isset($_POST['keyword'])) {
         $sql=$pdo->prepare('select * from product where name like ?');
         $sql->execute(['%'.$_POST['keyword'].'%']);
-        echo '<tr><th>商品名</th><th>価格</th><th>カテゴリー</th></tr>';
         foreach ($sql as $row) {
             $id=$row['id'];
             echo '<tr>';
+            echo '<td>';
+            echo '<p><img alt="image" src="../img/', $row['jpg'], '.jpg" height="150" width="170"></p>';
+            echo '</td>';
             echo '<td>';
             echo '<a href="detail.php?id=', $id, '">', $row['name'], '</a>';
             echo '</td>';
