@@ -66,7 +66,7 @@ $connect = 'mysql:host=' . SERVER . ';dbname=' . DBNAME . ';charset=utf8';
         echo '<div id="message">';
         echo '<h3>ログアウトしました</h3>';
         echo '</div>';
-        echo '<button type="button" class="b1" onclick="location.href=\'master-login.php\'">','ログイン画面に戻る</button>';
+        echo '<button type="button" class="b1" onclick="location.href=\'home.php\'">','ホーム画面に戻る</button>';
         exit();
         ?>
     </div>
