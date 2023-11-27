@@ -8,7 +8,7 @@
 <body>
 <div class="home">
         <div class="shopping-cart">
-            <a href="#">買い物カゴ</a>
+            <a href="cart-show.php">買い物カゴ</a>
         </div>
     <div class="name"></div>
             <u><p>商品検索</p></u>
