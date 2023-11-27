@@ -35,6 +35,7 @@ foreach ($sql as $row) {
     echo '<input type="hidden" name="id" value="', $row['id'], '">';
     echo '<input type="hidden" name="name" value="', $row['name'], '">';
     echo '<input type="hidden" name="price" value="', $row['price'], '">';
+    echo '<input type="hidden" name="size" value="', $row['size'], '">';
     echo '<p><input type="submit" value="買い物かごに入れる"></p>';
     echo '</form>';
 }
