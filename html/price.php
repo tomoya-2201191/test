@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <link rel="stylesheet" href="css/frame.css">
+    <link rel="stylesheet" href="../css/frame.css">
     <title>home</title>
 </head>
 <body>
