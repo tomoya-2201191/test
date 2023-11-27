@@ -38,7 +38,7 @@
             <img src="../img/header.JPG">
         </a>
         <div class="login">
-            <a href="#">ログアウト</a>        
+            <a href="m-logout.php">ログアウト</a>        
         </div>
     </header>
     <div class="name">
