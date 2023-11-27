@@ -52,48 +52,102 @@
         <?php
 
 // ボタンを押したか確認
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $id=$_POST['id'];
 $cartcount[$id]=$_POST['count'];
 
-// var_dump($_SESSION);
+$pdo=new PDO($connect, USER, PASS);
+$sql=$pdo->prepare('select * from product where id=?');
+$sql->execute([$id]);
+foreach ($sql as $row) {
+    $stock = $row['stock'];
+}
 
-// echo $_POST['action'];
-
+// ボタンの判定
 if (isset($_POST['action']) && $_POST['action'] == 'increase') {
-    
+    // 在庫確認
     $cartcount[$id] = $cartcount[$id] + 1;
-   
-    // echo $cartcount;
-    // echo '確認２';
-}
-
-if (isset($_POST['action']) && $_POST['action'] == 'decrease' && $_SESSION['product'][$id]['count'] > 0) {
-    $cartcount[$id] = $cartcount[$id] - 1;;
-}
-}
-
-
-
-// 商品表示
-if (!empty($_SESSION['product'])){
+    if($stock-$cartcount[$id] <= 0 ){
+        echo '在庫がありません。';
+        echo '<br>';
+        echo '<a href="cart-show.php">カートに戻る</a>';
+        require 'footer.php';
+         exit;
+    }
     
+}
+
+if (isset($_POST['action']) && $_POST['action'] == 'decrease' && $_SESSION['product'][$id]['count'] > 1 ) {
+    $cartcount[$id] = $cartcount[$id] - 1;
+    
+    }
+    
+
+if (isset($_POST['action']) && $_POST['action'] == 'decrease' && $_SESSION['product'][$id]['count'] == 1) {
+    // 在庫確認
+    $sql=$pdo->prepare('select * from product where id=?');
+    $sql->execute([$id]);
+    foreach ($sql as $row) {
+        echo $row['name'],'　';
+        echo 'サイズ',$row['size'];
+    }
+    echo 'を削除しますか';
+    echo '<br>';
+    
+    echo '<a href="cart-delete.php?id=', $id, '">はい</a>';
+    echo '　　';
+    echo '<a href="cart-show.php?">いいえ</a>';   
+    require 'footer.php';
+    exit;
+}
+}
+
+
+
+
+// カートの中身があるか
+if (!empty($_SESSION['product'])){
+
+    echo 'カート<br><br>';
+
     echo '<table>';
-    echo '<tr><th>商品番号</th><th>商品名</th>';
-    echo '<th>価格</th><th></th><th>個数</th><th></th><th></th><th>　　　　小計</th><th></th></tr>';
+    // echo '<tr><th>　　</th><th>商品名</th>';
+    // echo '<th>価格</th><th></th><th>個数</th><th></th><th></th><th>　　　　小計</th><th></th></tr>';
     $total=0;
     $count=0;
-    foreach ($_SESSION['product'] as $id=>$product){
-        // $cartcount = $_SESSION['product'][$id]['count'];
 
+    // 商品表示
+    foreach ($_SESSION['product'] as $id=>$product){
+
+        // $cartcountの中身があるか判定
         if(!(isset($cartcount[$id]))){
             $cartcount[$id] = $_SESSION['product'][$id]['count'];
         }
-        echo '<tr>';
-        echo '<td>', $id, '</td>';
+
+        
+        $pdo=new PDO($connect, USER, PASS);
+        $sql=$pdo->prepare('select * from product where id=?');
+        $sql->execute([$id]);
+
+        // 写真を表示
+        foreach ($sql as $row) {
+            echo '<tr><td>';
+            echo '<p><img alt="image" src="../img/', $row['jpg'], '.jpg" height="150" width="170"></p>';
+            echo '</td>';
+            if($row['stock'] == 0){
+                echo $row['name'];
+                echo '　サイズ',$row['size'];
+                echo '<br>';
+                echo 'こちらの商品は在庫がありません。削除をお願いします。';
+
+            }
+        }
+        
         echo '<td><a href="detail.php?id=', $id, '">',
              $product['name'], '<a></td>';
         echo '<td>', $product['price'], '</td>';
+        // 増減ボタン
         echo '<form action="cart-show.php" method="post">';
         echo '<td><button type="submit" name="action" value="decrease" >-</button></td>';
         echo '<td><input type="hidden" value="',$id, '"name="id" id="',$id,'"></td>';
@@ -102,15 +156,14 @@ if (!empty($_SESSION['product'])){
         echo '</form>';
         echo '<td>',$cartcount[$id],'</td>';
         $_SESSION['product'][$id]['count'] = $cartcount[$id];
+
+        // 増減ボタン
         echo '<form action="cart-show.php" method="post">';
         echo ' <td><button type="submit" name="action" value="increase">+</button></td>';
         echo '<td><input type="hidden" value="',$id, '"name="id"></td>';
         echo '<td><input type="hidden" value="',$cartcount[$id], '"name="count"></td>';
         
         echo '</form>';
-
-        //  var_dump($product['price']);
-        //  var_dump($cartcount);
 
         $subtotal=$product['price']*$cartcount[$id];
         $total+=$subtotal;
@@ -131,11 +184,28 @@ if (!empty($_SESSION['product'])){
     echo 'カートに商品がありません。';
 }
 
-echo '<form action="paymentInformation.php" method="post">';
-if(isset($_SESSION['product'])){
-echo '<br><button type="submit" class="b1">購入へ進む</button>';
-}
-  echo '</form>';
+?>
+ 
+<?php
+// ログインしているか判定
+if(!empty($_SESSION['product'])){
+    echo '<br>';
+
+    echo '<table>';
+    echo '<form action="home.php" method="post">';
+    echo '<tr><td><input type="submit" value="買い物を続ける"></td>';
+    echo '</form>';
+    echo '<form action="paymentInformation.php" method="post">';
+    echo '<td><input type="submit" value="購入へ進む"></td></tr>';
+    echo '</form>';
+
+    echo '</table>';
+  }
+
+  
+echo '</div>';
+echo '</div>';
+
 ?>
         </div>
         

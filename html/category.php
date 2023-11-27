@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <link rel="stylesheet" href="css/frame.css">
+    <link rel="stylesheet" href="../css/frame.css">
     <title>home</title>
 </head>
 <body>
 <div class="home">
         <div class="shopping-cart">
-            <a href="#">買い物カゴ</a>
+            <a href="cart-show.php">買い物カゴ</a>
         </div>
     <div class="name"></div>
             <u><p>商品検索</p></u>
@@ -28,10 +28,12 @@
     if (isset($_POST['keyword'])) {
         $sql=$pdo->prepare('select * from product where category like ?');
         $sql->execute([$_POST['keyword']]);
-        echo '<tr><th>商品名</th><th>価格</th><th>カテゴリー</th></tr>';
         foreach ($sql as $row) {
             $id=$row['id'];
             echo '<tr>';
+            echo '<td>';
+            echo '<p><img alt="image" src="../img/', $row['jpg'], '.jpg" height="150" width="170"></p>';
+            echo '</td>';
             echo '<td>';
             echo '<a href="detail.php?id=', $id, '">', $row['name'], '</a>';
             echo '</td>';
