@@ -1,21 +1,55 @@
 <?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link rel="stylesheet" href="css/frame.css">
+    <title>ASO CLOTHES</title>
+  <style>
+    .flex{
+    display: flex;
+    
+    }
+    .flex>p{
+        width: 25%;
+    }
+    .main{
+      text-align: center;
+    }
+    .b1{
+      width: auto;
+      height: 70px;
+      padding: 10px;
+      background-color: rgb(255, 192, 4);
+      font-size: 25px;
+      border-radius:5px;
+    }
+  </style>
+</head>
+<body>
+    <header class="header">
+        <a href="home.php">
+            <img src="../img/header.JPG">
+        </a>
+        <div class="login">
+        <?php
+            if(isset($_SESSION['customer'])){
+              echo '<a href="logout.php">ログアウト</a>';
+            }else{
+              echo '<a href="login.php">ログイン</a>';
+            }
+          ?>
+        </div>
+    </header>
+        <div class="shopping-cart">
+            <a href="cart-show.php">買い物カゴ</a>
+        </div>
+    <div class="name"></div>
+            <u><p>買い物カゴ</p></u>
+    </div>
+    <?php require 'header.php'; ?>
 
-
-
-<?php
-echo '<div class="shopping-cart">';
-echo '<a href="cart-show.php">買い物カゴ</a>';
-echo '</div>';
-echo '<div class="name"></div>';
-echo '<u><p>カート</p></u>';
-echo '</div>';
-echo '</div>';
-?>
-<?php require 'header.php'; ?>
-<?php //require 'menu.php'; ?>
-<?php //require 'cart.php'; ?>
-
-<?php
+        <div class="main">
+        <?php
 
 // ボタンを押したか確認
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -97,15 +131,19 @@ if (!empty($_SESSION['product'])){
     echo 'カートに商品がありません。';
 }
 
-?>
-
-<?php
-
 echo '<form action="paymentInformation.php" method="post">';
 if(isset($_SESSION['product'])){
-echo '<br><input type="submit" class="b1" value="購入へ進む">';
-  }
-    
+echo '<br><button type="submit" class="b1">購入へ進む</button>';
+}
+  echo '</form>';
 ?>
+        </div>
+        
+        <script>
+          function func1(e) {
+            e.classList.toggle("active");
+          }
+        </script>
+</body>
+</html>
 
-<?php require 'footer.php'; ?>
