@@ -1,9 +1,10 @@
 <?php require 'dbconnect.php'; ?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="css/frame.css">
-    <title>home</title>
+    <title>ASO CLOTHES</title>
 </head>
 <body>
 <div class="home">
@@ -23,7 +24,7 @@ foreach ($sql as $row) {
     echo '<p><img alt="image" src="../img/', $row['jpg'], '.jpg" height="150" width="170"></p>';
     echo '<form action="cart-insert.php" method="post">';
     echo '<p>商品名：', $row['name'], '</p>';
-    echo '<p>価格：', $row['price'], '</p>';
+    echo '<p>価格：¥', $row['price'], '</p>';
     echo '<p>カテゴリ：', $row['category'], '</p>';
     echo '<p>サイズ：', $row['size'], '</p>';
     echo '<p>注文数：<select name="count">';

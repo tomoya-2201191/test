@@ -3,7 +3,7 @@
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="../css/frame.css">
-    <title>home</title>
+    <title>ASO CLOTHES</title>
 </head>
   
 </head>
