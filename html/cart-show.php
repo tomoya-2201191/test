@@ -148,7 +148,8 @@ if (!empty($_SESSION['product'])){
                 echo '　サイズ',$row['size'];
                 echo '<br>';
                 echo 'こちらの商品は在庫がありません。削除をお願いします。';
-
+                   // 在庫なし
+                   $zerostock = $row['stock'];
             }
         }
         
@@ -203,10 +204,11 @@ if(!empty($_SESSION['product'])){
     echo '<form action="home.php" method="post">';
     echo '<tr><td><input type="submit" class="b2" value="買い物を続ける"></td>';
     echo '</form>';
+    if(!isset($zerostock)){
     echo '<form action="paymentInformation.php" method="post">';
     echo '<td><input type="submit" class="b1" value="購入へ進む"></td></tr>';
     echo '</form>';
-
+    }
     echo '</table>';
   }
 
