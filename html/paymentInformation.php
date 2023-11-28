@@ -30,12 +30,12 @@ echo '</div>';
         echo    '<input type="radio" name="cash" value="代引き">代引き';
         echo    '<br>';
         echo    '<br>';
-        echo    '<input type="submit" id="b1" value="注文情報確認へ">';
+        echo    '<input type="submit" class="button4" id="b1" value="注文情報確認へ">';
         echo    '</form>';
         echo    '<hr>';
         echo    '<br>';
         echo    '<br>';
-        echo    '<button type="submit" class="b2" onclick="location.href=\'cart-show.php\'">戻る</button>';
+        echo    '<button class="b2" onclick="location.href=\'cart-show.php\'">戻る</button>';
 
         
      }else{
