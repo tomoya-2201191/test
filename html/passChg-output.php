@@ -59,7 +59,7 @@
             echo '<form action="passChg-input.php" method="post">
                   <button type="submit" class="b2">戻る</button>
                   </form>';
-          } else if($_POST['pass1'] !== $_SESSION['customer']['pass']){
+          } else if(password_verify($_POST['pass1'],$_SESSION['customer']['pass']) != true){
             echo "<h3>※旧パスワードが一致しません。</h3>";
             echo '<form action="passChg-input.php" method="post">
                   <button type="submit" class="b2">戻る</button>
@@ -70,7 +70,7 @@
                   <button type="submit" class="b2">戻る</button>
                   </form>';
           }else{
-            $sql->execute([$_POST['pass3'],$_SESSION['customer']['id']]);
+            $sql->execute([password_hash($_POST['pass3'], PASSWORD_DEFAULT),$_SESSION['customer']['id']]);
             echo '<h3>ユーザー情報を更新しました。</h3>';
             echo '<form action="home.php" method="post">
                   <button type="submit" class="b3">ホームへ戻る</button>

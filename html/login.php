@@ -22,7 +22,7 @@
 
                 if(empty($mail) || empty($pass)){
                     $error_message = "※未入力の項目があります";
-                }else if($mail !== $row['mail_adress'] || $pass !== $row['pass']) {
+                }else if($mail !== $row['mail_adress'] || password_verify($pass,$row['pass']) != true) {
                     $error_message = "※メールアドレスかパスワードが違います";
                 }else{
                     $login_success_url = "home.php";

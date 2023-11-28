@@ -36,7 +36,7 @@
                     $pdo=new PDO($connect,USER,PASS);
                     $sql=$pdo->prepare('insert into customer(name,adress,tel,pass,mail_adress) 
                     values (?,?,?,?,?)');
-                    $sql->execute([$name,$address,$phone,$pass,$mail]);
+                    $sql->execute([$name,$address,$phone,password_hash($pass, PASSWORD_DEFAULT),$mail]);
                     exit;
                 }
             }
