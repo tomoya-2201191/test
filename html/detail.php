@@ -27,14 +27,23 @@ foreach ($sql as $row) {
     echo '<p>カテゴリ：', $row['category'], '</p>';
     echo '<p>サイズ：', $row['size'], '</p>';
     echo '<p>注文数：<select name="count">';
-    for ($i=1; $i<=10; $i++) {
-        echo '<option value="', $i, '">', $i, '</option>';
+    if($row['stock']<10){
+        for ($i=1; $i<=$row['stock']; $i++) {
+            echo '<option value="', $i, '">', $i, '</option>';
+        }
+    }else{
+        for ($i=1; $i<=10; $i++) {
+            echo '<option value="', $i, '">', $i, '</option>';
+        }
     }
     echo '</select></p>';
     echo '<p>概要：', $row['outline'], '</p>';
     echo '<input type="hidden" name="id" value="', $row['id'], '">';
     echo '<input type="hidden" name="name" value="', $row['name'], '">';
     echo '<input type="hidden" name="price" value="', $row['price'], '">';
+    if($row['stock']==0){
+        echo '<font color=red>※在庫がありません</font>';
+    }
     echo '<p><input type="submit" value="買い物かごに入れる"></p>';
     echo '</form>';
 }
