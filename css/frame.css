@@ -133,6 +133,34 @@ padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにす�
     border-radius:5px;
 }
 
+.button4{
+    min-width: 200px; 
+    height: 55px;
+    margin-left: 40px;
+    background-color: rgb(255, 192, 4);
+    font-size: 25px;
+    border-radius:5px;
+    padding: 0 16px; /* テキスト横の余白がキツキツにならないように */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button5{
+    min-width: 200px; 
+    height: 55px;
+    margin-left: 40px;
+    background-color: rgba(251, 198, 40, 0.355);
+    font-size: 25px;
+    border-radius:5px;
+    padding: 0 16px; /* テキスト横の余白がキツキツにならないように */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
 .p_text{
     width: 380px;
     height: 60px;
@@ -151,15 +179,3 @@ padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにす�
     width: auto;
 }
 
-.button4{
-    min-width: 200px; 
-    height: 55px;
-    margin-left: 40px;
-    background-color: rgb(255, 192, 4);
-    font-size: 25px;
-    border-radius:5px;
-    padding: 0 16px; /* テキスト横の余白がキツキツにならないように */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
