@@ -38,7 +38,7 @@ foreach ($sql as $row) {
             echo '<option value="', $i, '">', $i, '</option>';
         }
     }
-    
+
     echo '</select></p>';
     echo '<p>概要：', $row['outline'], '</p>';
     echo '<input type="hidden" name="id" value="', $row['id'], '">';
@@ -47,8 +47,9 @@ foreach ($sql as $row) {
     echo '<input type="hidden" name="size" value="', $row['size'], '">';
     if($row['stock']==0){
         echo '<font color=red>※在庫がありません</font>';
+    }else{
+        echo '<p><input type="submit" class="b1" value="買い物かごに入れる"></p>';
     }
-    echo '<p><input type="submit" class="b1" value="買い物かごに入れる"></p>';
     echo '</form>';
 }
 ?>
