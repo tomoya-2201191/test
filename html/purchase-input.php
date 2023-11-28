@@ -38,10 +38,13 @@ echo '<table>';
 echo '</hr>';
 
 echo '<hr>';
- if(isset($_SESSION['product'])){
-echo '内容をご確認いただき、購入を確定してください。<br>';
-echo '<a href="purchase-output.php">購入を確定する</a>';
-echo '</hr>';
+if(isset($_SESSION['product'])){
+  echo '内容をご確認いただき、購入を確定してください。<br>';
+  echo '<a href="paymentInformation.php">戻る</a>';
+  echo '　　　';
+  echo '<a href="purchase-output.php">購入を確定する</a>';
+  echo '</hr>';
+  
  }else {
 
  }
