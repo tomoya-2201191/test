@@ -28,6 +28,7 @@ foreach ($sql as $row) {
     echo '<p>カテゴリ：', $row['category'], '</p>';
     echo '<p>サイズ：', $row['size'], '</p>';
     echo '<p>注文数：<select name="count">';
+
     if($row['stock']<10){
         for ($i=1; $i<=$row['stock']; $i++) {
             echo '<option value="', $i, '">', $i, '</option>';
@@ -37,6 +38,7 @@ foreach ($sql as $row) {
             echo '<option value="', $i, '">', $i, '</option>';
         }
     }
+    
     echo '</select></p>';
     echo '<p>概要：', $row['outline'], '</p>';
     echo '<input type="hidden" name="id" value="', $row['id'], '">';
