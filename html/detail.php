@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <link rel="stylesheet" href="css/frame.css">
+    <link rel="stylesheet" href="../css/frame.css">
     <title>ASO CLOTHES</title>
 </head>
 <body>
@@ -20,7 +20,7 @@ $pdo=new PDO($connect, USER, PASS);
 $sql=$pdo->prepare('select * from product where id=?');
 $sql->execute([$_GET['id']]);
 foreach ($sql as $row) {
-    echo '<p><img alt="image" src="../img/', $row['jpg'], '.jpg" height="150" width="170"></p>';
+    echo '<p><img alt="image" src="../img/', $row['jpg'], '.jpg" height="230" width="260"></p>';
     echo '<form action="cart-insert.php" method="post">';
     echo '<p>商品名：', $row['name'], '</p>';
     echo '<p>価格：¥', $row['price'], '</p>';
@@ -47,7 +47,7 @@ foreach ($sql as $row) {
     if($row['stock']==0){
         echo '<font color=red>※在庫がありません</font>';
     }else{
-        echo '<p><input type="submit" class="b1" value="買い物かごに入れる"></p>';
+        echo '<p><input type="submit" class="button4" value="買い物かごに入れる"></p>';
     }
     echo '</form>';
 }
