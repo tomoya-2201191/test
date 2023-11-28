@@ -21,7 +21,7 @@ $pdo=new PDO($connect, USER, PASS);
 $sql=$pdo->prepare('select * from product where id=?');
 $sql->execute([$_GET['id']]);
 foreach ($sql as $row) {
-    echo '<p><img alt="image" src="../img/', $row['jpg'], '.jpg" height="150" width="170"></p>';
+    echo '<p><img alt="image" src="../img/', $row['jpg'], '.jpg" height="230" width="260"></p>';
     echo '<form action="cart-insert.php" method="post">';
     echo '<p>商品名：', $row['name'], '</p>';
     echo '<p>価格：¥', $row['price'], '</p>';
