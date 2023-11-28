@@ -1,9 +1,10 @@
 <?php require 'dbconnect.php'; ?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="../css/frame.css">
-    <title>home</title>
+    <title>ASO CLOTHES</title>
 </head>
 <body>
 <div class="home">
@@ -37,7 +38,7 @@
             echo '<td>';
             echo '<a href="detail.php?id=', $id, '">', $row['name'], '</a>';
             echo '</td>';
-            echo '<td>', $row['price'], '</td>';
+            echo '<td>¥', $row['price'], '</td>';
             echo '<td>', $row['category'], '</td>';
             echo '</tr>';
         }

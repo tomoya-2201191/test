@@ -49,7 +49,7 @@ echo '</hr>';
  }else{
     echo '<p>お支払方法を選択してください。</p>';
     echo '<form action="paymentInformation.php" methods="post">';
-    echo '<input type="submit" value="戻る">';
+    echo '<input type="submit" class="b2" value="戻る">';
     
 }
 

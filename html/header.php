@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="../css/frame.css">
-    <title>home</title>
+    <title>ASOCLOTHES</title>
 </head>
   <style>
     .parent ul{
@@ -22,8 +22,16 @@
       font-size: 25px;
       border-radius:5px;
     }
+    #b1{
+      width: auto;
+      height: 70px;
+      padding: 10px;
+      background-color: rgb(255, 192, 4);
+      font-size: 25px;
+      border-radius:5px;
+    }
     .b2{
-      width: 100px;
+      width: auto;
       height: 70px;
       padding: 10px;
       background-color: gley;
@@ -92,5 +100,3 @@
       e.classList.toggle("active");
     }
   </script>
-</body>
-</html>

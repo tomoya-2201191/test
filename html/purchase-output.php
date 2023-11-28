@@ -48,7 +48,7 @@ echo '</div>';
 }
 
     echo '<br>';
-    echo '購入手続きが完了しました。ありがとうございます';
+    echo '購入手続きが完了しました。ありがとうございます。';
 
     echo    '<br><br>';
     echo    '<form action="home.php" methods="post">';

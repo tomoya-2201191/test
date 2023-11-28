@@ -68,7 +68,7 @@
             echo '<p>電話番号<input type="text" name="tel"  value="',$row['tel'],'"></p>';
             echo '<a href="passChg-input.php">パスワードの変更はこちら</a>';
             echo '<p></p>';
-            echo '<button type="submit" class="b1">変更</button>';
+            echo '<button type="submit" class="B1">変更</button>';
             echo '</form>';
           }else {
             echo '<h3>ユーザー情報を更新するには、ログインしてください。</h3>';
