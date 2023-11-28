@@ -2,6 +2,8 @@
 <?php require 'dbconnect.php'; ?>
 
 <?php
+echo '<link rel="stylesheet" href="../css/frame.css">';
+
 echo '<title>cart</title>';
 
 echo '<div class="shopping-cart">';
@@ -34,7 +36,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'increase') {
     // 在庫確認
     $cartcount[$id] = $cartcount[$id] + 1;
     if($stock[$id]-$cartcount[$id] < 0 ){
-        echo '在庫がありません。';
+        echo '<font color=red>在庫がありません。</font>';
         echo '<br>';
         echo '<a href="cart-show.php">カートに戻る</a>';
         require 'footer.php';
@@ -105,7 +107,7 @@ if (!empty($_SESSION['product'])){
                 echo $row['name'];
                 echo '　サイズ',$row['size'];
                 echo '<br>';
-                echo 'こちらの商品は在庫がありません。削除をお願いします。';
+                echo '<font color=red>こちらの商品は在庫がありません。削除をお願いします。</font>';
                 // 在庫なし
                 $zerostock = $row['stock'];
 
@@ -115,7 +117,7 @@ if (!empty($_SESSION['product'])){
         
         echo '<td><a href="detail.php?id=', $id, '">',
              $product['name'], '<a></td>';
-        echo '<td>', $product['price'], '</td>';
+        echo '<td>¥', $product['price'], '</td>';
         // 増減ボタン
         echo '<form action="cart-show.php" method="post">';
         echo '<td><button type="submit" name="action" value="decrease" >-</button></td>';
@@ -136,7 +138,7 @@ if (!empty($_SESSION['product'])){
 
         $subtotal=$product['price']*$cartcount[$id];
         $total+=$subtotal;
-        echo '<td>', $subtotal, '</td>';
+        echo '<td>¥', $subtotal, '</td>';
        
         echo '<td><a href="cart-delete.php?id=', $id, '">削除</a></td>';
         echo '</tr>';
@@ -145,7 +147,7 @@ if (!empty($_SESSION['product'])){
     }
     echo '<tr><td><br>';
     echo '<br></tr></td>';
-    echo '<tr><td>合計</td><td></td><td></td><td></td><td>',$total,
+    echo '<tr><td>合計</td><td></td><td></td><td></td><td>¥',$total,
          '</td><td></td></tr>';
     echo '</table>';
 
@@ -159,10 +161,10 @@ if (!empty($_SESSION['product'])){
 // ログインしているか判定
 if(!empty($_SESSION['product'])){
     echo '<br>';
-
+    echo '<br>';
     echo '<table>';
     echo '<form action="home.php" method="post">';
-    echo '<tr><td><input type="submit" value="買い物を続ける"></td>';
+    echo '<tr><td><input type="submit" class="button5" value="買い物を続ける"></td>';
     echo '</form>';
     // 在庫がない商品がある場合購入ボタンを消す
     if(!isset($zerostock)){
