@@ -14,47 +14,6 @@
     a {
       text-decoration:none;
     }
-    .b1{
-      width: auto;
-      height: 70px;
-      padding: 10px;
-      background-color: rgb(255, 192, 4);
-      font-size: 25px;
-      border-radius:5px;
-    }
-    #b1{
-      width: auto;
-      height: 70px;
-      padding: 10px;
-      background-color: rgb(255, 192, 4);
-      font-size: 25px;
-      border-radius:5px;
-    }
-    .b2{
-      width: auto;
-      height: 70px;
-      padding: 10px;
-      background-color: gley;
-      font-size: 25px;
-      border-radius:5px;
-    }
-    .b3{
-      width: auto;
-      height: 70px;
-      padding: 10px;
-      background-color: rgb(20, 230, 146);
-      font-size: 25px;
-      border-radius:5px;
-    }
-    .B1{
-            width: 100px;
-            height: 70px;
-            margin-left: 100px;
-            padding: 10px;
-            background-color: rgb(255, 192, 4);
-            font-size: 25px;
-            border-radius:5px;
-        }
   </style>
 </head>
 <body>

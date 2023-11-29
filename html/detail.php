@@ -47,7 +47,7 @@ foreach ($sql as $row) {
     if($row['stock']==0){
         echo '<font color=red>※在庫がありません</font>';
     }else{
-        echo '<p><input type="submit" class="button4" value="買い物かごに入れる"></p>';
+        echo '<p><input type="submit" id="button4" value="買い物かごに入れる"></p>';
     }
     echo '</form>';
 }
