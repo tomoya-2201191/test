@@ -110,10 +110,5 @@
             </div>
         </div>
     </div>
-    <?php
-        if(!empty($error_message)){
-            echo $error_message;
-        }
-    ?>
 </body>
 </html>
