@@ -75,11 +75,7 @@
             $sql->execute([
               $_POST['name'],$_POST['mail_adress'],$_POST['adress'],$_POST['tel'],$_SESSION['customer']['id']
             ]);
-            $_SESSION['customer']=[
-              'name'=>$_POST['name'],
-              'address'=>$_POST['adress'],'tel'=>$_POST['tel'],
-              'mail'=>$_POST['mail_adress']
-          ];
+            $_SESSION['customer'] = $sql->fetch();
             echo '<h3>ユーザー情報を更新しました。</h3>';
             echo '<form action="home.php" method="post">
                   <button type="submit" class="b2">ホームへ戻る</button>
