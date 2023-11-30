@@ -40,6 +40,7 @@
             echo '</td>';
             echo '<td>¥', $row['price'], '</td>';
             echo '<td>', $row['category'], '</td>';
+            echo '<td>', $row['size'], '</td>';
             echo '</tr>';
         }
         echo '</table>';
