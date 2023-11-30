@@ -16,7 +16,7 @@ echo '</div>';
     if (isset($_POST['cash'])){
 
 require 'cart.php';
-
+echo '<br>';
 echo '<hr>';
 echo '<table>';
 echo '<tr>';
@@ -35,25 +35,27 @@ echo '<tr>';
 echo '<td>メールアドレス　　　',$_SESSION['customer']['mail'],'</td>';
 echo '</tr>';
 echo '<table>';
+echo '<br>';
+echo '<a href="userInUp-input.php">ユーザー更新はこちら</a>';
 echo '</hr>';
 
 echo '<hr>';
-if(isset($_SESSION['product'])){
-  echo '内容をご確認いただき、購入を確定してください。<br>';
-  echo '<a href="paymentInformation.php">戻る</a>';
-  echo '　　　';
-  echo '<a href="purchase-output.php">購入を確定する</a>';
-  echo '</hr>';
-  
- }else {
+echo '<br>';
+ if(isset($_SESSION['product'])){
+echo '内容をご確認いただき、購入を確定してください。<br>';
+echo '<a href="paymentInformation.php">戻る</a>';
+echo '　　　';
+echo '<a href="purchase-output.php">購入を確定する</a>';
+echo '</hr>';
+
+ }else{
 
  }
 
  }else{
     echo '<p>お支払方法を選択してください。</p>';
     echo '<form action="paymentInformation.php" methods="post">';
-    echo '<input type="submit" class="b2" value="戻る">';
-    
+    echo '<input type="submit" class="b2" value="戻る">';    
 }
 
   }else{
