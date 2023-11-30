@@ -66,7 +66,7 @@
           $pdo = new PDO('mysql:host=mysql219.phy.lolipop.lan;dbname=LAA1516821-asoclothes;charset=utf8',
           'LAA1516821','Pass0726');
           $sql=$pdo->prepare('update customer set name=?,mail_adress=?,adress=?,tel=? where id=?');
-          if(empty($_POST['name'] || empty($_POST['mail_adress'] || empty($_POST['tel'])) )) {
+          if(empty($_POST['name']) || empty($_POST['mail_adress']) || empty($_POST['tel'])){
             echo "<h3>※入力項目を入力してください</h3>";
             echo '<form action="userInUp-input.php" method="post">
                   <button type="submit" class="b1">戻る</button>
@@ -75,6 +75,9 @@
             $sql->execute([
               $_POST['name'],$_POST['mail_adress'],$_POST['adress'],$_POST['tel'],$_SESSION['customer']['id']
             ]);
+            $updatedData = $pdo->prepare('select * from customer where id = ?');
+            $updatedData->execute([$_SESSION['customer']['id']]);
+            $_SESSION['customer'] = $updatedData->fetch();
             echo '<h3>ユーザー情報を更新しました。</h3>';
             echo '<form action="home.php" method="post">
                   <button type="submit" class="b2">ホームへ戻る</button>

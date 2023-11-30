@@ -133,7 +133,7 @@ padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにす�
     border-radius:5px;
 }
 
-.button4{
+#button4{
     min-width: 200px; 
     height: 55px;
     margin-left: 40px;
@@ -146,7 +146,7 @@ padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにす�
     justify-content: center;
 }
 
-.button5{
+#button5{
     min-width: 200px; 
     height: 55px;
     margin-left: 40px;
@@ -178,4 +178,45 @@ padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにす�
 .detail{
     width: auto;
 }
+.b1{
+    width: auto;
+    height: 70px;
+    padding: 10px;
+    background-color: rgb(255, 192, 4);
+    font-size: 25px;
+    border-radius:5px;
+  }
+  #b1{
+    width: auto;
+    height: 70px;
+    padding: 10px;
+    background-color: rgb(255, 192, 4);
+    font-size: 25px;
+    border-radius:5px;
+  }
+  .b2{
+    width: auto;
+    height: 70px;
+    padding: 10px;
+    background-color: gley;
+    font-size: 25px;
+    border-radius:5px;
+  }
+  .b3{
+    width: auto;
+    height: 70px;
+    padding: 10px;
+    background-color: rgb(20, 230, 146);
+    font-size: 25px;
+    border-radius:5px;
+  }
+  .B1{
+          width: 100px;
+          height: 70px;
+          margin-left: 100px;
+          padding: 10px;
+          background-color: rgb(255, 192, 4);
+          font-size: 25px;
+          border-radius:5px;
+      }
 

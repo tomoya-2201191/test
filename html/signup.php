@@ -71,7 +71,7 @@
     .btn{
         text-align: center;
     }
-    .B1{
+    .Button1{
         margin-right: 170px;
         width: 100px;
         height: 70px;
@@ -85,7 +85,7 @@
         text-align: center;
         color: red;
     }
-    .B2{
+    .Button2{
             width: 100px;
             height: 70px;
             margin-left: 150px;
@@ -117,8 +117,8 @@
                 </div>
                 <br>
                 <div class="btn">
-                    <button type="button" class="B1" onclick="location.href='login.php'">戻る</button>
-                    <input type="submit" class="B2"name="register" value="登録">
+                    <button type="button" class="Button1" onclick="location.href='login.php'">戻る</button>
+                    <input type="submit" class="Button2"name="register" value="登録">
                 </div>
             </form>
             <div class="error">
