@@ -52,16 +52,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/frame.css">
     <title>商品登録</title>
-</head>
     <style>
     .parent ul{
       display: none;
     }
-    .active {
-      /*background-color: lightyellow;*/
-    }
     .active ul {
       display: block;
+    }
+    .error{
+        color: red;
     }
   </style>
 </head>
@@ -110,10 +109,5 @@
             </div>
         </div>
     </div>
-    <?php
-        if(!empty($error_message)){
-            echo $error_message;
-        }
-    ?>
 </body>
 </html>
