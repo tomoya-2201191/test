@@ -23,12 +23,14 @@
         <input type="submit" class="button" value="検索">
         </form>
         </div>
-    <?php
-    echo '<table>';
+        <?php
     $pdo=new PDO($connect, USER, PASS);
     if (isset($_POST['keyword'])) {
         $sql=$pdo->prepare('select * from product where name like ?');
         $sql->execute(['%'.$_POST['keyword'].'%']);
+        $count=$sql -> rowCount();
+        if($count > 0){
+            echo '<table>';
         foreach ($sql as $row) {
             $id=$row['id'];
             echo '<tr>';
@@ -44,6 +46,10 @@
             echo '</tr>';
         }
         echo '</table>';
+        }else{
+            echo '<h2>データが1件もありません</h2>';
+            echo '</table>';
+        }
     }
     ?>
 </body>
