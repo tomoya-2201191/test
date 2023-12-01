@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/frame.css">
-    <title>ranking</title>
+    <title>ASO CLOTHES</title>
     <style>
         .parent ul{
         display: none;

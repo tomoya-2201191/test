@@ -66,8 +66,23 @@
           $pdo = new PDO('mysql:host=mysql219.phy.lolipop.lan;dbname=LAA1516821-asoclothes;charset=utf8',
           'LAA1516821','Pass0726');
           $sql=$pdo->prepare('update customer set name=?,mail_adress=?,adress=?,tel=? where id=?');
-          if(empty($_POST['name']) || empty($_POST['mail_adress']) || empty($_POST['tel'])){
+          if(empty($_POST['name']) || empty($_POST['mail_adress']) || empty($_POST['adress']) || empty($_POST['tel'])){
             echo "<h3>※入力項目を入力してください</h3>";
+            echo '<form action="userInUp-input.php" method="post">
+                  <button type="submit" class="b1">戻る</button>
+                  </form>';
+          }else if(strlen($_POST['tel']) < 10 || strlen($_POST['tel']) > 12){
+            echo '※電話番号を10文字以上12文字以内で収めてください';
+            echo '<form action="userInUp-input.php" method="post">
+                  <button type="submit" class="b1">戻る</button>
+                  </form>';
+          }else if(strlen($_POST['mail_adress']) > 30){
+            echo '<h3>※メールアドレスを30文字以内に収めてください</h3>';
+            echo '<form action="userInUp-input.php" method="post">
+                  <button type="submit" class="b1">戻る</button>
+                  </form>';
+          }else if(!filter_var($_POST['mail_adress'],FILTER_VALIDATE_EMAIL)){
+            echo '<h3>※メールアドレスの形式が違います</h3>';
             echo '<form action="userInUp-input.php" method="post">
                   <button type="submit" class="b1">戻る</button>
                   </form>';
