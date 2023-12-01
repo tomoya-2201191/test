@@ -69,25 +69,36 @@
             ?>
             <br><hr><br>
             <table>
-                <tr><th>商品ID</th><th>商品名</th><th>カテゴリ</th><th>サイズ</th><th>価格</th><th>概要</th><th>在庫数</th><th>売上数</th></tr>
+                <tr><th>商品ID</th><th>商品名</th><th>カテゴリ</th><th></th><th>サイズ</th><th>価格</th><th>概要</th><th>在庫数</th><th>売上数</th></tr>
+                <tr></tr>
                 <?php
-                    foreach($pdo->query('select * from product') as $row){
-                        echo '<tr>';
-                        echo '<td>',$row['id'],'</td>';
-                        echo '<td>',$row['name'],'</td>';
-                        echo '<td>',$row['category'],'<td>';
-                        echo '<td>',$row['size'],'</td>';
-                        echo '<td>',$row['price'],'</td>';
-                        echo '<td>',$row['outline'],'</td>';
-                        echo '<td>',$row['stock'],'</td>';
-                        echo '<td>',$row['sales'],'</td>';
-                        echo "\n";
-                    }
+                     $pdo=new PDO($connect, USER, PASS);
+                        $sql=$pdo->prepare('select * from product where id=?');
+                        $sql->execute([$_POST['id']]);
+                        foreach ($sql as $row) {
+                            echo '<tr>';
+                            echo '<td>',$row['id'],'</td>';
+                            echo '<td>',$row['name'],'</td>';
+                            echo '<td>',$row['category'],'<td>';
+                            echo '<td>',$row['size'],'</td>';
+                            echo '<td>',$row['price'],'</td>';
+                            echo '<td>',$row['outline'],'</td>';
+                            echo '<td>',$row['stock'],'</td>';
+                            echo '<td>',$row['sales'],'</td>';
+                            echo "\n";
+                        }
                 ?>
             </table>
             <form action="m-home.php" method="post">
                 <input type="submit" value="ホームへ戻る" class="button2">
             </form>
+            <?php
+            $id = $_POST['id'];
+            echo '<form action="p-update-input2.php" method="post">';
+            echo '<input type="submit" value="戻る" class="button2">';
+            echo '<input type="hidden" name="id" value="',$id, '">';
+            echo '</form>';
+            ?>
         </div>
     </div>
 </body>
