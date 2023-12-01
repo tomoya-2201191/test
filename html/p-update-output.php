@@ -61,6 +61,14 @@
                     echo '概要を入力してください';
                 }else if(!preg_match('/^[0-9]+$/',$_POST['stock'])){
                     echo '在庫数を整数で入力してください';
+                }else if(strlen($_POST['name']) > 100){
+                    echo '商品名の文字数を100文字以内で入力してください';
+                }else if(strlen($_POST['outline']) > 500){
+                    echo '概要の文字数を500文字以内で入力してください';
+                }else if(strlen($_POST['price']) > 6){
+                    echo '価格6桁以内で入力してください';
+                }else if(strlen($_POST['stock']) > 3){
+                    echo '在庫6桁以内で入力してください';
                 }else if($sql->execute([$_POST['name'],$_POST['category'],$_POST['size'],$_POST['price'],$_POST['outline'],$_POST['stock'],$_POST['id']])){
                     echo '更新が完了しました';
                 }else{
