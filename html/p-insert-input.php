@@ -6,45 +6,7 @@
 
     $connect = 'mysql:host='. SERVER . ';dbname='. DBNAME . ';charset=utf8';
 ?>
-<?php
-    error_reporting(0);
-    ini_set('display_errors', 0);
-    session_start();
-    $pdo = new PDO($connect,USER,PASS);
-        if(isset($_POST['insert'])) {
-            $login_success_url="";
-            $error_message = "";
-            $name = $_POST['name'];
-            $category = $_POST['category'];
-            $size = $_POST['size'];
-            $price = $_POST['price'];
-            $outline = $_POST['outline'];
-            $stock = $_POST['stock'];
-            $jpg = $_POST['jpg'];
-            
-            $sql = $pdo->prepare('insert into product(name,category,size,price,outline,stock,jpg) value (?,?,?,?,?,?,?)');
-                if(empty($name)){
-                    $error_message = '商品名を入力してください';
-                }else if(empty($category)){
-                    $error_message = 'カテゴリを入力してください';
-                }else if(empty($size)){
-                    $error_message = 'サイズを入力してください';
-                }else if(!preg_match('/^[0-9]+$/',$price)){
-                    $error_message = '価格を整数で入力してください';
-                }else if(empty($outline)){
-                    $error_message = '概要を入力してください';
-                }else if(!preg_match('/^[0-9]+$/',$stock)){
-                    $error_message = '在庫数を整数で入力してください';
-                }else if(empty($jpg)){
-                    $error_message = '画像パスを入力してください';
-                }else{
-                    $sql->execute([$name,$category,$size,$price,$outline,$stock,$jpg]);
-                    $login_success_url = "p-insert-output.php";
-                    header("Location: {$login_success_url}");
-                    exit;
-                }
-            }
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,6 +52,53 @@
             </ul>
         </div>
         <div class="main">
+        <?php
+    error_reporting(0);
+    ini_set('display_errors', 0);
+    session_start();
+    $pdo = new PDO($connect,USER,PASS);
+        if(isset($_POST['insert'])) {
+            $login_success_url="";
+            $error_message = "";
+            $name = $_POST['name'];
+            $category = $_POST['category'];
+            $size = $_POST['size'];
+            $price = $_POST['price'];
+            $outline = $_POST['outline'];
+            $stock = $_POST['stock'];
+            $jpg = $_POST['jpg'];
+            
+            $sql = $pdo->prepare('insert into product(name,category,size,price,outline,stock,jpg) value (?,?,?,?,?,?,?)');
+                if(empty($name)){
+                    $error_message = '商品名を入力してください';
+                }else if(empty($category)){
+                    $error_message = 'カテゴリを入力してください';
+                }else if(empty($size)){
+                    $error_message = 'サイズを入力してください';
+                }else if(!preg_match('/^[0-9]+$/',$price)){
+                    $error_message = '価格を整数で入力してください';
+                }else if(empty($outline)){
+                    $error_message = '概要を入力してください';
+                }else if(!preg_match('/^[0-9]+$/',$stock)){
+                    $error_message = '在庫数を整数で入力してください';
+                }else if(empty($jpg)){
+                    $error_message = '画像パスを入力してください';
+                }else if(strlen($_POST['name']) > 100){
+                    $error_message = '商品名の文字数を100文字以内で入力してください';
+                }else if(strlen($_POST['outline']) > 500){
+                    $error_message = '概要の文字数を500文字以内で入力してください';
+                }else if(strlen($_POST['price']) > 6){
+                    $error_message = '価格6桁以内で入力してください';
+                }else if(strlen($_POST['stock']) > 3){
+                    $error_message = '在庫6桁以内で入力してください';
+                }else{
+                    $sql->execute([$name,$category,$size,$price,$outline,$stock,$jpg]);
+                    $login_success_url = "p-insert-output.php";
+                    header("Location: {$login_success_url}");
+                    exit;
+                }
+            }
+?>
             <form action="p-insert-input.php" method="post">
                 商品名：<input type="text" name="name" style="width: 300px; height=30px"><br>
                 カテゴリ：<input type="text" name="category" style="width: 200px; height=30px"><br>
