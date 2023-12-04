@@ -13,6 +13,10 @@
     .active ul {
       display: block;
     }
+    .txt{
+       width: 200px;
+       height: 30px; 
+    }
   </style>
 </head>
 <body>
@@ -41,11 +45,11 @@
         <div class="main">
         <form action="passChg-output.php" method="post">
                         <p>旧パスワード入力
-                          <input type="password" name="pass1"></p>
+                          <input type="password" class="txt" name="pass1"></p>
                         <p>新パスワード入力
-                          <input type="password" name="pass2"></p>
+                          <input type="password" class="txt" name="pass2"></p>
                         <p>パスワード再入力
-                          <input type="password" name="pass3"></p>
+                          <input type="password" class="txt" name="pass3"></p>
                       <p></p>
                       <button type="submit" class="B1">変更</button>
                       

@@ -54,13 +54,13 @@ echo '</div>';
  }
 
  }else{
-    echo '<p>お支払方法を選択してください。</p>';
+    echo '<h3>お支払方法を選択してください。</h3>';
     echo '<form action="paymentInformation.php" methods="post">';
     echo '<input type="submit" class="b2" value="戻る">';    
 }
 
   }else{
-      echo 'ログイン又は新規登録をお願いいたします。';
+      echo '<h3>ログイン又は新規登録をお願いいたします。</h3>';
 
   }
 ?>
