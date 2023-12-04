@@ -59,7 +59,7 @@
           <?php
           $pdo = new PDO($connect,USER,PASS);
           if(isset($_SESSION['customer'])){
-            $sql = $pdo->prepare('select * from customer where id=?');
+          $sql = $pdo->prepare('select * from customer where id=?');
           $sql->execute([$_SESSION['customer']['id']]);
           $row = $sql->fetch();
             echo '<p>名前<input type="text" name="name"  value="',$row['name'],'"></p>';
