@@ -88,9 +88,9 @@
                 }else if(strlen($_POST['outline']) > 500){
                     $error_message = '概要の文字数を500文字以内で入力してください';
                 }else if(strlen($_POST['price']) > 6){
-                    $error_message = '価格6桁以内で入力してください';
+                    $error_message = '価格を6桁以内で入力してください';
                 }else if(strlen($_POST['stock']) > 3){
-                    $error_message = '在庫6桁以内で入力してください';
+                    $error_message = '在庫を6桁以内で入力してください';
                 }else{
                     $sql->execute([$name,$category,$size,$price,$outline,$stock,$jpg]);
                     $login_success_url = "p-insert-output.php";
