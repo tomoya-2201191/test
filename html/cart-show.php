@@ -152,7 +152,7 @@ if (!empty($_SESSION['product'])){
     echo '</table>';
 
 }else {
-    echo 'カートに商品がありません。';
+    echo '<h3>カートに商品がありません。</h3>';
 }
 
 ?>

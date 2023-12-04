@@ -52,7 +52,7 @@ echo '</div>';
 
     echo    '<br><br>';
     echo    '<form action="home.php" methods="post">';
-    echo    '<input type="submit" value="ホームに戻る">';
+    echo    '<input type="submit" id="b3" value="ホームに戻る">';
 
      }else {
          echo '購入を行うにはするには、ログインしてください。';

@@ -14,20 +14,10 @@
     .active ul {
       display: block;
     }
-    a {
-      text-decoration:none;
-    }
-    .b1{
-            width: 100px;
-            height: 70px;
-            margin-left: 100px;
-            padding: 10px;
-            background-color: rgb(255, 192, 4);
-            font-size: 25px;
-            border-radius:5px;
-        }
-    h3{
-      text-align: center;
+    
+    .txt{
+       width: 200px;
+       height: 30px; 
     }
   </style>
 </head>
@@ -62,10 +52,10 @@
           $sql = $pdo->prepare('select * from customer where id=?');
           $sql->execute([$_SESSION['customer']['id']]);
           $row = $sql->fetch();
-            echo '<p>名前<input type="text" name="name"  value="',$row['name'],'"></p>';
-            echo '<p>メールアドレス<input type="text" name="mail_adress"  value="',$row['mail_adress'],'"></p>';
-            echo '<p>住所<input type="text" name="adress"  value="',$row['adress'],'"></p>';
-            echo '<p>電話番号<input type="text" name="tel"  value="',$row['tel'],'"></p>';
+            echo '<p>名　　　　　前　　<input type="text" class="txt" name="name"  value="',$row['name'],'"></p>';
+            echo '<p>メールアドレス　　<input type="text" class="txt" name="mail_adress"  value="',$row['mail_adress'],'"></p>';
+            echo '<p>住　　　　　所　　<input type="text" class="txt" name="adress"  value="',$row['adress'],'"></p>';
+            echo '<p>電　話　番　号　　<input type="text" class="txt" name="tel"  value="',$row['tel'],'"></p>';
             echo '<a href="passChg-input.php">パスワードの変更はこちら</a>';
             echo '<p></p>';
             echo '<button type="submit" class="B1">変更</button>';
