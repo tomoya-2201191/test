@@ -25,16 +25,24 @@
             $sql = $pdo->prepare('insert into product(name,category,size,price,outline,stock,jpg) value (?,?,?,?,?,?,?)');
                 if(empty($name)){
                     $error_message = '商品名を入力してください';
+                }else if($name.length>100){
+                    $error_message = '商品名を100文字以内で入力してください';
                 }else if(empty($category)){
                     $error_message = 'カテゴリを入力してください';
                 }else if(empty($size)){
                     $error_message = 'サイズを入力してください';
                 }else if(!preg_match('/^[0-9]+$/',$price)){
                     $error_message = '価格を整数で入力してください';
+                }else if($price>999999){
+                    $error_message = '価格を6桁以内で入力してください';
                 }else if(empty($outline)){
                     $error_message = '概要を入力してください';
+                }else if($outline.length>500){
+                    $error_message = '概要を500文字以内で入力してください';
                 }else if(!preg_match('/^[0-9]+$/',$stock)){
                     $error_message = '在庫数を整数で入力してください';
+                }else if($stock>999){
+                    $error_message = '在庫数を3桁以内で入力してください';
                 }else if(empty($jpg)){
                     $error_message = '画像パスを入力してください';
                 }else{
