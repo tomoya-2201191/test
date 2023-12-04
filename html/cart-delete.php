@@ -14,7 +14,12 @@ echo '</div>';
 unset($_SESSION['product'][$_GET['id']]);
 echo 'カートから商品を削除しました。';
 echo '<hr>';
-require 'cart.php'
+require 'cart.php';
+echo '<br>';
+echo '<form action="home.php" method="post">';
+echo '<br>';
+echo '<tr><td><input type="submit" class="button5"  value="買い物を続ける"></td></tr>';
+echo '</form>';
 ?>
 <?php require 'footer.php'; ?>
 
