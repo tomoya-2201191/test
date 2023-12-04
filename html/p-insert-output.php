@@ -71,7 +71,11 @@
             <table>
                 <tr><th>商品番号</th><th>商品名</th><th>カテゴリ</th><th>サイズ</th><th>価格</th><th>概要</th><th>在庫数</th><th>売上数</th><th>画像パス</th></tr>
                 <?php
-                    foreach($pdo->query('select * from product') as $row){
+                    $pdo=new PDO($connect,USER,PASS);
+                    $id=$pdo->query('select max(id) from product')->fetchColumn();
+                    $sql=$pdo->prepare('select * from product where id=?');
+                    $sql->execute([$id]);
+                    foreach($sql as $row){
                         echo '<tr>';
                         echo '<td>',$row['id'],'</td>';
                         echo '<td>',$row['name'],'</td>';
