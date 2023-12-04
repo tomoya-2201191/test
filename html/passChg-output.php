@@ -69,6 +69,16 @@
             echo '<form action="passChg-input.php" method="post">
                   <button type="submit" class="b2">戻る</button>
                   </form>';
+          }else if(!(strlen($_POST['pass2']) >= 8 && strlen($_POST['pass2']) <= 11)){
+            echo "<h3>※パスワードを8文字以上11文字以内に収めてください</h3>";
+            echo '<form action="passChg-input.php" method="post">
+                  <button type="submit" class="b2">戻る</button>
+                  </form>';
+          }else if($_POST['pass1'] == $_POST['pass2']){
+            echo "<h3>※新パスワードと旧パスワードが同じです</h3>";
+            echo '<form action="passChg-input.php" method="post">
+                  <button type="submit" class="b2">戻る</button>
+                  </form>';
           }else{
             $sql->execute([password_hash($_POST['pass3'], PASSWORD_DEFAULT),$_SESSION['customer']['id']]);
             echo '<h3>ユーザー情報を更新しました。</h3>';

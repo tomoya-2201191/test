@@ -24,6 +24,8 @@
                     $error_message = '※未入力の項目があります';
                 }else if(strlen($phone) < 10 || strlen($phone) > 12){
                     $error_message = '※電話番号を10文字以上12文字以内で収めてください';
+                }else if(strlen($mail) > 30){
+                    $error_message = '※メールアドレスを30文字以内で収めてください';
                 }else if(!filter_var($mail, FILTER_VALIDATE_EMAIL)){
                     $error_message = '※メールアドレスの形式が違います';
                 }else if(strlen($pass) < 8 || strlen($pass) > 11){

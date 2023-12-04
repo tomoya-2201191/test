@@ -1,4 +1,44 @@
 <?php require 'dbconnect.php'; ?>
+<?php
+    error_reporting(0);
+    ini_set('display_errors', 0);
+    session_start();
+    $pdo = new PDO($connect,USER,PASS);
+        if(isset($_POST['insert'])) {
+            $login_success_url="";
+            $error_message = "";
+            $name = $_POST['name'];
+            $category = $_POST['category'];
+            $size = $_POST['size'];
+            $price = $_POST['price'];
+            $outline = $_POST['outline'];
+            $stock = $_POST['stock'];
+            $jpg = $_POST['jpg'];
+           
+            $sql = $pdo->prepare('update product set name=?,category=?,size=?,price=?,outline=?,stock=? where id=?');
+                if(empty($name)){
+                    $error_message = '商品名を入力してください';
+                }else if(empty($category)){
+                    $error_message = 'カテゴリを入力してください';
+                }else if(empty($size)){
+                    $error_message = 'サイズを入力してください';
+                }else if(!preg_match('/^[0-9]+$/',$price)){
+                    $error_message = '価格を整数で入力してください';
+                }else if(empty($outline)){
+                    $error_message = '概要を入力してください';
+                }else if(!preg_match('/^[0-9]+$/',$stock)){
+                    $error_message = '在庫数を整数で入力してください';
+                }else if(empty($jpg)){
+                    $error_message = '画像パスを入力してください';
+                }else{
+                    $sql->execute([$name,$category,$size,$price,$outline,$stock,$jpg]);
+                    $login_success_url = "p-update-output.php";
+                    header("Location: {$login_success_url}");
+                    exit;
+                }
+            }
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -88,6 +128,14 @@
             <form action="p-update-input.php" method="post">
                 <input type="submit" value="選択画面へ戻る" class="button2">
             </form>
+            <div class="error">
+            <?php
+                    if(!empty($error_message)){
+                        echo $error_message;
+                    }
+            ?>
+            </div>
+            
         </div>
     </div>
 </body>
