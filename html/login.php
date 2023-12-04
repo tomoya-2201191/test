@@ -22,7 +22,7 @@
 
                 if(empty($mail) || empty($pass)){
                     $error_message = "※未入力の項目があります";
-                }else if($mail !== $row['mail_adress'] || password_verify($pass,$row['pass']) != true) {
+                }else if($mail !== $row['mail_adress'] || $pass !== $row['pass']) {
                     $error_message = "※メールアドレスかパスワードが違います";
                 }else{
                     $login_success_url = "home.php";
@@ -49,13 +49,35 @@
         .pass{
             text-align: center;
         }
+        form {
+            width: 50%;
+            margin: 0 auto;
+        }
         .txt{
-           width: 400px;
-           height: 50px; 
+            width: 400px;
+            height: 50px; 
+            text-align: center;
         }
         .txt::placeholder {
             text-align: center;
             font-size: 20px;
+        }
+        .form-row {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #f2f4f5;
+        }
+        .form-row:last-child {
+            border-bottom: none;
+        }
+        .form-label {
+            display: flex;
+            align-items: center;
+            width: 250px;
+        }
+        .form-label label {
+            font-weight: bold;
         }
         .login{
             text-align: center;
@@ -89,11 +111,17 @@
         </header>
         <br>
         <form action="login.php" method="post">
-            <div class="mail">
-                <input type="text" class="txt" name="mail" placeholder="メールアドレス">
+            <div class="form-row">
+                <div class="form-label">
+                    <label for="mail">メールアドレス：</label>
+                </div>
+                <input type="text" class="txt" name="mail" placeholder="例) abcd@xyz.com">
             </div>
-            <div class="pass">
-                <input type="password" class="txt" name="password" placeholder="パスワード">
+            <div class="form-row">
+                <div class="form-label">
+                    <label for="pass">パスワード：</label>
+                </div>
+                <input type="password" class="txt" name="pass">
             </div>
             <br>
             <div class="login">
