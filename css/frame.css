@@ -16,12 +16,13 @@
     font-size: 20px;
 }
 .name{
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     font-size: 20px;
 }
 .shopping-cart{
     text-align: right;
     padding-top: 10px;
+    font-size: 15px;
 }
 .container{
     width: 100%;/*横幅*/
