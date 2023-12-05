@@ -117,7 +117,7 @@
                 <div class="form-label">
                     <label for="pass">パスワード：</label>
                 </div>
-                <input type="password" class="txt" name="pass">
+                <input type="password" class="txt" name="password">
             </div>
             <br>
             <div class="login">
