@@ -6,7 +6,7 @@
 
 <title>cart</title>
 <div class="shopping-cart">
-<a class="fas fa-cart-plus fa-3x" href="cart-show.php"></a>
+    <a href="cart-show.php">買い物カゴ</a>
 </div>
 <div class="name"></div>
 <u><p>カート</p></u>
