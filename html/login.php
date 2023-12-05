@@ -132,7 +132,7 @@
             <h3>管理者の方は<button type="button" class="b1" onclick="location.href='master-login.php'">管理者ログイン</button></h3>
         </div>
         <div class="new">
-            <h3>初めての方は<button type="button" class="b1" onclick="location.href='signup3.php'">新規登録</button></h3>
+            <h3>初めての方は<button type="button" class="b1" onclick="location.href='signup.php'">新規登録</button></h3>
         </div>
         <div class="error">
             <?php
