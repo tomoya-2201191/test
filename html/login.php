@@ -6,7 +6,7 @@
 
     $connect = 'mysql:host='. SERVER . ';dbname='. DBNAME . ';charset=utf8';
 ?>
-<?php 
+<?php
     error_reporting(0);
     ini_set('display_errors', 0);
     session_start();
@@ -15,14 +15,13 @@
             $error_message = "";
             $mail = $_POST['mail'];
             $pass = $_POST['password'];
-            
             $sql = $pdo->prepare('select * from customer where mail_adress=?');
             $sql->execute([$mail]);
             $row = $sql->fetch();
-
+ 
                 if(empty($mail) || empty($pass)){
                     $error_message = "※未入力の項目があります";
-                }else if($mail !== $row['mail_adress'] || $pass !== $row['pass']) {
+                }else if($mail !== $row['mail_adress'] || password_verify($pass,$row['pass']) != true) {
                     $error_message = "※メールアドレスかパスワードが違います";
                 }else{
                     $login_success_url = "home.php";
@@ -56,7 +55,7 @@
         .txt{
             width: 400px;
             height: 50px; 
-            text-align: center;
+            text-align:center;
         }
         .txt::placeholder {
             text-align: center;
@@ -111,7 +110,7 @@
         </header>
         <br>
         <form action="login.php" method="post">
-            <div class="form-row">
+        <div class="form-row">
                 <div class="form-label">
                     <label for="mail">メールアドレス：</label>
                 </div>
@@ -133,7 +132,7 @@
             <h3>管理者の方は<button type="button" class="b1" onclick="location.href='master-login.php'">管理者ログイン</button></h3>
         </div>
         <div class="new">
-            <h3>初めての方は<button type="button" class="b1" onclick="location.href='signup.php'">新規登録</button></h3>
+            <h3>初めての方は<button type="button" class="b1" onclick="location.href='signup3.php'">新規登録</button></h3>
         </div>
         <div class="error">
             <?php
