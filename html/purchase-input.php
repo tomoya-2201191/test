@@ -37,26 +37,28 @@ echo '</div>';
       echo '<tr>';
       echo '<td>メールアドレス　　　',$row['mail_adress'],'</td>';
       echo '</tr>';
-      echo '<table>';
+      echo '</table>';
       echo '<br>';
-      echo '<a href="userInUp-input.php">ユーザー更新はこちら</a>';
-      echo '</hr>';
+      echo '<form action="userInUp-input.php" method="post">';
+      echo '<input type="submit" id="button5" value="ユーザー更新はこちら"></td>';
+      echo '</form>';
+      
 
       echo '<hr>';
       echo '<br>';
       if(isset($_SESSION['product'])){
       echo '内容をご確認いただき、購入を確定してください。<br>';
-      echo '<a href="paymentInformation.php">戻る</a>';
+      echo '<button type="button" class="b2" onclick="location.href=\'paymentInformation.php\'">戻る</button>';
       echo '　　　';
-      echo '<a href="purchase-output.php">購入を確定する</a>';
-      echo '</hr>';
+      echo '<button type="button" id="b1" onclick="location.href=\'purchase-output.php\'">購入を確定する</button>';
 
  }
 
  }else{
     echo '<h3>お支払方法を選択してください。</h3>';
     echo '<form action="paymentInformation.php" methods="post">';
-    echo '<input type="submit" class="b2" value="戻る">';    
+    echo '<input type="submit" class="b2" value="戻る">'; 
+    echo '</form>';   
 }
 
   }else{
