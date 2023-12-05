@@ -6,53 +6,7 @@
  
     $connect = 'mysql:host='. SERVER . ';dbname='. DBNAME . ';charset=utf8';
 ?>
- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/frame.css">
-    <title>商品登録</title>
-    <style>
-    .parent ul{
-      display: none;
-    }
-    .active ul {
-      display: block;
-    }
-    .error{
-        color: red;
-    }
-  </style>
-</head>
-<body>
-    <header class="header">
-        <a href="home.php">
-            <img src="../img/header.JPG">
-        </a>
-        <div class="login">
-            <a href="m-logout.php">ログアウト</a>
-           
-        </div>
-    </header>
-    <div class="name">
-        <u><p>商品登録</p></u>
-    </div>
-    <div class="container">
-        <div class="left-menu">
-            <ul>
-                <li><a href="m-home.php">ホーム</a></li>
-                    <ul>
-                    <li><a href="p-insert-input.php">商品登録</a></li>
-                    <li><a href="p-delete-input.php">商品削除</a></li>
-                    <li><a href="p-update-input.php">更新</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div class="main">
-        <?php
+<?php
     error_reporting(0);
     ini_set('display_errors', 0);
     session_start();
@@ -99,6 +53,52 @@
                 }
             }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/frame.css">
+    <title>商品登録</title>
+    <style>
+    .parent ul{
+      display: none;
+    }
+    .active ul {
+      display: block;
+    }
+    .error{
+        color: red;
+    }
+  </style>
+</head>
+<body>
+    <header class="header">
+        <a href="home.php">
+            <img src="../img/header.JPG">
+        </a>
+        <div class="login">
+            <a href="m-logout.php">ログアウト</a>
+           
+        </div>
+    </header>
+    <div class="name">
+        <u><p>商品登録</p></u>
+    </div>
+    <div class="container">
+        <div class="left-menu">
+            <ul>
+                <li><a href="m-home.php">ホーム</a></li>
+                    <ul>
+                    <li><a href="p-insert-input.php">商品登録</a></li>
+                    <li><a href="p-delete-input.php">商品削除</a></li>
+                    <li><a href="p-update-input.php">更新</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+
             <form action="p-insert-input.php" method="post">
                 商品名：<input type="text" name="name" style="width: 300px; height=30px"><br>
                 カテゴリ：<input type="text" name="category" style="width: 200px; height=30px"><br>

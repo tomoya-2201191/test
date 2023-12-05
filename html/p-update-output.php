@@ -18,6 +18,10 @@
     .active ul {
       display: block;
     }
+    table{
+        table-layout:fixed;
+        width:100%;
+    }
   </style>
 </head>
 <body>
@@ -77,7 +81,7 @@
             ?>
             <br><hr><br>
             <table>
-                <tr><th>商品ID</th><th>商品名</th><th>カテゴリ</th><th></th><th>サイズ</th><th>価格</th><th>概要</th><th>在庫数</th><th>売上数</th></tr>
+                <tr><th>商品ID</th><th>商品名</th><th>カテゴリ</th><th>サイズ</th><th>価格</th><th>概要</th><th>在庫数</th><th>売上数</th></tr>
                 <tr></tr>
                 <?php
                      $pdo=new PDO($connect, USER, PASS);
@@ -85,14 +89,14 @@
                         $sql->execute([$_POST['id']]);
                         foreach ($sql as $row) {
                             echo '<tr>';
-                            echo '<td>',$row['id'],'</td>';
-                            echo '<td>',$row['name'],'</td>';
-                            echo '<td>',$row['category'],'<td>';
-                            echo '<td>',$row['size'],'</td>';
-                            echo '<td>',$row['price'],'</td>';
-                            echo '<td>',$row['outline'],'</td>';
-                            echo '<td>',$row['stock'],'</td>';
-                            echo '<td>',$row['sales'],'</td>';
+                            echo '<td style="text-align:center;">',$row['id'],'</td>';
+                            echo '<td style="text-align:center;">',$row['name'],'</td>';
+                            echo '<td style="text-align:center;">',$row['category'],'</td>';
+                            echo '<td style="text-align:center;">',$row['size'],'</td>';
+                            echo '<td style="text-align:center;">',$row['price'],'</td>';
+                            echo '<td style="text-align:center;">',$row['outline'],'</td>';
+                            echo '<td style="text-align:center;">',$row['stock'],'</td>';
+                            echo '<td style="text-align:center;">',$row['sales'],'</td>';
                             echo "\n";
                         }
                 ?>

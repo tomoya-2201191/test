@@ -53,27 +53,6 @@
                     echo '削除に失敗しました。';
                 }
             ?>
-            <br><hr><br>
-            <table>
-                <?php
-                    foreach($pdo->query('select * from product') as $row){
-                        echo '<div class="frame">';
-                        echo '<p><img alt="image" src="../img/', $row['jpg'], '.jpg" height="150" width="170"></p>';
-                        echo '<div class="detail">';
-                        echo '<p>',$row['id'],'</p>';
-                        echo '<p>',$row['name'],'</p>';
-                        echo '<p>',$row['category'],'</p>';
-                        echo '<p>',$row['size'],'</p>';
-                        echo '<p>',$row['price'],'</p>';
-                        echo '<p>',$row['outline'],'</p>';
-                        echo '<p>',$row['stock'],'</p>';
-                        echo '<p>',$row['sales'],'</p>';
-                        echo '<p>',$row['jpg'],'</p>';
-                        echo '</div>';
-                        echo '</div>';
-                    }
-                ?>
-            </table>
             <form action="m-home.php" method="post">
                 <input type="submit" value="ホームへ戻る" class="button2">
             </form>

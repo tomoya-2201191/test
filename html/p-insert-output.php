@@ -73,32 +73,31 @@
             ?>
             <br><hr><br>
             
-                <?php
+            <?php
                     $pdo=new PDO($connect,USER,PASS);
                     $id=$pdo->query('select max(id) from product')->fetchColumn();
                     $sql=$pdo->prepare('select * from product where id=?');
                     $sql->execute([$id]);
                     echo '<table>';
-                    echo '<tr><th>商品番号</th><th>商品名</th><th>カテゴリ</th><th>サイズ</th><th>価格</th><th>概要</th><th>在庫数</th><th>売上数</th><th>画像パス</th></tr>';
+                    echo '<tr><th>商品番号</th><th>商品名</th><th>カテゴリ</th><th>サイズ</th><th>価格</th><th>概要</th><th>在庫数</th><th>画像パス</th></tr>';
                     foreach($sql as $row){
                         echo '<tr>';
-                        echo '<td>',$row['id'],'</td>';
-                        echo '<td>',$row['name'],'</td>';
-                        echo '<td>',$row['category'],'<td>';
-                        echo '<td>',$row['size'],'</td>';
-                        echo '<td>',$row['price'],'</td>';
-                        echo '<td>',$row['outline'],'</td>';
-                        echo '<td>',$row['stock'],'</td>';
-                        echo '<td>',$row['sales'],'</td>';
-                        echo '<td>',$row['jpg'],'</td>';
+                        echo '<td style="text-align:center;">',$row['id'],'</td>';
+                        echo '<td style="text-align:center;">',$row['name'],'</td>';
+                        echo '<td style="text-align:center;">',$row['category'],'</td>';
+                        echo '<td style="text-align:center;">',$row['size'],'</td>';
+                        echo '<td style="text-align:center;">',$row['price'],'</td>';
+                        echo '<td style="text-align:center;">',$row['outline'],'</td>';
+                        echo '<td style="text-align:center;">',$row['stock'],'</td>';
+                        echo '<td style="text-align:center;">',$row['jpg'],'</td>';
                         echo '</tr>';
                         echo "\n";
                     }
                     echo '</table>';
                 ?>
-            <form action="m-home.php" method="post">
-                <input type="submit" value="ホームへ戻る" class="button2">
-            </form>
+                <form action="m-home.php" method="post">
+                    <input type="submit" value="ホームへ戻る" class="button2">
+                </form>
         </div>
     </div>
 </body>
