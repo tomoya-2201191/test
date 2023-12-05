@@ -1,13 +1,21 @@
 <?php session_start(); ?>
 <?php require 'dbconnect.php'; ?>
-<?php
-echo '<div class="shopping-cart">';
-echo '<a href="cart-show.php">買い物カゴ</a>';
-echo '</div>';
-echo '<div class="name"></div>';
-echo '<u><p>支払方法</p></u>';
-echo '</div>';
-?>
+<link rel="stylesheet" href="../css/frame.css">
+<style>
+    .pay {
+        width: 100%;
+        background-color: #76e2d8;
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+</style>
+<div class="shopping-cart">
+<a href="cart-show.php">買い物カゴ</a>
+</div>
+<div class="name"></div>
+<u><p>支払い方法</p></u>
+</div>
+
 <?php require 'header.php'; ?>
 
 <?php
@@ -17,8 +25,9 @@ echo '</div>';
 
         
         echo    '<form action="purchase-input.php" method="post">';
-        echo    '<a class="pay">決済方法</a>';
+        echo    '<div class="pay">支払い方法';
         echo    '<hr>';
+        echo    '</div>';
         echo    '<br>';
         echo     '<br>';
         echo    '<input type="radio" name="cash" value="クレジットカード">クレジットカード';
@@ -39,7 +48,7 @@ echo '</div>';
 
         
      }else{
-         echo '<h3>ログインしてください。</h3>';
+         echo 'ログインしてください。';
      }
     echo '</div>'; 
  

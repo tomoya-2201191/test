@@ -1,18 +1,19 @@
 <?php session_start(); ?>
 <?php require 'dbconnect.php'; ?>
 
-<?php
-echo '<link rel="stylesheet" href="../css/frame.css">';
+<link rel="stylesheet" href="../css/frame.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 
-echo '<title>cart</title>';
 
-echo '<div class="shopping-cart">';
-echo '<a href="cart-show.php">買い物カゴ</a>';
-echo '</div>';
-echo '<div class="name"></div>';
-echo '<u><p>カート</p></u>';
-echo '</div>';
-?>
+<title>cart</title>
+
+<div class="shopping-cart">
+<a class="fas fa-cart-plus fa-3x" href="cart-show.php"></a>
+</div>
+<div class="name"></div>
+<u><p>カート</p></u>
+</div>
+
 <?php require 'header.php'; ?>
 
 <?php
@@ -140,7 +141,7 @@ if (!empty($_SESSION['product'])){
         $total+=$subtotal;
         echo '<td>¥', $subtotal, '</td>';
        
-        echo '<td><a href="cart-delete.php?id=', $id, '">削除</a></td>';
+        echo '<td><a  class="far fa-trash-alt" href="cart-delete.php?id=', $id, '"></a></td>';
         echo '</tr>';
         
 
@@ -152,7 +153,7 @@ if (!empty($_SESSION['product'])){
     echo '</table>';
 
 }else {
-    echo '<h3>カートに商品がありません。</h3>';
+    echo 'カートに商品がありません。';
 }
 
 ?>
@@ -164,12 +165,12 @@ if(!empty($_SESSION['product'])){
     echo '<br>';
     echo '<table>';
     echo '<form action="home.php" method="post">';
-    echo '<tr><td><input type="submit" id="button5" value="買い物を続ける"></td>';
+    echo '<tr><td><input type="submit" class="button5" value="買い物を続ける"></td>';
     echo '</form>';
     // 在庫がない商品がある場合購入ボタンを消す
     if(!isset($zerostock)){
     echo '<form action="paymentInformation.php" method="post">';
-    echo '<td><input type="submit" id="button4" value="購入へ進む"></td></tr>';
+    echo '<td><input type="submit" class="button4" value="購入へ進む"></td></tr>';
     echo '</form>';
     }
     echo '</table>';
