@@ -106,7 +106,7 @@
         </header>
         <br>
         <form action="master-login.php" method="post">
-        <form action="login.php" method="post">
+        <!-- <form action="login.php" method="post"> -->
             <div class="form-row">
                 <div class="form-label">
                     <label for="mail">メールアドレス：</label>
