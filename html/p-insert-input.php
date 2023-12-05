@@ -70,6 +70,16 @@
     .error{
         color: red;
     }
+    .main{
+        font-size:20px;
+    }
+    .text{
+        width: 50px;
+        height: 20px;
+    }
+    .toroku{
+        text-align:center;
+    }
   </style>
 </head>
 <body>
@@ -100,14 +110,16 @@
         <div class="main">
 
             <form action="p-insert-input.php" method="post">
-                商品名：<input type="text" name="name" style="width: 300px; height=30px"><br>
-                カテゴリ：<input type="text" name="category" style="width: 200px; height=30px"><br>
-                サイズ：<input type="text" name="size" style="width: 200px; height=30px"><br>
-                価格：<input type="text" name="price" style="width: 200px; height=30px"><br>
-                概要：<textarea name="outline" cols="50" rows="3"></textarea><br>
-                在庫：<input type="text" name="stock" style="width: 50px; height=30px"><br>
-                画像パス:<input type="text" name="jpg" style="width: 50px; height=30px">.jpg<br>
-                <input type="submit" name="insert" value="登録" class="button">
+                <div class="toroku">
+                    商品名：<input type="text"  class="text" name="name" style="width: 300px; height=30px"><br>
+                    カテゴリ：<input type="text" class="text"  name="category" style="width: 200px; height=30px"><br>
+                    サイズ：<input type="text" class="text" name="size" style="width: 200px; height=30px"><br>
+                    価格：<input type="text" class="text" name="price" style="width: 200px; height=30px"><br><br>
+                    概要：<textarea name="outline" cols="50" rows="4"></textarea><br>
+                    在庫：<input type="text" class="text" name="stock" style="width: 80px; height=30px"><br>
+                    画像パス:<input type="text" class="text" name="jpg" style="width: 200px; height=30px">.jpg<br><br>
+                    <input type="submit" name="insert" value="登録" class="button">
+                </div>
             </form>
             <div class="error">
             <?php
