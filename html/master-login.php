@@ -106,7 +106,7 @@
         </header>
         <br>
         <form action="master-login.php" method="post">
-        <form action="login.php" method="post">
+        <!-- <form action="login.php" method="post"> -->
             <div class="form-row">
                 <div class="form-label">
                     <label for="mail">メールアドレス：</label>
@@ -117,7 +117,7 @@
                 <div class="form-label">
                     <label for="pass">パスワード：</label>
                 </div>
-                <input type="password" class="txt" name="pass">
+                <input type="password" class="txt" name="password">
             </div>
             <br>
             <div class="login">
