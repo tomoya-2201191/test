@@ -71,12 +71,23 @@
         $sql->execute(['%'.$_POST['keyword'].'%']);
         $count=$sql -> rowCount();
         if($count > 0){
+<<<<<<< HEAD
         foreach ($sql as $row) {
             $id=$row['id'];
             echo '<li><a href="detail.php?id=', $id, '"><img alt="image" src="../img/', $row['jpg'], '.jpg" height="240" width="260">';
             echo '<p><a href="detail.php?id=', $id, '">', $row['name'], '</a></p>';
             echo '<span>¥', $row['price'],'</span><span>',$row['category'],'</span><span>','size:',$row['size'], '</span></li>';
         }
+=======
+            foreach ($sql as $row) {
+                $id=$row['id'];
+                echo '<li><a href="detail.php?id=', $id, '"><img alt="image" src="../img/', $row['jpg'], '.jpg" height="240" width="260">';
+                echo '<p><a href="detail.php?id=', $id, '">', $row['name'], '</a></p>';
+                echo '<span>¥', $row['price'],'</span><span>',$row['category'],'</span><span>','size:',$row['size'], '</span></li>';
+            }
+            echo '</ul>';
+            echo '</div>';
+>>>>>>> 5b01c165e6b6c836b2bb9ad8134846f2c107bc96
         }else{
             echo '<h2>データが1件もありません</h2>';
         }
