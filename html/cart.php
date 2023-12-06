@@ -22,7 +22,7 @@ if (!empty($_SESSION['product'])){
 
 
 }else {
-    echo '<h3>カートに商品がありません。</h3>';
+    echo 'カートに商品がありません。';
     echo '<br>';
     echo '<br>';
 
