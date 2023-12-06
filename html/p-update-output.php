@@ -22,6 +22,8 @@
         table-layout:fixed;
         width:100%;
     }
+    
+
   </style>
 </head>
 <body>
@@ -83,27 +85,31 @@
             <table>
                 <tr><th>商品ID</th><th>商品名</th><th>カテゴリ</th><th>サイズ</th><th>価格</th><th>概要</th><th>在庫数</th><th>売上数</th></tr>
                 <tr></tr>
-                <?php
-                     $pdo=new PDO($connect, USER, PASS);
-                        $sql=$pdo->prepare('select * from product where id=?');
-                        $sql->execute([$_POST['id']]);
-                        foreach ($sql as $row) {
-                            echo '<tr>';
-                            echo '<td style="text-align:center;">',$row['id'],'</td>';
-                            echo '<td style="text-align:center;">',$row['name'],'</td>';
-                            echo '<td style="text-align:center;">',$row['category'],'</td>';
-                            echo '<td style="text-align:center;">',$row['size'],'</td>';
-                            echo '<td style="text-align:center;">',$row['price'],'</td>';
-                            echo '<td style="text-align:center;">',$row['outline'],'</td>';
-                            echo '<td style="text-align:center;">',$row['stock'],'</td>';
-                            echo '<td style="text-align:center;">',$row['sales'],'</td>';
-                            echo "\n";
-                        }
-                ?>
+                <div class="frame">
+                    <?php
+                        $pdo=new PDO($connect, USER, PASS);
+                            $sql=$pdo->prepare('select * from product where id=?');
+                            $sql->execute([$_POST['id']]);
+                            foreach ($sql as $row) {
+                                echo '<tr>';
+                                echo '<div class="detail">';
+                                echo '<td style="text-align:center;">',$row['id'],'</td>';
+                                echo '<td style="text-align:center;">',$row['name'],'</td>';
+                                echo '<td style="text-align:center;">',$row['category'],'</td>';
+                                echo '<td style="text-align:center;">',$row['size'],'</td>';
+                                echo '<td style="text-align:center;">',$row['price'],'</td>';
+                                echo '<td style="text-align:center;">',$row['outline'],'</td>';
+                                echo '<td style="text-align:center;">',$row['stock'],'</td>';
+                                echo '<td style="text-align:center;">',$row['sales'],'</td>';
+                                echo "\n";
+                                echo '</div>';
+                            }
+                    ?>
             </table>
-            <form action="m-home.php" method="post">
-                <input type="submit" value="ホームへ戻る" class="button2">
-            </form>
+                <form action="m-home.php" method="post">
+                    <input type="submit" value="ホームへ戻る" class="button02">
+                </form>
+                </div>
             <?php
             $id = $_POST['id'];
             echo '<form action="p-update-input2.php" method="post">';

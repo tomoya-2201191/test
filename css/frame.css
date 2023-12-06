@@ -119,10 +119,24 @@ padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにす�
     font-size: 25px;
     border-radius:5px;
     padding: 0 16px; /* テキスト横の余白がキツキツにならないように */
-    display: inline-flex;
+    /* display: inline-flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
 }
+
+.button02{
+    min-width: 200px; 
+    height: 70px;
+    margin-left: 40px;
+    background-color: rgb(20, 209, 230);
+    font-size: 25px;
+    border-radius:5px;
+    padding: 0 16px; /* テキスト横の余白がキツキツにならないように */
+    /* display: inline-flex;
+    align-items: center;
+    justify-content: center; */
+}    
+
 .button3{
     width: 110px;
     height: 70px;
