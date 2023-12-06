@@ -11,7 +11,7 @@
         <div class="shopping-cart">
             <a href="cart-show.php">買い物カゴ</a>
         </div>
-    <div class="name"></div>
+    <div class="name">
             <u><p>商品検索</p></u>
     </div>
   </div>
