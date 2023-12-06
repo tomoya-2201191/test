@@ -5,6 +5,45 @@
 <head>
     <link rel="stylesheet" href="../css/frame.css">
     <title>ASO CLOTHES</title>
+    <style>
+        #column ul {
+	width: calc(100 + 20px);
+	margin: 0 -10px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#column li {
+	padding: 10px 10px 20px 30px;
+  list-style: none;
+    width: 250px;
+    overflow: hidden;
+    float:left;
+    height:400px;
+}
+
+#column li a,
+#column li a:visited {
+	text-decoration: none;
+	color: #111;
+}
+
+#column li p {
+	font-size: 130%;
+	margin-bottom: 3px;
+}
+
+#column li span {
+	font-size: 110%;
+	display: block;
+}
+.column04 li {
+	width: calc(25% - 20px);
+}
+#column img {
+  border-radius: 10px;
+}
+    </style>
 </head>
 <body>
 <div class="home">
@@ -24,31 +63,22 @@
         </form>
         </div>
         <?php
+        echo '<div id="column" class="column03">';
+        echo '<ul>';
     $pdo=new PDO($connect, USER, PASS);
     if (isset($_POST['keyword'])) {
         $sql=$pdo->prepare('select * from product where name like ?');
         $sql->execute(['%'.$_POST['keyword'].'%']);
         $count=$sql -> rowCount();
         if($count > 0){
-            echo '<table>';
         foreach ($sql as $row) {
             $id=$row['id'];
-            echo '<tr>';
-            echo '<td>';
-            echo '<p><img alt="image" src="../img/', $row['jpg'], '.jpg" height="150" width="170"></p>';
-            echo '</td>';
-            echo '<td>';
-            echo '<a href="detail.php?id=', $id, '">', $row['name'], '</a>';
-            echo '</td>';
-            echo '<td>¥', $row['price'], '</td>';
-            echo '<td>', $row['category'], '</td>';
-            echo '<td>', $row['size'], '</td>';
-            echo '</tr>';
+            echo '<li><a href="detail.php?id=', $id, '"><img alt="image" src="../img/', $row['jpg'], '.jpg" height="240" width="260">';
+            echo '<p><a href="detail.php?id=', $id, '">', $row['name'], '</a></p>';
+            echo '<span>¥', $row['price'],'</span><span>',$row['category'],'</span><span>','size:',$row['size'], '</span></li>';
         }
-        echo '</table>';
         }else{
             echo '<h2>データが1件もありません</h2>';
-            echo '</table>';
         }
     }
     ?>

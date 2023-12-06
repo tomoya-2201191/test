@@ -81,7 +81,6 @@
         echo '</div>';
         }else{
             echo '<h2>データが1件もありません</h2>';
-            echo '</table>';
         }
     }
     ?>
