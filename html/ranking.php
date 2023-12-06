@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/frame.css">
-    <title>ASO CLOTHES</title>
+    <title>ranking</title>
     <style>
         .parent ul{
         display: none;
@@ -56,7 +56,7 @@
     <div class="shopping-cart">
         <a href="cart-show.php">買い物カゴ</a>
     </div>
-    <div class="name"></div>
+    <div class="name">
             <u><p>ランキング</p></u>
             <div class="genre">
               <?php
@@ -102,9 +102,10 @@
               }else{
                 echo $i,'位';
               }
+              $id=$row['id'];
               echo '</td>';
               echo '<td>';
-              echo '<p><img alt="image" src="../img/', $row['jpg'], '.jpg" height="150" width="170"></p>';
+              echo '<p><a href="detail.php?id=', $id, '"><img alt="image" src="../img/', $row['jpg'], '.jpg" height="150" width="170"></p>';
               echo '</td>';
               echo '<td>';
               echo '<a href="detail.php?id=', $row['id'], '">', $row['name'], '</a>';
