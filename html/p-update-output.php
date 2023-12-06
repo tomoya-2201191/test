@@ -22,8 +22,37 @@
         table-layout:fixed;
         width:100%;
     }
-    
-
+    .box{
+    position:relative;
+}
+.button2{
+    min-width: 200px; 
+    height: 70px;
+    margin-bottom: 20px;
+    background-color: rgb(20, 230, 146);
+    font-size: 25px;
+    border-radius:5px;
+    padding: 0 16px; /* テキスト横の余白がキツキツにならないように */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    left:10px;
+}
+.button02{
+    min-width: 200px; 
+    height: 70px;
+    margin-bottom: 20px;
+    background-color: rgb(20, 209, 230);
+    font-size: 25px;
+    border-radius:5px;
+    padding: 0 16px; /* テキスト横の余白がキツキツにならないように */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    right:10px;
+}
   </style>
 </head>
 <body>
@@ -85,31 +114,28 @@
             <table>
                 <tr><th>商品ID</th><th>商品名</th><th>カテゴリ</th><th>サイズ</th><th>価格</th><th>概要</th><th>在庫数</th><th>売上数</th></tr>
                 <tr></tr>
-                <div class="frame">
-                    <?php
-                        $pdo=new PDO($connect, USER, PASS);
-                            $sql=$pdo->prepare('select * from product where id=?');
-                            $sql->execute([$_POST['id']]);
-                            foreach ($sql as $row) {
-                                echo '<tr>';
-                                echo '<div class="detail">';
-                                echo '<td style="text-align:center;">',$row['id'],'</td>';
-                                echo '<td style="text-align:center;">',$row['name'],'</td>';
-                                echo '<td style="text-align:center;">',$row['category'],'</td>';
-                                echo '<td style="text-align:center;">',$row['size'],'</td>';
-                                echo '<td style="text-align:center;">',$row['price'],'</td>';
-                                echo '<td style="text-align:center;">',$row['outline'],'</td>';
-                                echo '<td style="text-align:center;">',$row['stock'],'</td>';
-                                echo '<td style="text-align:center;">',$row['sales'],'</td>';
-                                echo "\n";
-                                echo '</div>';
-                            }
-                    ?>
+                <?php
+                     $pdo=new PDO($connect, USER, PASS);
+                        $sql=$pdo->prepare('select * from product where id=?');
+                        $sql->execute([$_POST['id']]);
+                        foreach ($sql as $row) {
+                            echo '<tr>';
+                            echo '<td style="text-align:center;">',$row['id'],'</td>';
+                            echo '<td style="text-align:center;">',$row['name'],'</td>';
+                            echo '<td style="text-align:center;">',$row['category'],'</td>';
+                            echo '<td style="text-align:center;">',$row['size'],'</td>';
+                            echo '<td style="text-align:center;">',$row['price'],'</td>';
+                            echo '<td style="text-align:center;">',$row['outline'],'</td>';
+                            echo '<td style="text-align:center;">',$row['stock'],'</td>';
+                            echo '<td style="text-align:center;">',$row['sales'],'</td>';
+                            echo "\n";
+                        }
+                ?>
             </table>
-                <form action="m-home.php" method="post">
-                    <input type="submit" value="ホームへ戻る" class="button02">
-                </form>
-                </div>
+            <div class="box">
+            <form action="m-home.php" method="post">
+                <input type="submit" value="ホームへ戻る" class="button02">
+            </form>
             <?php
             $id = $_POST['id'];
             echo '<form action="p-update-input2.php" method="post">';
@@ -117,6 +143,7 @@
             echo '<input type="hidden" name="id" value="',$id, '">';
             echo '</form>';
             ?>
+            </div>
         </div>
     </div>
 </body>
