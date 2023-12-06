@@ -10,24 +10,27 @@
         <div class="shopping-cart">
             <a href="cart-show.php">買い物カゴ</a>
         </div>
-    <div class="name">
+    <div class="name"></div>
             <u><p>商品検索</p></u>
     </div>
   </div>
     <?php require 'header.php'; ?>
 <?php
-echo '<div class="detail">';
+echo '<div id="detail" class="detail">';
 $pdo=new PDO($connect, USER, PASS);
 $sql=$pdo->prepare('select * from product where id=?');
 $sql->execute([$_GET['id']]);
 foreach ($sql as $row) {
-    echo '<p><img alt="image" src="../img/', $row['jpg'], '.jpg" height="230" width="260"></p>';
+    echo '<div class="img">';
+    echo '<p><img alt="image" src="../img/', $row['jpg'], '.jpg" height="400" width="400"></p></div>';
+    echo '<div class="item">';
     echo '<form action="cart-insert.php" method="post">';
-    echo '<p>商品名：', $row['name'], '</p>';
-    echo '<p>価格：¥', $row['price'], '</p>';
+    echo '<h1>', $row['name'], '</h1>';
+    echo '<h3>価格：¥', $row['price'], '</h3>';
     echo '<p>カテゴリ：', $row['category'], '</p>';
     echo '<p>サイズ：', $row['size'], '</p>';
     echo '<p>注文数：<select name="count">';
+ 
 
     if($row['stock']<10){
         for ($i=1; $i<=$row['stock']; $i++) {
@@ -48,7 +51,8 @@ foreach ($sql as $row) {
     if($row['stock']==0){
         echo '<font color=red>※在庫がありません</font>';
     }else{
-        echo '<p><input type="submit" id="button4" value="買い物かごに入れる"></p>';
+        echo '<br>';
+        echo '<p><input type="submit" class="button" value="カートに追加"></p></div>';
     }
     echo '</form>';
 }
