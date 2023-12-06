@@ -36,7 +36,7 @@
         <div class="shopping-cart">
             <a href="cart-show.php">買い物カゴ</a>
         </div>
-    <div class="name"></div>
+    <div class="name">
             <u><p>パスワード変更完了</p></u>
     </div>
     <?php require 'header.php'; ?>

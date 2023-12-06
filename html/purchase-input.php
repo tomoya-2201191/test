@@ -4,7 +4,7 @@
 echo '<div class="shopping-cart">';
 echo '<a href="cart-show.php">買い物カゴ</a>';
 echo '</div>';
-echo '<div class="name"></div>';
+echo '<div class="name">';
 echo '<u><p>確認画面</p></u>';
 echo '</div>';
 echo '</div>';
