@@ -16,6 +16,7 @@
   </div>
     <?php require 'header.php'; ?>
 <?php
+echo '<div class="detail">';
 $pdo=new PDO($connect, USER, PASS);
 $sql=$pdo->prepare('select * from product where id=?');
 $sql->execute([$_GET['id']]);
@@ -51,6 +52,7 @@ foreach ($sql as $row) {
     }
     echo '</form>';
 }
+echo '</div>';
 ?>
 </body>
 </html>
