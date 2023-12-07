@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 <title>カート</title>
 
 <div class="shopping-cart">
@@ -6,7 +6,7 @@
 </div>
 <div class="name"></div>
 <u><p>カート</p></u>
-</div>
+</div> -->
 <?php
 if (!empty($_SESSION['product'])){
     echo '<table>';

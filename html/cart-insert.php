@@ -3,6 +3,7 @@
 
 <title>カート</title>
 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 <div class="shopping-cart">
 <a class="fas fa-cart-plus fa-3x" href="cart-show.php"></a>
 </div>
