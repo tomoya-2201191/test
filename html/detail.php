@@ -44,7 +44,8 @@ foreach ($sql as $row) {
     }
 
     echo '</select></p>';
-    echo '<p>概要：', $row['outline'], '</p>';
+    echo '<hr>';
+    echo '<p>',$row['outline'], '</p>';
     echo '<input type="hidden" name="id" value="', $row['id'], '">';
     echo '<input type="hidden" name="name" value="', $row['name'], '">';
     echo '<input type="hidden" name="price" value="', $row['price'], '">';
