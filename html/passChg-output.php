@@ -4,6 +4,7 @@
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="../css/frame.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <title>ユーザー情報更新完了</title>
 </head>
   <style>

@@ -3,6 +3,7 @@
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="../css/frame.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <title>パスワード変更</title>
 </head>
   <style>

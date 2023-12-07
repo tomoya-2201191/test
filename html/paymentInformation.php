@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <?php require 'dbconnect.php'; ?>
 <link rel="stylesheet" href="../css/frame.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 <style>
     .pay {
         width: 100%;

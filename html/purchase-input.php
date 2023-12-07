@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <?php require 'dbconnect.php'; ?>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 <?php
 echo '<div class="shopping-cart">';
 echo '<a href="cart-show.php">買い物カゴ</a>';
