@@ -52,7 +52,7 @@ foreach ($sql as $row) {
         echo '<font color=red>※在庫がありません</font>';
     }else{
         echo '<br>';
-        echo '<p><input type="submit" id="button5" value="カートに追加"></p></div>';
+        echo '<p><input type="submit" id="b1" value="カートに追加"></p></div>';
     }
     echo '</form>';
 }

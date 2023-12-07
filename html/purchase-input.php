@@ -37,6 +37,10 @@ echo '</div>';
       echo '<tr>';
       echo '<td>メールアドレス　　　',$row['mail_adress'],'</td>';
       echo '</tr>';
+      echo '<tr><td><br>';
+      echo '<br></tr></td>';
+      echo '<tr><td>合計</td><td></td><td></td><td></td><td>¥',$total,
+           '</td><td></td></tr>';  
       echo '</table>';
       echo '<br>';
       echo '<form action="userInUp-input.php" method="post">';
