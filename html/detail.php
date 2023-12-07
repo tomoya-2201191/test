@@ -3,14 +3,13 @@
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="../css/frame.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <title>ASO CLOTHES</title>
 </head>
 <body>
 <div class="home">
-    <div class="shopping-cart">
-    <a class="fas fa-cart-plus fa-3x" href="cart-show.php"></a>
-    </div>
+        <div class="shopping-cart">
+            <a href="cart-show.php">買い物カゴ</a>
+        </div>
     <div class="name"></div>
             <u><p>商品検索</p></u>
     </div>
@@ -53,7 +52,7 @@ foreach ($sql as $row) {
         echo '<font color=red>※在庫がありません</font>';
     }else{
         echo '<br>';
-        echo '<p><input type="submit" id="button5" value="カートに追加"></p></div>';
+        echo '<p><input type="submit" id="b1" value="カートに追加"></p></div>';
     }
     echo '</form>';
 }
