@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/frame.css">
-    <title>ranking</title>
+    <title>ランキング</title>
     <style>
         .parent ul{
         display: none;

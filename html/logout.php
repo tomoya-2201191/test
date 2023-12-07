@@ -13,7 +13,7 @@ $connect = 'mysql:host=' . SERVER . ';dbname=' . DBNAME . ';charset=utf8';
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/frame.css">
-    <title>logout</title>
+    <title>ログアウト</title>
     <style>
         .parent ul {
             display: none;
