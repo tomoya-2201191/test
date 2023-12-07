@@ -14,15 +14,22 @@ if (!empty($_SESSION['product'])){
             $subtotal=$product['price']*$product['count'];
             $total+=$subtotal;
         echo '<td>¥', $subtotal, '</td>';
-       
         echo '<td><a href="cart-delete.php?id=', $id, '">削除</a></td>';
         echo '</tr>';
+        echo '<tr><td><br>';
+        echo '<br></tr></td>';
+        echo '<tr><td>合計</td><td></td><td></td><td></td><td>¥',$total,
+             '</td><td></td></tr>';
+        echo '</table>';
+    
+       
+      
 
     }
 
 
 }else {
-    echo '<h3>カートに商品がありません。</h3>';
+    echo 'カートに商品がありません。';
     echo '<br>';
     echo '<br>';
 
