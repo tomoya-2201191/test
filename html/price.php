@@ -51,7 +51,6 @@
 <div class="shopping-cart">
 <a class="fas fa-cart-plus fa-3x" href="cart-show.php"></a>
 </div>
-
     <div class="name">
             <u><p>商品検索</p></u>
     </div>
