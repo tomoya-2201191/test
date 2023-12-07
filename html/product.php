@@ -48,9 +48,9 @@
 </head>
 <body>
 <div class="home">
-        <div class="shopping-cart">
-            <a href="cart-show.php">買い物カゴ</a>
-        </div>
+<div class="shopping-cart">
+<a class="fas fa-cart-plus fa-3x" href="cart-show.php"></a>
+</div>
     <div class="name">
             <u><p>商品検索</p></u>
     </div>

@@ -5,6 +5,7 @@
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="../css/frame.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <title>ユーザー情報更新</title>
 </head>
   <style>
@@ -36,9 +37,10 @@
           ?>
         </div>
     </header>
-        <div class="shopping-cart">
-            <a href="cart-show.php">買い物カゴ</a>
-        </div>
+    <div class="shopping-cart">
+      <a class="fas fa-cart-plus fa-3x" href="cart-show.php"></a>
+    </div>
+
     <div class="name">
             <u><p>ユーザー情報更新</p></u>
     </div>

@@ -28,9 +28,9 @@
             
         </div>
     </header>
-        <div class="shopping-cart">
-            <a href="cart-show.php">買い物カゴ</a>
-        </div>
+    <div class="shopping-cart">
+<a class="fas fa-cart-plus fa-3x" href="cart-show.php"></a>
+</div>
     <div class="name">
             <u><p>パスワード変更</p></u>
     </div>

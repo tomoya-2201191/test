@@ -11,7 +11,7 @@
     }
 </style>
 <div class="shopping-cart">
-<a href="cart-show.php">買い物カゴ</a>
+<a class="fas fa-cart-plus fa-3x" href="cart-show.php"></a>
 </div>
 <div class="name">
 <u><p>支払い方法</p></u>

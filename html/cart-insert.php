@@ -1,15 +1,14 @@
 <?php session_start(); ?>
 <?php require 'dbconnect.php'; ?>
 
-<?php
-echo '<div class="shopping-cart">';
-echo '<a href="cart-show.php">買い物カゴ</a>';
-echo '</div>';
-echo '<div class="name"></div>';
-echo '<u><p>カート</p></u>';
-echo '</div>';
+<title>カート</title>
 
-?>
+<div class="shopping-cart">
+<a class="fas fa-cart-plus fa-3x" href="cart-show.php"></a>
+</div>
+<div class="name"></div>
+<u><p>カート</p></u>
+</div>
 
 <?php require 'header.php'; ?>
 <?php

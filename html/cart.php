@@ -1,3 +1,12 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+<title>カート</title>
+
+<div class="shopping-cart">
+<a class="fas fa-cart-plus fa-3x" href="cart-show.php"></a>
+</div>
+<div class="name"></div>
+<u><p>カート</p></u>
+</div>
 <?php
 if (!empty($_SESSION['product'])){
     echo '<table>';

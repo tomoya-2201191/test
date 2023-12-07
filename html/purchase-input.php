@@ -1,15 +1,15 @@
 <?php session_start(); ?>
 <?php require 'dbconnect.php'; ?>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-<?php
-echo '<div class="shopping-cart">';
-echo '<a href="cart-show.php">買い物カゴ</a>';
-echo '</div>';
-echo '<div class="name">';
-echo '<u><p>確認画面</p></u>';
-echo '</div>';
-echo '</div>';
-?>
+
+<div class="shopping-cart">
+<a class="fas fa-cart-plus fa-3x" href="cart-show.php"></a>
+</div>
+<div class="name">
+<u><p>確認画面</p></u>
+</div>
+</div>
+
 <?php require 'header.php'; ?>
 <?php
   $pdo = new PDO($connect,USER,PASS);

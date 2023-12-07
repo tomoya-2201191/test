@@ -12,6 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/frame.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <title>ランキング</title>
     <style>
         .parent ul{
@@ -54,7 +55,7 @@
         </div>
     </header>
     <div class="shopping-cart">
-        <a href="cart-show.php">買い物カゴ</a>
+      <a class="fas fa-cart-plus fa-3x" href="cart-show.php"></a>
     </div>
     <div class="name">
             <u><p>ランキング</p></u>

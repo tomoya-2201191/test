@@ -1,6 +1,4 @@
 <?php require 'dbconnect.php'; ?>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-
 <?php
     error_reporting(0);
     ini_set('display_errors', 0);
