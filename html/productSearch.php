@@ -3,7 +3,7 @@
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="../css/frame.css">
-    <title>ASO CLOTHES</title>
+    <title>商品検索</title>
 </head>
   
 </head>
