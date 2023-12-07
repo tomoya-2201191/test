@@ -190,7 +190,7 @@ padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにす�
 }
 
 #column li {
-	padding: 10px 10px 20px 0;
+	padding: 10px 10px 20px 30px;
     list-style: none;
     width: 250px;
     overflow: hidden;
