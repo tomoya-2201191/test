@@ -23,7 +23,7 @@ $sql=$pdo->prepare('select * from product where id=?');
 $sql->execute([$_GET['id']]);
 foreach ($sql as $row) {
     echo '<div class="img">';
-    echo '<p><img alt="image" src="../img/', $row['jpg'], '.jpg" height="400" width="400"></p></div>';
+    echo '<p><img alt="image" src="../img/', $row['jpg'], '.jpg" height="400" width="440"></p></div>';
     echo '<div class="item">';
     echo '<form action="cart-insert.php" method="post">';
     echo '<h1>', $row['name'], '</h1>';
