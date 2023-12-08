@@ -13,6 +13,7 @@ $connect = 'mysql:host=' . SERVER . ';dbname=' . DBNAME . ';charset=utf8';
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/frame.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <title>ログアウト</title>
     <style>
         .parent ul {
@@ -58,9 +59,9 @@ $connect = 'mysql:host=' . SERVER . ';dbname=' . DBNAME . ';charset=utf8';
     </div>
 </header>
 <div class="shopping-cart">
-    <a href="cart-show.php">買い物カゴ</a>
-</div>
-<div class="name"></div>
+    <a class="fas fa-cart-plus fa-3x" href="cart-show.php"></a>
+    </div>
+<div class="name">
 <u><p>ログアウト</p></u>
 </div>
 <div class="container">
