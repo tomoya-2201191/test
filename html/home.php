@@ -99,7 +99,7 @@
               $id=$row['id'];
               echo '<li><a href="detail.php?id=', $id, '"><img alt="image" src="../img/', $row['jpg'], '.jpg" height="240" width="260">';
               echo '<h3><a href="detail.php?id=', $id, '">', $row['name'], '</a></h3>';
-              echo '<span><h4>¥', $row['price'],'</h4></span><span>','size:',$row['size'], '</span></li>';
+              echo '<span><h4>¥', $row['price'],'</span><span>','size:',$row['size'], '</h4></span></li>';
           }
           echo '</ul>';
           echo '</div>';
