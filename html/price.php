@@ -77,8 +77,8 @@
         foreach ($sql as $row) {
             $id=$row['id'];
             echo '<li><a href="detail.php?id=', $id, '"><img alt="image" src="../img/', $row['jpg'], '.jpg" height="240" width="260">';
-            echo '<p><a href="detail.php?id=', $id, '">', $row['name'], '</a></p>';
-            echo '<span>¥', $row['price'],'</span><span>',$row['category'],'</span><span>','size:',$row['size'], '</span></li>';
+            echo '<h3><a href="detail.php?id=', $id, '">', $row['name'], '</a></h3>';
+            echo '<span><h4>¥', $row['price'],'<h4></span><span>','size:',$row['size'], '</span></li>';
         }
         echo '</ul>';
         echo '</div>';
