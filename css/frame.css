@@ -49,14 +49,14 @@ padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにす�
 
 .p_name {
     display: inline-block;
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
     margin-top: 80px;
     margin-left: 180px;
     color: #fff;
     background-color:orange;
     text-align: center;
-    line-height:350px;
+    line-height:300px;
     border-radius: 50%;
     font-size: 35px;
     /*円,検索機能*/
@@ -64,14 +64,14 @@ padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにす�
 
 .p_category {
     display: inline-block;
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
     margin-top: 80px;
     margin-left: 240px;
     color: #fff;
     background-color:rgb(52, 136, 232);
     text-align: center;
-    line-height:350px;
+    line-height:300px;
     border-radius: 50%;
     font-size: 35px;
     /*円,検索機能*/
@@ -79,14 +79,14 @@ padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにす�
 
 .p_price {
     display: inline-block;
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
     margin-top: 50px;
-    margin-left: 480px;
+    margin-left: 440px;
     color: #fff;
     background-color:rgb(56, 220, 56);
     text-align: center;
-    line-height:350px;
+    line-height:300px;
     border-radius: 50%;
     font-size: 35px;
     /*円,検索機能*/
