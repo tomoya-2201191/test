@@ -173,9 +173,13 @@ padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにす�
     display: flex;
 }
  
-.detail{
+.detail_1{
     width: auto;
     display: flex;
+    padding-left: 20px;
+}
+.detail{
+    width: auto;
 }
 
 .pay{
@@ -281,8 +285,4 @@ a {
           background-color: rgb(255, 192, 4);
           font-size: 25px;
           border-radius:5px;
-}
-
-.detail{
-    padding-left: 20px;
 }

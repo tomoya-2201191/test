@@ -17,7 +17,7 @@
   </div>
     <?php require 'header.php'; ?>
 <?php
-echo '<div id="detail" class="detail">';
+echo '<div id="detail_1" class="detail_1">';
 $pdo=new PDO($connect, USER, PASS);
 $sql=$pdo->prepare('select * from product where id=?');
 $sql->execute([$_GET['id']]);
