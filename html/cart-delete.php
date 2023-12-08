@@ -17,7 +17,7 @@ require 'cart.php';
 echo '<br>';
 echo '<form action="home.php" method="post">';
 echo '<br>';
-echo '<tr><td><input type="submit" id="button5"  value="買い物を続ける"></td></tr>';
+echo '<tr><td><input type="submit" class="button5"  value="買い物を続ける"></td></tr>';
 echo '</form>';
 ?>
 <?php require 'footer.php'; ?>
