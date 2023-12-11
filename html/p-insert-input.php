@@ -25,8 +25,8 @@
             $sql = $pdo->prepare('insert into product(name,category,size,price,outline,stock,jpg) value (?,?,?,?,?,?,?)');
                 if(empty($name)){
                     $error_message = '商品名を入力してください';
-                }else if(empty($category)){
-                    $error_message = 'カテゴリを入力してください';
+                // }else if(empty($category)){
+                //     $error_message = 'カテゴリを入力してください';
                 }else if(empty($size)){
                     $error_message = 'サイズを入力してください';
                 }else if(!preg_match('/^[0-9]+$/',$price)){
@@ -80,6 +80,11 @@
     .toroku{
         text-align:center;
     }
+    .box select{
+        width: 200px;
+        height:30px;
+        font-size:20px;
+    }
   </style>
 </head>
 <body>
@@ -111,8 +116,16 @@
 
             <form action="p-insert-input.php" method="post">
                 <div class="toroku">
-                    商品名：<input type="text"  class="text" name="name" style="width: 300px; height=30px"><br>
-                    カテゴリ：<input type="text" class="text"  name="category" style="width: 200px; height=30px"><br>
+                    商品名：<input type="text"  class="text" name="name" style="width: 300px; height=30px"><br><br>
+                    <div class="box select">
+                    カテゴリ：<select name= "category">
+                                <option value = "アウター">アウター</option>
+                                <option value = "トップス">トップス</option>
+                                <option value = "ボトムス">ボトムス</option>
+                                <option value = "シューズ">シューズ</option>
+                                <option value = "小物">小物</option>
+                            </select><br>
+                    </div>
                     サイズ：<input type="text" class="text" name="size" style="width: 200px; height=30px"><br>
                     価格：<input type="text" class="text" name="price" style="width: 200px; height=30px"><br><br>
                     概要：<textarea name="outline" cols="50" rows="4"></textarea><br>
