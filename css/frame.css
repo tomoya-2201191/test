@@ -143,7 +143,7 @@ padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにす�
     justify-content: center;
 }
 
-.button5{
+#button5{
     min-width: 200px; 
     height: 55px;
     margin-left: 40px;

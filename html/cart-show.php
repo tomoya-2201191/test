@@ -165,7 +165,7 @@ if(!empty($_SESSION['product'])){
     echo '<br>';
     echo '<table>';
     echo '<form action="home.php" method="post">';
-    echo '<tr><td><input type="submit" class="button5" value="買い物を続ける"></td>';
+    echo '<tr><td><input type="submit" id="button5" value="買い物を続ける"></td>';
     echo '</form>';
     // 在庫がない商品がある場合購入ボタンを消す
     if(!isset($zerostock)){

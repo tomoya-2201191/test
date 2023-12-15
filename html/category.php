@@ -44,7 +44,19 @@
 #column img {
   border-radius: 10px;
 }
-    </style>
+.box select{
+    width: 400px;
+    height: 70px;
+    font-size: 25px;
+}
+.select{
+    display: flex;
+    justify-content: left;
+    padding-left: 45px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+</style>
 </head>
 <body>
 <div class="home">
@@ -58,10 +70,21 @@
     <?php require 'header.php'; ?>
 
         <div class="main">
-        <form action="category.php" method="post">
-        <input type="text" class="text" name="keyword" placeholder="カテゴリ">
-        <input type="submit" class="button" value="検索">
-        </form>
+            <div class="select">
+            <div class="box">
+                <form action="category.php" method="post">
+                <select name= "keyword">
+                    <option value = "なし">なし</option>
+                    <option value = "アウター">アウター</option>
+                    <option value = "トップス">トップス</option>
+                    <option value = "ボトムス">ボトムス</option>
+                    <option value = "シューズ">シューズ</option>
+                    <option value = "小物">小物</option>
+                </select>
+            </div>
+                <input type="submit" class="button" value="検索">
+                </form>
+            </div>
         </div>
         <?php
         echo '<div id="column" class="column03">';
