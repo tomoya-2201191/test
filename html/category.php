@@ -56,6 +56,12 @@
     padding-bottom: 20px;
     padding-top: 10px;
 }
+.soldout {
+    font-size: 25px;
+    font-weight: bold;
+  
+  
+  }
 </style>
 </head>
 <body>
@@ -98,6 +104,9 @@
         foreach ($sql as $row) {
             $id=$row['id'];
             echo '<li><a href="detail.php?id=', $id, '"><img alt="image" src="../img/', $row['jpg'], '.jpg" height="240" width="260">';
+            if($row['stock']==0){
+                echo '<a class=soldout><font color=red>SOLD OUT</font></a>';
+              }
             echo '<h3><a href="detail.php?id=', $id, '">', $row['name'], '</a></h3>';
             echo '<span><h4>¥', $row['price'],'</span><span>','size:',$row['size'], '</h4></span></li>';
         }

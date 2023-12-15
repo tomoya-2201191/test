@@ -96,6 +96,9 @@
             $pdo= new PDO($connect,USER,PASS);
             $sql=$pdo->query('select * from product');            
             foreach ($sql as $row) {
+              if($row['stock']==0){
+                echo '<font color=red>※売り切れ</font>';
+              }
               $id=$row['id'];
               echo '<li><a href="detail.php?id=', $id, '"><img alt="image" src="../img/', $row['jpg'], '.jpg" height="240" width="260">';
               echo '<h3><a href="detail.php?id=', $id, '">', $row['name'], '</a></h3>';
