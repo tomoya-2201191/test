@@ -61,6 +61,12 @@
 #column img {
   border-radius: 10px;
 }
+.soldout {
+    font-size: 25px;
+    font-weight: bold;
+  
+  
+  }
 
     
   </style>
@@ -96,11 +102,11 @@
             $pdo= new PDO($connect,USER,PASS);
             $sql=$pdo->query('select * from product');            
             foreach ($sql as $row) {
-              if($row['stock']==0){
-                echo '<font color=red>※売り切れ</font>';
-              }
               $id=$row['id'];
               echo '<li><a href="detail.php?id=', $id, '"><img alt="image" src="../img/', $row['jpg'], '.jpg" height="240" width="260">';
+              if($row['stock']==0){
+                echo '<a class=soldout><font color=red>SOLD OUT</font></a>';
+              }
               echo '<h3><a href="detail.php?id=', $id, '">', $row['name'], '</a></h3>';
               echo '<span><h4>¥', $row['price'],'</span><span>','size:',$row['size'], '</h4></span></li>';
           }
