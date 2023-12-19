@@ -7,8 +7,6 @@
     $connect = 'mysql:host='. SERVER . ';dbname='. DBNAME . ';charset=utf8';
 ?>
 <?php
-    error_reporting(0);
-    ini_set('display_errors', 0);
     session_start();
     $pdo = new PDO($connect,USER,PASS);
         if(isset($_POST["login"])) {
