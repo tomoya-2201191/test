@@ -29,7 +29,7 @@
         </div>
     </header>
     <div class="name">
-        <u><p>更新</p></u>
+        <u><p>商品削除</p></u>
         この商品を削除しますか？
     </div>
     <div class="container">

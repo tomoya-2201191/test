@@ -23,7 +23,10 @@
         </a>
         <div class="login">
           <?php
+          
             if(isset($_SESSION['customer'])){
+              $name = $_SESSION['customer']['name'];
+              echo 'ようこそ!　　',$name,'さん　　　　　　';
               echo '<a href="logout.php">ログアウト</a>';
             }else{
               echo '<a href="login.php">ログイン</a>';
